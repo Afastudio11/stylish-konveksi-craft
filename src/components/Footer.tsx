@@ -13,29 +13,45 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-foreground text-white py-16">
-      <div className="container mx-auto px-4 lg:px-8">
+    <footer className="bg-gradient-to-b from-foreground to-primary-dark text-white py-16 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-accent/10 to-transparent" />
+      </div>
+
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="Sekala Industry" className="h-8 w-auto" />
-              <span className="text-xl font-bold">SEKALA INDUSTRY</span>
+          <div className="animate-fade-in">
+            <div className="flex items-center gap-3 mb-4 group cursor-pointer" onClick={() => scrollToSection("home")}>
+              <div className="relative">
+                <img src={logo} alt="Sekala Industry" className="h-10 w-auto transition-transform duration-300 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-accent/30 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
+              <span className="text-xl font-black group-hover:text-accent transition-colors">SEKALA INDUSTRY</span>
             </div>
-            <p className="text-white/70 leading-relaxed">
+            <p className="text-white/70 leading-relaxed mb-4">
               Solusi konveksi profesional dengan kualitas premium untuk kebutuhan bisnis dan organisasi Anda.
             </p>
+            <div className="flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full w-fit">
+              <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+              <span className="text-accent font-semibold text-sm">We're Open</span>
+            </div>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="font-bold mb-4 text-lg">Menu</h4>
+          <div className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <h4 className="font-black mb-6 text-lg flex items-center gap-2">
+              <span className="w-1 h-6 bg-accent rounded-full" />
+              Menu
+            </h4>
             <ul className="space-y-3">
               {["Beranda", "Tentang", "Layanan", "Produk", "Kontak"].map((item, index) => (
                 <li key={item}>
                   <button
                     onClick={() => scrollToSection(["home", "about", "services", "products", "contact"][index])}
-                    className="text-white/70 hover:text-accent transition-colors"
+                    className="text-white/70 hover:text-accent transition-all duration-300 hover:translate-x-1 inline-block"
+                    data-testid={`footer-nav-${["home", "about", "services", "products", "contact"][index]}`}
                   >
                     {item}
                   </button>
@@ -45,35 +61,45 @@ const Footer = () => {
           </div>
 
           {/* Services */}
-          <div>
-            <h4 className="font-bold mb-4 text-lg">Layanan</h4>
+          <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <h4 className="font-black mb-6 text-lg flex items-center gap-2">
+              <span className="w-1 h-6 bg-accent rounded-full" />
+              Layanan
+            </h4>
             <ul className="space-y-3 text-white/70">
-              <li>Seragam Kantor</li>
-              <li>Kaos Custom</li>
-              <li>Jaket & Hoodie</li>
-              <li>Polo Shirt</li>
-              <li>Merchandise</li>
+              {["Seragam Kantor", "Kaos Custom", "Jaket & Hoodie", "Polo Shirt", "Merchandise"].map((item) => (
+                <li key={item} className="hover:text-accent transition-colors cursor-default">{item}</li>
+              ))}
             </ul>
           </div>
 
           {/* Contact */}
-          <div>
-            <h4 className="font-bold mb-4 text-lg">Kontak</h4>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-white/70">
-                <Phone className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <a href="tel:085754777068" className="hover:text-accent transition-colors">
+          <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <h4 className="font-black mb-6 text-lg flex items-center gap-2">
+              <span className="w-1 h-6 bg-accent rounded-full" />
+              Kontak
+            </h4>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3 text-white/70 group">
+                <div className="p-2 bg-accent/20 rounded-lg group-hover:bg-accent/30 transition-colors">
+                  <Phone className="w-4 h-4 flex-shrink-0 text-accent" />
+                </div>
+                <a href="tel:085754777068" className="hover:text-accent transition-colors" data-testid="footer-phone">
                   0857-5477-7068
                 </a>
               </li>
-              <li className="flex items-start gap-3 text-white/70">
-                <Mail className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <a href="mailto:info@sekalaindustry.com" className="hover:text-accent transition-colors">
+              <li className="flex items-start gap-3 text-white/70 group">
+                <div className="p-2 bg-accent/20 rounded-lg group-hover:bg-accent/30 transition-colors">
+                  <Mail className="w-4 h-4 flex-shrink-0 text-accent" />
+                </div>
+                <a href="mailto:info@sekalaindustry.com" className="hover:text-accent transition-colors" data-testid="footer-email">
                   info@sekalaindustry.com
                 </a>
               </li>
-              <li className="flex items-start gap-3 text-white/70">
-                <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
+              <li className="flex items-start gap-3 text-white/70 group">
+                <div className="p-2 bg-accent/20 rounded-lg group-hover:bg-accent/30 transition-colors">
+                  <MapPin className="w-4 h-4 flex-shrink-0 text-accent" />
+                </div>
                 <span>Jawa Barat, Indonesia</span>
               </li>
             </ul>
@@ -81,13 +107,15 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
           <p className="text-white/60 text-sm">
             © 2024 Sekala Industry. All rights reserved.
           </p>
-          <p className="text-accent font-semibold">
-            #KALACINTABERPOLA
-          </p>
+          <div className="flex items-center gap-2 px-6 py-2 bg-accent/10 rounded-full border border-accent/20">
+            <span className="text-accent font-black tracking-widest text-sm">
+              #KALACINTABERPOLA
+            </span>
+          </div>
         </div>
       </div>
     </footer>

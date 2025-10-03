@@ -18,19 +18,25 @@ const features = [
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-gradient-subtle">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section id="about" className="py-24 bg-gradient-to-b from-background to-secondary/50 relative overflow-hidden">
+      {/* Background Decorative Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/3 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
-          <div className="animate-fade-in">
+          <div className="animate-slide-up">
             <div className="inline-block mb-4">
-              <span className="text-sm font-semibold text-primary uppercase tracking-wider">
+              <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-bold uppercase tracking-wider">
                 Tentang Kami
               </span>
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
-              Mitra Terpercaya untuk Kebutuhan <span className="text-primary">Konveksi Anda</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 text-balance">
+              Mitra Terpercaya untuk Kebutuhan <span className="gradient-text">Konveksi Anda</span>
             </h2>
             
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
@@ -41,26 +47,39 @@ const About = () => {
 
             <div className="space-y-3 mb-10">
               {features.map((feature, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span className="text-foreground">{feature}</span>
+                <div 
+                  key={index} 
+                  className="flex items-start gap-3 group animate-slide-up"
+                  style={{ animationDelay: `${index * 0.05}s` }}
+                  data-testid={`about-feature-${index}`}
+                >
+                  <div className="p-1.5 bg-accent/20 rounded-lg group-hover:bg-accent/30 transition-all duration-300 group-hover:scale-110">
+                    <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0" />
+                  </div>
+                  <span className="text-foreground group-hover:text-primary transition-colors">{feature}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Right Stats */}
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-6 animate-slide-up" style={{ animationDelay: '0.2s' }}>
             {stats.map((stat, index) => (
               <div 
                 key={index}
-                className="bg-card p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-border"
+                className="group bg-gradient-to-br from-card to-card/50 p-8 rounded-2xl border border-border hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2"
+                data-testid={`about-stat-${index}`}
               >
-                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-muted-foreground font-medium">
-                  {stat.label}
+                <div className="relative">
+                  <div className="text-4xl md:text-5xl font-black bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-muted-foreground font-semibold group-hover:text-foreground transition-colors">
+                    {stat.label}
+                  </div>
+                  
+                  {/* Glow Effect on Hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
                 </div>
               </div>
             ))}

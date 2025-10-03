@@ -32,65 +32,96 @@ const Header = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled 
-          ? "bg-background/95 backdrop-blur-md shadow-md py-3" 
+          ? "glassmorphism-dark shadow-lg py-3" 
           : "bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection("home")}>
-            <img src={logo} alt="Sekala Industry" className="h-7 w-auto" />
-            <span className={`text-lg font-semibold transition-colors ${scrolled ? "text-foreground" : "text-white"}`}>
+          <div 
+            className="flex items-center gap-3 cursor-pointer group" 
+            onClick={() => scrollToSection("home")}
+            data-testid="link-home"
+          >
+            <div className="relative">
+              <img 
+                src={logo} 
+                alt="Sekala Industry" 
+                className="h-8 w-auto transition-transform duration-300 group-hover:scale-110" 
+              />
+              <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+            </div>
+            <span className={`text-lg font-bold transition-all duration-300 ${
+              scrolled ? "text-foreground" : "text-white"
+            } group-hover:text-accent`}>
               SEKALA INDUSTRY
             </span>
           </div>
 
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-1">
             {["Beranda", "Tentang", "Layanan", "Produk", "Kontak"].map((item, index) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(["home", "about", "services", "products", "contact"][index])}
-                className={`text-sm font-medium transition-colors relative group ${
-                  scrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"
+                className={`px-4 py-2 text-sm font-semibold transition-all duration-300 relative group rounded-lg ${
+                  scrolled 
+                    ? "text-foreground hover:text-accent" 
+                    : "text-white/90 hover:text-white"
                 }`}
+                data-testid={`nav-${["home", "about", "services", "products", "contact"][index]}`}
               >
-                {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
+                <span className="relative z-10">{item}</span>
+                <span className="absolute inset-0 bg-accent/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-3/4" />
               </button>
             ))}
-            <Button 
-              onClick={() => scrollToSection("contact")}
-              size="sm"
-              className="bg-accent hover:bg-accent-dark text-accent-foreground font-medium px-6 transition-all hover:scale-105"
-            >
-              Hubungi Kami
-            </Button>
+            <div className="ml-2">
+              <Button 
+                onClick={() => scrollToSection("contact")}
+                size="sm"
+                className="bg-accent hover:bg-accent-dark text-primary font-bold px-6 py-2 transition-all duration-300 hover:scale-105 shadow-glow-accent"
+                data-testid="button-contact-header"
+              >
+                Hubungi Kami
+              </Button>
+            </div>
           </nav>
 
           <button
-            className={`lg:hidden transition-colors ${scrolled ? "text-foreground" : "text-white"}`}
+            className={`lg:hidden p-2 rounded-lg transition-all duration-300 ${
+              scrolled 
+                ? "text-foreground hover:bg-accent/10" 
+                : "text-white hover:bg-white/10"
+            }`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            data-testid="button-menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {isMenuOpen && (
-          <nav className="lg:hidden mt-6 pb-6 flex flex-col gap-4 animate-fade-in">
+          <nav className="lg:hidden mt-6 pb-6 flex flex-col gap-3 animate-slide-down">
             {["Beranda", "Tentang", "Layanan", "Produk", "Kontak"].map((item, index) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(["home", "about", "services", "products", "contact"][index])}
-                className="text-foreground hover:text-primary transition-colors text-left font-medium"
+                className={`px-4 py-3 text-left font-semibold transition-all duration-300 rounded-lg ${
+                  scrolled
+                    ? "text-foreground hover:bg-accent/10 hover:text-accent"
+                    : "text-white hover:bg-white/10"
+                }`}
+                data-testid={`nav-mobile-${["home", "about", "services", "products", "contact"][index]}`}
               >
                 {item}
               </button>
             ))}
             <Button 
               onClick={() => scrollToSection("contact")}
-              className="bg-accent hover:bg-accent-dark text-accent-foreground font-medium w-full"
+              className="bg-accent hover:bg-accent-dark text-primary font-bold w-full mt-2 shadow-glow-accent"
+              data-testid="button-contact-mobile"
             >
               Hubungi Kami
             </Button>
