@@ -1,4 +1,4 @@
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
 
@@ -22,61 +22,68 @@ const Hero = () => {
           alt="Manufacturing" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/75" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/95 via-primary/90 to-primary-dark/95" />
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 lg:px-8 relative z-10 py-32 md:py-40">
-        <div className="max-w-4xl animate-fade-in">
-          <div className="inline-block mb-6">
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 backdrop-blur-sm border border-accent/30 rounded-full text-accent-foreground text-sm font-medium">
-              <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-              Solusi Konveksi Terpercaya
-            </span>
-          </div>
-
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Wujudkan Brand Identity<br />
-            Anda dengan <span className="text-accent">Kualitas Premium</span>
+      <div className="container mx-auto px-4 lg:px-8 relative z-10 py-20 md:py-32">
+        <div className="max-w-5xl mx-auto text-center animate-fade-in">
+          {/* Main Heading */}
+          <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white mb-4 leading-none tracking-tight">
+            SEKALA<br />
+            INDUSTRY
           </h1>
 
-          <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl leading-relaxed">
-            Sekala Industry adalah mitra terpercaya untuk kebutuhan konveksi profesional Anda. 
-            Dari seragam perusahaan hingga merchandise custom, kami hadirkan dengan standar kualitas tinggi.
-          </p>
+          {/* IS OPEN NOW */}
+          <div className="inline-block mb-12">
+            <div className="bg-accent px-8 py-3 md:px-12 md:py-4">
+              <p className="text-2xl md:text-3xl lg:text-4xl font-black text-primary uppercase tracking-wide">
+                IS OPEN NOW!
+              </p>
+            </div>
+          </div>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          {/* Operating Hours */}
+          <div className="mb-16">
+            <p className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8">
+              9.00 AM - 17.00 PM
+            </p>
+
+            {/* Order and Consultation */}
+            <div className="space-y-3">
+              <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-white uppercase">
+                ORDER AND
+                <br />
+                CONSULTATION
+              </p>
+              <a 
+                href="tel:085754777068"
+                className="inline-block text-3xl md:text-4xl lg:text-5xl font-black text-accent hover:text-accent-light transition-colors"
+                data-testid="link-phone"
+              >
+                0857-5477-7068
+              </a>
+            </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="mb-12">
             <Button 
               onClick={() => scrollToSection("contact")}
               size="lg"
-              className="bg-accent hover:bg-accent-dark text-accent-foreground font-semibold px-8 py-6 text-base transition-all hover:scale-105 shadow-xl"
+              className="bg-accent hover:bg-accent-dark text-primary font-bold px-10 py-7 text-lg transition-all hover:scale-105 shadow-2xl"
+              data-testid="button-consultation"
             >
               Mulai Konsultasi
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button 
-              onClick={() => scrollToSection("products")}
-              size="lg"
-              variant="outline"
-              className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-6 text-base transition-all hover:scale-105"
-            >
-              Lihat Produk Kami
+              <ArrowRight className="ml-2 w-6 h-6" />
             </Button>
           </div>
 
-          <div className="mt-16 flex flex-wrap items-center gap-8 text-white/80">
-            <div className="flex items-center gap-3">
-              <Phone className="w-5 h-5" />
-              <div>
-                <p className="text-xs uppercase tracking-wider mb-1">Hubungi Kami</p>
-                <p className="font-semibold text-white">0857-5477-7068</p>
-              </div>
-            </div>
-            <div className="h-12 w-px bg-white/20" />
-            <div>
-              <p className="text-xs uppercase tracking-wider mb-1">Jam Operasional</p>
-              <p className="font-semibold text-white">Senin - Sabtu, 09:00 - 17:00</p>
-            </div>
+          {/* Hashtag */}
+          <div className="pt-8 border-t-2 border-white/20">
+            <p className="text-xl md:text-2xl font-bold text-white/90 tracking-wider">
+              #KALACINTABERPOLA
+            </p>
           </div>
         </div>
       </div>
