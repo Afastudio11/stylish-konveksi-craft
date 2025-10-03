@@ -84,17 +84,18 @@ const Contact = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg"
-                className="bg-accent hover:bg-accent-dark text-accent-foreground font-semibold px-8 transition-all hover:scale-105 shadow-xl"
+                className="bg-accent hover:bg-accent/90 text-foreground font-bold px-8 transition-all hover:scale-105 shadow-xl"
                 onClick={() => window.open('https://wa.me/6285754777068', '_blank')}
+                data-testid="button-whatsapp"
               >
                 <MessageCircle className="mr-2 w-5 h-5" />
                 Chat WhatsApp
               </Button>
               <Button 
                 size="lg"
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 transition-all hover:scale-105"
+                className="bg-white hover:bg-white/90 text-primary font-bold px-8 transition-all hover:scale-105 shadow-xl border-2 border-white"
                 onClick={() => window.location.href = 'tel:085754777068'}
+                data-testid="button-call"
               >
                 <Phone className="mr-2 w-5 h-5" />
                 Telepon Kami
