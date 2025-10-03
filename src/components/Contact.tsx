@@ -1,123 +1,106 @@
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+
+const contactInfo = [
+  {
+    icon: Phone,
+    title: "Telepon / WhatsApp",
+    value: "0857-5477-7068",
+    link: "tel:085754777068",
+  },
+  {
+    icon: Mail,
+    title: "Email",
+    value: "info@sekalaindustry.com",
+    link: "mailto:info@sekalaindustry.com",
+  },
+  {
+    icon: MapPin,
+    title: "Lokasi",
+    value: "Jawa Barat, Indonesia",
+    link: "#",
+  },
+  {
+    icon: Clock,
+    title: "Jam Operasional",
+    value: "Senin - Sabtu, 09:00 - 17:00",
+    link: "#",
+  },
+];
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 bg-gradient-hero relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30"></div>
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
-            Hubungi <span className="text-accent">Kami</span>
-          </h2>
-          <p className="text-lg text-primary-foreground/90 max-w-2xl mx-auto">
-            Siap melayani konsultasi dan pemesanan Anda
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
-          <Card className="border-0 bg-card/95 backdrop-blur">
-            <CardContent className="p-8">
-              <div className="flex items-start gap-4">
-                <div className="bg-gradient-hero p-3 rounded-xl">
-                  <Phone className="w-6 h-6 text-primary-foreground" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-card-foreground mb-2">Telepon / WhatsApp</h3>
-                  <a 
-                    href="tel:085754777068" 
-                    className="text-2xl font-bold text-primary hover:text-primary-dark transition-colors"
-                  >
-                    0857-5477-7068
-                  </a>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border-0 bg-card/95 backdrop-blur">
-            <CardContent className="p-8">
-              <div className="flex items-start gap-4">
-                <div className="bg-gradient-hero p-3 rounded-xl">
-                  <Clock className="w-6 h-6 text-primary-foreground" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-card-foreground mb-2">Jam Operasional</h3>
-                  <p className="text-xl font-bold text-primary">
-                    9.00 AM - 17.00 PM
-                  </p>
-                  <p className="text-sm text-muted-foreground mt-1">Senin - Sabtu</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border-0 bg-card/95 backdrop-blur">
-            <CardContent className="p-8">
-              <div className="flex items-start gap-4">
-                <div className="bg-gradient-hero p-3 rounded-xl">
-                  <Mail className="w-6 h-6 text-primary-foreground" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-card-foreground mb-2">Email</h3>
-                  <a 
-                    href="mailto:info@sekalaindustry.com" 
-                    className="text-lg font-semibold text-primary hover:text-primary-dark transition-colors"
-                  >
-                    info@sekalaindustry.com
-                  </a>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border-0 bg-card/95 backdrop-blur">
-            <CardContent className="p-8">
-              <div className="flex items-start gap-4">
-                <div className="bg-gradient-hero p-3 rounded-xl">
-                  <MapPin className="w-6 h-6 text-primary-foreground" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-card-foreground mb-2">Lokasi</h3>
-                  <p className="text-muted-foreground">
-                    Jawa Barat, Indonesia
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="text-center">
-          <div className="inline-block bg-accent px-10 py-5 mb-6 transform rotate-1 shadow-glow">
-            <p className="text-xl md:text-2xl font-bold text-accent-foreground">
-              ORDER AND CONSULTATION
+    <section id="contact" className="py-24 bg-background">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16 animate-fade-in">
+            <span className="text-sm font-semibold text-primary uppercase tracking-wider mb-4 block">
+              Hubungi Kami
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
+              Siap Membantu <span className="text-primary">Kebutuhan Anda</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Tim kami siap memberikan konsultasi dan solusi terbaik untuk proyek konveksi Anda
             </p>
           </div>
-          
-          <div className="mb-8">
-            <a 
-              href="tel:085754777068"
-              className="text-3xl md:text-5xl font-black text-accent hover:text-accent-glow transition-colors"
-            >
-              0857-5477-7068
-            </a>
+
+          {/* Contact Cards */}
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            {contactInfo.map((info, index) => (
+              <a
+                key={index}
+                href={info.link}
+                className="group bg-card p-6 rounded-2xl border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                    <info.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-card-foreground mb-1 text-sm">
+                      {info.title}
+                    </h3>
+                    <p className="text-foreground font-medium">
+                      {info.value}
+                    </p>
+                  </div>
+                </div>
+              </a>
+            ))}
           </div>
 
-          <Button 
-            size="lg"
-            className="bg-accent hover:bg-accent-glow text-accent-foreground font-bold text-lg px-12 py-6 shadow-glow transition-all hover:scale-105"
-            onClick={() => window.open('https://wa.me/6285754777068', '_blank')}
-          >
-            <Phone className="mr-2" />
-            Chat WhatsApp
-          </Button>
-
-          <p className="mt-8 text-primary-foreground/70 text-sm">
-            #KALACINTABERPOLA
-          </p>
+          {/* CTA Section */}
+          <div className="bg-gradient-primary p-12 rounded-3xl text-center shadow-2xl">
+            <h3 className="text-3xl font-bold text-primary-foreground mb-4">
+              Mulai Proyek Anda Sekarang
+            </h3>
+            <p className="text-primary-foreground/90 text-lg mb-8 max-w-2xl mx-auto">
+              Konsultasikan kebutuhan konveksi Anda dengan tim profesional kami. 
+              Dapatkan penawaran terbaik dan layanan yang memuaskan.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg"
+                className="bg-accent hover:bg-accent-dark text-accent-foreground font-semibold px-8 transition-all hover:scale-105 shadow-xl"
+                onClick={() => window.open('https://wa.me/6285754777068', '_blank')}
+              >
+                <MessageCircle className="mr-2 w-5 h-5" />
+                Chat WhatsApp
+              </Button>
+              <Button 
+                size="lg"
+                variant="outline"
+                className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8 transition-all hover:scale-105"
+                onClick={() => window.location.href = 'tel:085754777068'}
+              >
+                <Phone className="mr-2 w-5 h-5" />
+                Telepon Kami
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,60 +1,62 @@
-import { Shirt, Users, Palette, Clock } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Sparkles, Palette, Clock, Shield } from "lucide-react";
 
 const services = [
   {
-    icon: Shirt,
-    title: "Produksi Konveksi",
-    description: "Memproduksi berbagai jenis pakaian seperti seragam, kaos, jaket, dan produk garmen lainnya dengan kualitas terbaik",
+    icon: Sparkles,
+    title: "Produksi Custom",
+    description: "Buat produk sesuai kebutuhan dengan berbagai pilihan bahan, warna, dan design yang dapat disesuaikan",
   },
   {
     icon: Palette,
-    title: "Custom Design",
-    description: "Layanan desain custom sesuai kebutuhan Anda dengan tim desainer profesional yang berpengalaman",
-  },
-  {
-    icon: Users,
-    title: "Pesanan Satuan & Grosir",
-    description: "Melayani pesanan dalam jumlah kecil maupun besar dengan harga kompetitif dan kualitas terjamin",
+    title: "Design Konsultasi",
+    description: "Tim desainer kami siap membantu mewujudkan ide Anda menjadi design yang menarik dan profesional",
   },
   {
     icon: Clock,
     title: "Pengerjaan Cepat",
-    description: "Proses produksi yang efisien dengan waktu pengerjaan yang dapat disesuaikan dengan kebutuhan Anda",
+    description: "Proses produksi yang efisien dengan timeline yang jelas dan dapat diandalkan untuk setiap pesanan",
+  },
+  {
+    icon: Shield,
+    title: "Quality Control",
+    description: "Setiap produk melalui quality check ketat untuk memastikan standar kualitas terbaik",
   },
 ];
 
 const Services = () => {
   return (
-    <section id="services" className="py-20 bg-secondary">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Layanan <span className="text-primary">Kami</span>
+    <section id="services" className="py-24 bg-background">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="text-center mb-16 max-w-3xl mx-auto animate-fade-in">
+          <span className="text-sm font-semibold text-primary uppercase tracking-wider mb-4 block">
+            Layanan Kami
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
+            Solusi Lengkap untuk <span className="text-primary">Kebutuhan Konveksi</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Kami menyediakan berbagai layanan konveksi profesional untuk memenuhi kebutuhan bisnis dan organisasi Anda
+          <p className="text-lg text-muted-foreground">
+            Kami menyediakan berbagai layanan profesional yang dirancang untuk memberikan hasil terbaik
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
-            <Card 
-              key={index} 
-              className="border-0 shadow-elegant hover:shadow-glow transition-all duration-300 hover:-translate-y-2 bg-card"
+            <div 
+              key={index}
+              className="group bg-card p-8 rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
             >
-              <CardContent className="p-6 text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-hero rounded-2xl mb-4">
-                  <service.icon className="w-8 h-8 text-primary-foreground" />
-                </div>
-                <h3 className="text-xl font-bold text-card-foreground mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground">
-                  {service.description}
-                </p>
-              </CardContent>
-            </Card>
+              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                <service.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
+              </div>
+              
+              <h3 className="text-xl font-bold text-card-foreground mb-3 group-hover:text-primary transition-colors">
+                {service.title}
+              </h3>
+              
+              <p className="text-muted-foreground leading-relaxed">
+                {service.description}
+              </p>
+            </div>
           ))}
         </div>
       </div>
