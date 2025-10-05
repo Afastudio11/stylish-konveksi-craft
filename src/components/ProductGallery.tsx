@@ -147,15 +147,18 @@ const ProductGallery = () => {
                       transform: `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,
                       opacity,
                       zIndex,
-                      transition: 'transform 1s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1)',
+                      transition: 'transform 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                       transformStyle: 'preserve-3d',
+                      willChange: 'transform, opacity',
+                      backfaceVisibility: 'hidden',
                     }}
                   >
                     <div className={`relative overflow-hidden rounded-2xl bg-white shadow-xl h-[380px] md:h-[450px] w-[280px] md:w-[320px] ${
                       isCenter ? 'ring-4 ring-accent shadow-2xl' : ''
                     }`}
                     style={{
-                      transition: 'box-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1), outline 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+                      transition: 'box-shadow 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94), outline 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                      willChange: 'box-shadow'
                     }}>
                       <img
                         src={product.image}
@@ -167,7 +170,7 @@ const ProductGallery = () => {
                         isCenter ? 'opacity-80' : 'opacity-60'
                       }`}
                       style={{
-                        transition: 'opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1)'
+                        transition: 'opacity 0.85s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
                       }} />
                       
                       <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
@@ -178,7 +181,7 @@ const ProductGallery = () => {
                           isCenter ? 'text-xl md:text-2xl' : 'text-lg md:text-xl'
                         }`}
                         style={{
-                          transition: 'font-size 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
+                          transition: 'font-size 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
                         }}>
                           {product.title}
                         </h3>
