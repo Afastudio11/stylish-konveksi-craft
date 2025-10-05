@@ -145,14 +145,14 @@ const ProductGallery = () => {
                       transform: `translateX(${translateX}px) scale(${scale})`,
                       opacity,
                       zIndex,
-                      transition: 'all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                      transition: 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), z-index 0s',
                     }}
                   >
                     <div className={`relative overflow-hidden rounded-2xl bg-white shadow-xl h-[380px] md:h-[450px] w-[280px] md:w-[320px] ${
                       isCenter ? 'ring-4 ring-accent shadow-2xl' : ''
                     }`}
                     style={{
-                      transition: 'box-shadow 0.5s ease, outline 0.5s ease'
+                      transition: 'box-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1), outline 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
                     }}>
                       <img
                         src={product.image}
@@ -164,7 +164,7 @@ const ProductGallery = () => {
                         isCenter ? 'opacity-80' : 'opacity-60'
                       }`}
                       style={{
-                        transition: 'opacity 0.6s ease-in-out'
+                        transition: 'opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1)'
                       }} />
                       
                       <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
@@ -175,7 +175,7 @@ const ProductGallery = () => {
                           isCenter ? 'text-xl md:text-2xl' : 'text-lg md:text-xl'
                         }`}
                         style={{
-                          transition: 'font-size 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+                          transition: 'font-size 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
                         }}>
                           {product.title}
                         </h3>
