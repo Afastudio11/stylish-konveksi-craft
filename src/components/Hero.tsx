@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden" style={{ backgroundColor: '#0F37D8' }}>
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden" style={{ backgroundColor: '#343CCD' }}>
       {/* Background Image */}
       <div className="absolute inset-0">
         <img 
