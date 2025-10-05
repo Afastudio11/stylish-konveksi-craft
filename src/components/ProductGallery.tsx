@@ -44,6 +44,48 @@ const ProductGallery = () => {
       image: "/products/SEKALA PRICELIST KONVEKSI_page-0014_1759648130420.jpg",
       title: "Coach Jacket",
       category: "Streetwear"
+    },
+    {
+      id: 8,
+      image: "/products/SEKALA PRICELIST KONVEKSI_page-0012_1759645213700.jpg",
+      title: "Sweater Custom",
+      category: "Streetwear"
+    },
+    {
+      id: 9,
+      image: "/products/SEKALA PRICELIST KONVEKSI_page-0004_1759645213702.jpg",
+      title: "Jersey Olahraga",
+      category: "Sport"
+    },
+    {
+      id: 10,
+      image: "/products/SEKALA PRICELIST KONVEKSI_page-0022_1759645213702.jpg",
+      title: "Seragam Sekolah",
+      category: "Formal"
+    },
+    {
+      id: 11,
+      image: "/products/SEKALA PRICELIST KONVEKSI_page-0020_1759645213702.jpg",
+      title: "Vest Tactical",
+      category: "Streetwear"
+    },
+    {
+      id: 12,
+      image: "/products/SEKALA PRICELIST KONVEKSI_page-0006_1759645213702.jpg",
+      title: "Kemeja Bordir",
+      category: "Casual"
+    },
+    {
+      id: 13,
+      image: "/products/SEKALA PRICELIST KONVEKSI_page-0008_1759645213703.jpg",
+      title: "Polo Shirt",
+      category: "Corporate"
+    },
+    {
+      id: 14,
+      image: "/products/SEKALA PRICELIST KONVEKSI_page-0010_1759645213703.jpg",
+      title: "Hoodie Premium",
+      category: "Streetwear"
     }
   ];
 
@@ -55,6 +97,15 @@ const ProductGallery = () => {
 
   const scrollNext = () => {
     setCurrentIndex((prev) => (prev === products.length - 1 ? 0 : prev + 1));
+  };
+
+  const getVisibleProducts = () => {
+    const visible = [];
+    for (let i = -2; i <= 2; i++) {
+      const index = (currentIndex + i + products.length) % products.length;
+      visible.push({ ...products[index], position: i });
+    }
+    return visible;
   };
 
   return (
@@ -74,62 +125,68 @@ const ProductGallery = () => {
           </p>
         </div>
 
-        <div className="relative mb-12">
-          <div className="flex items-center justify-center gap-4 md:gap-6 overflow-hidden py-8">
-            {products.map((product, index) => {
-              const isActive = index === currentIndex;
-              const offset = index - currentIndex;
-              
-              return (
-                <div
-                  key={product.id}
-                  className={`flex-shrink-0 transition-all duration-500 ease-out ${
-                    isActive ? 'scale-100 opacity-100' : 'scale-75 opacity-40'
-                  }`}
-                  style={{
-                    transform: `translateX(${offset * -320}px) scale(${isActive ? 1 : 0.75})`,
-                    zIndex: isActive ? 10 : 1,
-                  }}
-                >
-                  <div className={`relative overflow-hidden rounded-2xl bg-white shadow-xl h-[400px] md:h-[480px] w-[280px] md:w-[340px] transition-all duration-500 ${
-                    isActive ? 'ring-4 ring-accent shadow-2xl' : ''
-                  }`}>
-                    <img
-                      src={product.image}
-                      alt={product.title}
-                      className="w-full h-full object-cover"
-                    />
-                    
-                    <div className={`absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent transition-opacity duration-500 ${
-                      isActive ? 'opacity-80' : 'opacity-60'
-                    }`} />
-                    
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
-                      <span className="inline-block px-4 py-1.5 bg-accent text-foreground text-sm font-bold rounded-full mb-2 shadow-lg">
-                        {product.category}
-                      </span>
-                      <h3 className={`font-black text-white drop-shadow-lg transition-all duration-500 ${
-                        isActive ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl'
-                      }`}>
-                        {product.title}
-                      </h3>
+        <div className="relative h-[450px] md:h-[550px] mb-12">
+          <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+            <div className="relative w-full h-full flex items-center justify-center">
+              {getVisibleProducts().map((product, idx) => {
+                const { position } = product;
+                const isCenter = position === 0;
+                
+                const scale = isCenter ? 1 : 0.75;
+                const opacity = Math.abs(position) <= 1 ? 1 : 0.3;
+                const translateX = position * 300;
+                const zIndex = isCenter ? 20 : 10 - Math.abs(position);
+
+                return (
+                  <div
+                    key={`${product.id}-${idx}`}
+                    className="absolute transition-all duration-500 ease-out"
+                    style={{
+                      transform: `translateX(${translateX}px) scale(${scale})`,
+                      opacity,
+                      zIndex,
+                    }}
+                  >
+                    <div className={`relative overflow-hidden rounded-2xl bg-white shadow-xl h-[380px] md:h-[450px] w-[280px] md:w-[320px] transition-all duration-500 ${
+                      isCenter ? 'ring-4 ring-accent shadow-2xl' : ''
+                    }`}>
+                      <img
+                        src={product.image}
+                        alt={product.title}
+                        className="w-full h-full object-cover"
+                      />
+                      
+                      <div className={`absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent transition-opacity duration-500 ${
+                        isCenter ? 'opacity-80' : 'opacity-60'
+                      }`} />
+                      
+                      <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
+                        <span className="inline-block px-4 py-1.5 bg-accent text-foreground text-sm font-bold rounded-full mb-2 shadow-lg">
+                          {product.category}
+                        </span>
+                        <h3 className={`font-black text-white drop-shadow-lg transition-all duration-500 ${
+                          isCenter ? 'text-xl md:text-2xl' : 'text-lg md:text-xl'
+                        }`}>
+                          {product.title}
+                        </h3>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
 
           <button
             onClick={scrollPrev}
-            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-primary backdrop-blur-md shadow-xl rounded-full flex items-center justify-center text-white hover:bg-accent hover:text-foreground transition-all duration-300 z-20 group border-2 border-white/20"
+            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-primary backdrop-blur-md shadow-xl rounded-full flex items-center justify-center text-white hover:bg-accent hover:text-foreground transition-all duration-300 z-30 group border-2 border-white/20"
             aria-label="Previous"
           >
             <ChevronLeft className="w-6 h-6 md:w-7 md:h-7 group-hover:scale-110 transition-transform" />
           </button>
           <button
             onClick={scrollNext}
-            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-primary backdrop-blur-md shadow-xl rounded-full flex items-center justify-center text-white hover:bg-accent hover:text-foreground transition-all duration-300 z-20 group border-2 border-white/20"
+            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-primary backdrop-blur-md shadow-xl rounded-full flex items-center justify-center text-white hover:bg-accent hover:text-foreground transition-all duration-300 z-30 group border-2 border-white/20"
             aria-label="Next"
           >
             <ChevronRight className="w-6 h-6 md:w-7 md:h-7 group-hover:scale-110 transition-transform" />
