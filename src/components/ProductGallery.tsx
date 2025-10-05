@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const ProductGallery = () => {
@@ -48,38 +48,47 @@ const ProductGallery = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const carouselRef = useRef<HTMLDivElement>(null);
 
   const scrollPrev = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-      scrollToIndex(currentIndex - 1);
-    } else {
-      setCurrentIndex(products.length - 1);
-      scrollToIndex(products.length - 1);
-    }
+    setCurrentIndex((prev) => (prev === 0 ? products.length - 1 : prev - 1));
   };
 
   const scrollNext = () => {
-    if (currentIndex < products.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-      scrollToIndex(currentIndex + 1);
-    } else {
-      setCurrentIndex(0);
-      scrollToIndex(0);
-    }
+    setCurrentIndex((prev) => (prev === products.length - 1 ? 0 : prev + 1));
   };
 
-  const scrollToIndex = (index: number) => {
-    if (carouselRef.current) {
-      const scrollWidth = carouselRef.current.scrollWidth;
-      const clientWidth = carouselRef.current.clientWidth;
-      const scrollPosition = (scrollWidth / products.length) * index - (clientWidth / 2) + (scrollWidth / products.length / 2);
-      carouselRef.current.scrollTo({
-        left: scrollPosition,
-        behavior: 'smooth'
-      });
+  const getCardStyle = (index: number) => {
+    const diff = index - currentIndex;
+    const totalCards = products.length;
+    
+    // Normalize difference to be between -totalCards/2 and totalCards/2
+    let normalizedDiff = diff;
+    if (normalizedDiff > totalCards / 2) {
+      normalizedDiff -= totalCards;
+    } else if (normalizedDiff < -totalCards / 2) {
+      normalizedDiff += totalCards;
     }
+
+    // Calculate rotation angle (360 degrees divided by number of cards)
+    const anglePerCard = 360 / totalCards;
+    const rotateY = normalizedDiff * anglePerCard;
+    
+    // Calculate position on circle
+    const radius = 450; // radius of the circle
+    const translateZ = -radius;
+    
+    // Scale and opacity based on position
+    const isActive = normalizedDiff === 0;
+    const scale = isActive ? 1 : 0.75;
+    const opacity = Math.abs(normalizedDiff) <= 1 ? 1 : 0.4;
+    const zIndex = isActive ? 10 : Math.max(0, 5 - Math.abs(normalizedDiff));
+
+    return {
+      transform: `rotateY(${rotateY}deg) translateZ(${translateZ}px) scale(${scale})`,
+      opacity,
+      zIndex,
+      transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+    };
   };
 
   return (
@@ -101,24 +110,25 @@ const ProductGallery = () => {
           </p>
         </div>
 
-        {/* Carousel */}
-        <div className="relative px-12 md:px-16">
+        {/* Circular Carousel */}
+        <div className="relative h-[500px] md:h-[600px] mb-12">
           <div 
-            ref={carouselRef}
-            className="overflow-x-auto scrollbar-hide scroll-smooth"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            className="absolute inset-0 flex items-center justify-center"
+            style={{ 
+              perspective: '2000px',
+              perspectiveOrigin: 'center center'
+            }}
           >
-            <div className="flex gap-6 md:gap-8 pb-4">
+            <div className="relative w-full h-full" style={{ transformStyle: 'preserve-3d' }}>
               {products.map((product, index) => (
                 <div
                   key={product.id}
-                  className={`flex-shrink-0 w-[280px] md:w-[350px] lg:w-[400px] transition-all duration-500 ${
-                    index === currentIndex 
-                      ? "scale-100 opacity-100" 
-                      : "scale-90 opacity-50"
-                  }`}
+                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] md:w-[350px] h-[380px] md:h-[460px]"
+                  style={getCardStyle(index)}
                 >
-                  <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl aspect-[3/4] group">
+                  <div className={`relative overflow-hidden rounded-3xl bg-white shadow-2xl h-full group ${
+                    index === currentIndex ? 'ring-4 ring-accent' : ''
+                  }`}>
                     {/* Image */}
                     <img
                       src={product.image}
@@ -131,7 +141,7 @@ const ProductGallery = () => {
                     
                     {/* Content */}
                     <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
-                      <span className="inline-block px-4 py-2 bg-accent text-primary text-sm font-bold rounded-full mb-3 shadow-lg">
+                      <span className="inline-block px-4 py-2 bg-accent text-foreground text-sm font-bold rounded-full mb-3 shadow-lg">
                         {product.category}
                       </span>
                       <h3 className="text-2xl md:text-3xl font-black text-white drop-shadow-lg">
@@ -150,14 +160,14 @@ const ProductGallery = () => {
           {/* Navigation Buttons */}
           <button
             onClick={scrollPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 bg-primary backdrop-blur-md shadow-2xl rounded-full flex items-center justify-center text-white hover:bg-accent hover:text-foreground transition-all duration-300 z-10 group border border-primary"
+            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 bg-primary backdrop-blur-md shadow-2xl rounded-full flex items-center justify-center text-white hover:bg-accent hover:text-foreground transition-all duration-300 z-20 group border border-primary"
             aria-label="Previous"
           >
             <ChevronLeft className="w-6 h-6 md:w-8 md:h-8 group-hover:scale-110 transition-transform" />
           </button>
           <button
             onClick={scrollNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 bg-primary backdrop-blur-md shadow-2xl rounded-full flex items-center justify-center text-white hover:bg-accent hover:text-foreground transition-all duration-300 z-10 group border border-primary"
+            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 bg-primary backdrop-blur-md shadow-2xl rounded-full flex items-center justify-center text-white hover:bg-accent hover:text-foreground transition-all duration-300 z-20 group border border-primary"
             aria-label="Next"
           >
             <ChevronRight className="w-6 h-6 md:w-8 md:h-8 group-hover:scale-110 transition-transform" />
@@ -169,14 +179,11 @@ const ProductGallery = () => {
           {products.map((_, index) => (
             <button
               key={index}
-              onClick={() => {
-                setCurrentIndex(index);
-                scrollToIndex(index);
-              }}
+              onClick={() => setCurrentIndex(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 index === currentIndex 
                   ? "bg-accent w-8" 
-                  : "bg-primary/30 hover:bg-primary/50"
+                  : "bg-primary hover:bg-accent"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
