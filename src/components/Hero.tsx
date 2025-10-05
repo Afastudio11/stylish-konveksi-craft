@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden" style={{ backgroundColor: '#0F37D8' }}>
       {/* Background Image */}
       <div className="absolute inset-0">
         <img 
@@ -8,8 +8,6 @@ const Hero = () => {
           alt="Sekala Industry Products" 
           className="w-full h-full object-cover object-center"
         />
-        {/* Blue Overlay */}
-        <div className="absolute inset-0 bg-primary/70" />
       </div>
 
       {/* Animated Background Elements */}

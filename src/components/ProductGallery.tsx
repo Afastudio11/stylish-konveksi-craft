@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const ProductGallery = () => {
@@ -90,6 +90,14 @@ const ProductGallery = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev === products.length - 1 ? 0 : prev + 1));
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, [products.length]);
 
   const scrollPrev = () => {
     setCurrentIndex((prev) => (prev === 0 ? products.length - 1 : prev - 1));
