@@ -140,33 +140,43 @@ const ProductGallery = () => {
                 return (
                   <div
                     key={`${product.id}-${idx}`}
-                    className="absolute transition-all duration-500 ease-out"
+                    className="absolute"
                     style={{
                       transform: `translateX(${translateX}px) scale(${scale})`,
                       opacity,
                       zIndex,
+                      transition: 'all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1)',
                     }}
                   >
-                    <div className={`relative overflow-hidden rounded-2xl bg-white shadow-xl h-[380px] md:h-[450px] w-[280px] md:w-[320px] transition-all duration-500 ${
+                    <div className={`relative overflow-hidden rounded-2xl bg-white shadow-xl h-[380px] md:h-[450px] w-[280px] md:w-[320px] ${
                       isCenter ? 'ring-4 ring-accent shadow-2xl' : ''
-                    }`}>
+                    }`}
+                    style={{
+                      transition: 'box-shadow 0.5s ease, outline 0.5s ease'
+                    }}>
                       <img
                         src={product.image}
                         alt={product.title}
                         className="w-full h-full object-cover"
                       />
                       
-                      <div className={`absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent transition-opacity duration-500 ${
+                      <div className={`absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent ${
                         isCenter ? 'opacity-80' : 'opacity-60'
-                      }`} />
+                      }`}
+                      style={{
+                        transition: 'opacity 0.6s ease-in-out'
+                      }} />
                       
                       <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
                         <span className="inline-block px-4 py-1.5 bg-accent text-foreground text-sm font-bold rounded-full mb-2 shadow-lg">
                           {product.category}
                         </span>
-                        <h3 className={`font-black text-white drop-shadow-lg transition-all duration-500 ${
+                        <h3 className={`font-black text-white drop-shadow-lg ${
                           isCenter ? 'text-xl md:text-2xl' : 'text-lg md:text-xl'
-                        }`}>
+                        }`}
+                        style={{
+                          transition: 'font-size 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+                        }}>
                           {product.title}
                         </h3>
                       </div>
