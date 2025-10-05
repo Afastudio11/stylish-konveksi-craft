@@ -83,20 +83,20 @@ const ProductGallery = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50 relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-primary relative overflow-hidden">
       {/* Background Decoration */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-5">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent rounded-full blur-3xl" />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-primary-light/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16 animate-slide-up">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-primary mb-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4">
             Our <span className="text-accent">Portofolio</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-white/90 max-w-2xl mx-auto">
             Lihat berbagai produk konveksi berkualitas yang telah kami buat untuk klien kami
           </p>
         </div>
@@ -150,14 +150,14 @@ const ProductGallery = () => {
           {/* Navigation Buttons */}
           <button
             onClick={scrollPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 bg-white shadow-2xl rounded-full flex items-center justify-center text-primary hover:bg-accent hover:text-primary transition-all duration-300 z-10 group"
+            className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 bg-white/20 backdrop-blur-md shadow-2xl rounded-full flex items-center justify-center text-white hover:bg-accent hover:text-primary transition-all duration-300 z-10 group border border-white/30"
             aria-label="Previous"
           >
             <ChevronLeft className="w-6 h-6 md:w-8 md:h-8 group-hover:scale-110 transition-transform" />
           </button>
           <button
             onClick={scrollNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 bg-white shadow-2xl rounded-full flex items-center justify-center text-primary hover:bg-accent hover:text-primary transition-all duration-300 z-10 group"
+            className="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 bg-white/20 backdrop-blur-md shadow-2xl rounded-full flex items-center justify-center text-white hover:bg-accent hover:text-primary transition-all duration-300 z-10 group border border-white/30"
             aria-label="Next"
           >
             <ChevronRight className="w-6 h-6 md:w-8 md:h-8 group-hover:scale-110 transition-transform" />
@@ -175,8 +175,8 @@ const ProductGallery = () => {
               }}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 index === currentIndex 
-                  ? "bg-primary w-8" 
-                  : "bg-gray-300 hover:bg-primary/50"
+                  ? "bg-accent w-8" 
+                  : "bg-white/30 hover:bg-white/50"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
@@ -187,7 +187,7 @@ const ProductGallery = () => {
         <div className="text-center mt-12 animate-fade-in">
           <a
             href="#contact"
-            className="inline-block px-8 py-4 bg-primary text-white font-bold rounded-full hover:bg-primary-dark transition-all duration-300 shadow-glow-primary hover:shadow-xl hover:scale-105"
+            className="inline-block px-8 py-4 bg-accent text-primary font-bold rounded-full hover:bg-accent-dark transition-all duration-300 shadow-glow-accent hover:shadow-xl hover:scale-105"
           >
             Konsultasi Gratis Sekarang
           </a>
