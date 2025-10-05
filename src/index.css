@@ -164,6 +164,15 @@ All colors MUST be HSL.
   .shadow-glow-accent {
     box-shadow: 0 0 20px hsl(68, 98%, 49% / 0.3);
   }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 @keyframes fadeIn {
