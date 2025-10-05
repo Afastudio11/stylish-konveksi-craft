@@ -126,15 +126,17 @@ const ProductGallery = () => {
         </div>
 
         <div className="relative h-[450px] md:h-[550px] mb-12">
-          <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
-            <div className="relative w-full h-full flex items-center justify-center">
+          <div className="absolute inset-0 flex items-center justify-center overflow-hidden" style={{ perspective: '1500px', perspectiveOrigin: 'center center' }}>
+            <div className="relative w-full h-full flex items-center justify-center" style={{ transformStyle: 'preserve-3d' }}>
               {getVisibleProducts().map((product, idx) => {
                 const { position } = product;
                 const isCenter = position === 0;
                 
-                const scale = isCenter ? 1 : 0.75;
+                const scale = isCenter ? 1.1 : 0.7;
                 const opacity = Math.abs(position) <= 1 ? 1 : 0.3;
-                const translateX = position * 300;
+                const translateX = position * 320;
+                const translateZ = isCenter ? 50 : -100;
+                const rotateY = position * 8;
                 const zIndex = isCenter ? 20 : 10 - Math.abs(position);
 
                 return (
@@ -142,10 +144,11 @@ const ProductGallery = () => {
                     key={`${product.id}-${idx}`}
                     className="absolute"
                     style={{
-                      transform: `translateX(${translateX}px) scale(${scale})`,
+                      transform: `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,
                       opacity,
                       zIndex,
-                      transition: 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), z-index 0s',
+                      transition: 'transform 1s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1)',
+                      transformStyle: 'preserve-3d',
                     }}
                   >
                     <div className={`relative overflow-hidden rounded-2xl bg-white shadow-xl h-[380px] md:h-[450px] w-[280px] md:w-[320px] ${
