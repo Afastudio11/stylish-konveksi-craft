@@ -53,7 +53,7 @@ const About = () => {
                   style={{ animationDelay: `${index * 0.05}s` }}
                   data-testid={`about-feature-${index}`}
                 >
-                  <div className="p-1.5 bg-accent/20 rounded-lg group-hover:bg-accent/30 transition-all duration-300 group-hover:scale-110">
+                  <div className="p-1.5 bg-primary/20 rounded-lg group-hover:bg-primary/30 transition-all duration-300 group-hover:scale-110">
                     <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0" />
                   </div>
                   <span className="text-foreground group-hover:text-primary transition-colors">{feature}</span>
@@ -71,7 +71,7 @@ const About = () => {
                 data-testid={`about-stat-${index}`}
               >
                 <div className="relative">
-                  <div className="text-4xl md:text-5xl font-black bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-4xl md:text-5xl font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300">
                     {stat.value}
                   </div>
                   <div className="text-sm text-muted-foreground font-semibold group-hover:text-foreground transition-colors">

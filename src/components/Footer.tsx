@@ -25,10 +25,9 @@ const Footer = () => {
           <div className="animate-fade-in">
             <div className="flex items-center gap-3 mb-4 group cursor-pointer" onClick={() => scrollToSection("home")}>
               <div className="relative">
-                <img src={logo} alt="Sekala Industry" className="h-10 w-auto transition-transform duration-300 group-hover:scale-110" />
+                <img src={logo} alt="Sekala Industry" className="h-12 w-auto transition-transform duration-300 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-accent/30 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
-              <span className="text-xl font-black group-hover:text-accent transition-colors">SEKALA INDUSTRY</span>
             </div>
             <p className="text-white/70 leading-relaxed mb-4">
               Solusi konveksi profesional dengan kualitas premium untuk kebutuhan bisnis dan organisasi Anda.

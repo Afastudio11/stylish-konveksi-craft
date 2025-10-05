@@ -49,15 +49,10 @@ const Header = () => {
               <img 
                 src={logo} 
                 alt="Sekala Industry" 
-                className="h-8 w-auto transition-transform duration-300 group-hover:scale-110" 
+                className="h-10 w-auto transition-transform duration-300 group-hover:scale-110" 
               />
               <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
-            <span className={`text-lg font-bold transition-all duration-300 ${
-              scrolled ? "text-foreground" : "text-white"
-            } group-hover:text-accent`}>
-              SEKALA INDUSTRY
-            </span>
           </div>
 
           <nav className="hidden lg:flex items-center gap-1">

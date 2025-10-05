@@ -9,48 +9,48 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 216 19% 16%;
+    --foreground: 0 0% 0%;
 
     --card: 0 0% 100%;
-    --card-foreground: 216 19% 16%;
+    --card-foreground: 0 0% 0%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 216 19% 16%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 229 87% 45%;
+    --primary: 232 87% 45%;
     --primary-foreground: 0 0% 100%;
-    --primary-dark: 229 87% 35%;
-    --primary-light: 229 87% 55%;
+    --primary-dark: 232 87% 35%;
+    --primary-light: 232 87% 55%;
 
     --secondary: 0 0% 98%;
-    --secondary-foreground: 229 19% 16%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 229 10% 45%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
     --accent: 68 98% 49%;
-    --accent-foreground: 229 87% 25%;
+    --accent-foreground: 0 0% 0%;
     --accent-light: 68 98% 59%;
     --accent-dark: 68 98% 39%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 216 20% 90%;
-    --input: 216 20% 90%;
-    --ring: 229 87% 45%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 232 87% 45%;
 
     --radius: 1rem;
 
-    --gradient-primary: linear-gradient(135deg, hsl(229, 87%, 45%) 0%, hsl(229, 87%, 35%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(232, 87%, 45%) 0%, hsl(232, 87%, 35%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(68, 98%, 49%) 0%, hsl(68, 98%, 59%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(210, 20%, 98%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(0, 0%, 98%) 100%);
     
-    --shadow-sm: 0 1px 2px 0 hsl(216 19% 16% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(216 19% 16% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(216 19% 16% / 0.1);
-    --shadow-xl: 0 20px 25px -5px hsl(216 19% 16% / 0.1);
-    --shadow-2xl: 0 25px 50px -12px hsl(216 19% 16% / 0.15);
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0 25px 50px -12px hsl(0 0% 0% / 0.15);
     
     --transition-base: all 0.2s ease;
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -58,37 +58,37 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 216 19% 16%;
+    --background: 0 0% 0%;
     --foreground: 0 0% 100%;
 
-    --card: 216 19% 18%;
+    --card: 0 0% 10%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 216 19% 18%;
+    --popover: 0 0% 10%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 229 87% 45%;
+    --primary: 232 87% 45%;
     --primary-foreground: 0 0% 100%;
-    --primary-dark: 229 87% 35%;
-    --primary-light: 229 87% 55%;
+    --primary-dark: 232 87% 35%;
+    --primary-light: 232 87% 55%;
 
-    --secondary: 229 19% 22%;
+    --secondary: 0 0% 20%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 229 19% 22%;
+    --muted: 0 0% 20%;
     --muted-foreground: 0 0% 70%;
 
     --accent: 68 98% 49%;
-    --accent-foreground: 229 87% 25%;
+    --accent-foreground: 0 0% 0%;
     --accent-light: 68 98% 59%;
     --accent-dark: 68 98% 39%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 216 19% 25%;
-    --input: 216 19% 25%;
-    --ring: 229 87% 45%;
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 232 87% 45%;
   }
 }
 
@@ -99,13 +99,11 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    font-feature-settings: 'cv11', 'ss01';
-    font-optical-sizing: auto;
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
     font-weight: 700;
     letter-spacing: -0.02em;
   }
@@ -151,14 +149,14 @@ All colors MUST be HSL.
   }
   
   .gradient-text {
-    background: linear-gradient(135deg, hsl(229, 87%, 45%), hsl(68, 98%, 49%));
+    background: linear-gradient(135deg, hsl(232, 87%, 45%), hsl(232, 87%, 65%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   
   .shadow-glow-primary {
-    box-shadow: 0 0 20px hsl(229, 87%, 45% / 0.3);
+    box-shadow: 0 0 20px hsl(232, 87%, 45% / 0.3);
   }
   
   .shadow-glow-accent {

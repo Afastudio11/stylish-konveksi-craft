@@ -81,7 +81,7 @@ const Products = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <div className="absolute top-4 right-4 px-4 py-2 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                      <span className="text-sm font-bold text-primary">Premium Quality</span>
+                      <span className="text-sm font-bold text-foreground">Premium Quality</span>
                     </div>
                   </div>
 
@@ -109,7 +109,7 @@ const Products = () => {
 
                     <Button 
                       onClick={scrollToContact}
-                      className="w-fit bg-accent hover:bg-accent-dark text-primary font-bold px-8 py-6 transition-all duration-300 hover:scale-105 shadow-glow-accent group/btn"
+                      className="w-fit bg-accent hover:bg-accent-dark text-foreground font-bold px-8 py-6 transition-all duration-300 hover:scale-105 shadow-glow-accent group/btn"
                       data-testid={`button-order-${index}`}
                     >
                       Pesan Sekarang
