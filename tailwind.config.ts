@@ -13,6 +13,11 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        primary: ['"Alte Haas Grotesk"', '"Arial Black"', 'Impact', 'sans-serif'],
+        secondary: ['Gotham', '"Montserrat"', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['Gotham', '"Montserrat"', 'system-ui', '-apple-system', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

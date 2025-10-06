@@ -1,3 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Brand Fonts - Alte Haas Grotesk */
+@font-face {
+  font-family: 'Alte Haas Grotesk';
+  src: local('Arial Black'), local('Impact');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alte Haas Grotesk';
+  src: local('Arial Black'), local('Impact');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Brand Fonts - Gotham */
+@font-face {
+  font-family: 'Gotham';
+  src: local('Montserrat');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: local('Montserrat');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: local('Montserrat');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: local('Montserrat');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -102,13 +154,19 @@ Secondary: #000000 (black), #E3E3E3 (light gray), #FFFFFF (white)
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+    font-family: 'Gotham', 'Montserrat', system-ui, -apple-system, sans-serif;
+    font-weight: 400;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+    font-family: 'Alte Haas Grotesk', 'Arial Black', Impact, sans-serif;
     font-weight: 700;
     letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+  
+  strong, b {
+    font-weight: 700;
   }
 }
 
