@@ -462,9 +462,9 @@ const Products = () => {
     <section id="products" className="py-20 md:py-28 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Header Section with Products as Frame */}
-        <div className="relative max-w-6xl mx-auto">
+        <div className={`relative max-w-6xl mx-auto flex flex-col ${boxGap}`}>
           {/* Top Row - 5 Products */}
-          <div className={`grid grid-cols-5 ${boxGap} mb-3 md:mb-4`}>
+          <div className={`grid grid-cols-5 ${boxGap}`}>
             {products.slice(0, 5).map((product, index) => (
               <div
                 key={index}
@@ -477,7 +477,7 @@ const Products = () => {
           </div>
 
           {/* Middle Row - 2 Left Products, Text Center, 2 Right Products */}
-          <div className={`grid grid-cols-[auto_1fr_auto] ${boxGap} items-start mb-3 md:mb-4`}>
+          <div className={`grid grid-cols-[auto_1fr_auto] ${boxGap} items-start`}>
             {/* Left Products - 2 boxes vertically */}
             <div className={`flex flex-col ${boxGap}`}>
               {products.slice(5, 7).map((product, index) => (
@@ -496,7 +496,7 @@ const Products = () => {
               <h2 className="text-2xl md:text-4xl lg:text-5xl font-black text-foreground mb-2">
                 Daftar Harga
               </h2>
-              <h2 className="text-2xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-4" style={{ color: '#4169e1' }}>
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-4" style={{ color: '#343CCD' }}>
                 Produk Konveksi
               </h2>
               <p className="text-xs md:text-sm text-muted-foreground leading-relaxed max-w-xl mx-auto">
