@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp, Plus, Shirt, ShoppingBag, Wind, Sparkles, School, GraduationCap, Users, Package } from "lucide-react";
+import { Plus, Shirt, ShoppingBag, Wind, Sparkles, School, GraduationCap, Users, Package } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 interface PriceRange {
   quantity: string;
@@ -341,108 +347,110 @@ const products: Product[] = [
 ];
 
 const ProductCard = ({ product }: { product: Product }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const Icon = product.icon;
 
   return (
-    <div className="bg-card rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 overflow-hidden">
-      <div 
-        className="p-6 cursor-pointer flex justify-between items-center hover:bg-secondary/30 transition-colors"
-        onClick={() => setIsExpanded(!isExpanded)}
+    <>
+      <button
+        onClick={() => setIsOpen(true)}
+        className="flex flex-col items-center gap-3 p-6 bg-card rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:scale-105 w-full"
       >
-        <div className="flex items-center gap-4">
-          <div className="p-3 bg-primary/10 rounded-xl">
-            <Icon className="w-8 h-8 text-primary" />
-          </div>
-          <h3 className="text-2xl font-black text-card-foreground">{product.name}</h3>
+        <div className="p-4 bg-primary/10 rounded-xl">
+          <Icon className="w-8 h-8 text-primary" />
         </div>
-        <div className="ml-4 flex-shrink-0">
-          {isExpanded ? (
-            <ChevronUp className="w-6 h-6 text-primary" />
-          ) : (
-            <ChevronDown className="w-6 h-6 text-primary" />
-          )}
-        </div>
-      </div>
+        <h3 className="text-lg text-card-foreground">{product.name}</h3>
+      </button>
 
-      {isExpanded && (
-        <div className="px-6 pb-6 space-y-6 animate-slide-down">
-          <div>
-            <p className="text-muted-foreground leading-relaxed">{product.description}</p>
-          </div>
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl flex items-center gap-3">
+              <div className="p-3 bg-primary/10 rounded-xl">
+                <Icon className="w-6 h-6 text-primary" />
+              </div>
+              {product.name}
+            </DialogTitle>
+          </DialogHeader>
 
-          {product.options.length > 0 && (
+          <div className="space-y-6 mt-4">
             <div>
-              <h4 className="font-bold text-primary mb-3">Opsi Tambahan:</h4>
-              <div className="flex flex-wrap gap-3">
-                {product.options.map((option, idx) => (
-                  <span key={idx} className="px-4 py-2 bg-primary/10 text-primary border border-primary/30 rounded-lg text-sm font-semibold flex items-center gap-2 hover:bg-primary/20 transition-colors">
-                    <Plus className="w-4 h-4" />
-                    {option}
-                  </span>
+              <p className="text-muted-foreground leading-relaxed">{product.description}</p>
+            </div>
+
+            {product.options.length > 0 && (
+              <div>
+                <h4 className="text-primary mb-3">Opsi Tambahan:</h4>
+                <div className="flex flex-wrap gap-3">
+                  {product.options.map((option, idx) => (
+                    <span key={idx} className="px-4 py-2 bg-primary/10 text-primary border border-primary/30 rounded-lg text-sm flex items-center gap-2 hover:bg-primary/20 transition-colors">
+                      <Plus className="w-4 h-4" />
+                      {option}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div>
+              <h4 className="text-primary mb-3">Tabel Ukuran:</h4>
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse text-sm">
+                  <thead>
+                    <tr className="bg-accent">
+                      {product.sizeChart.headers.map((header, idx) => (
+                        <th key={idx} className="px-3 py-2 text-foreground border border-foreground/20">
+                          {header}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {product.sizeChart.rows.map((row, idx) => (
+                      <tr key={idx} className="hover:bg-secondary/30">
+                        {Object.values(row).map((cell, cellIdx) => (
+                          <td key={cellIdx} className="px-3 py-2 text-center border border-border">
+                            {cell}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-primary mb-3">Harga:</h4>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {product.pricing.map((price, idx) => (
+                  <div key={idx} className="border-2 border-accent rounded-xl p-4 text-center">
+                    <div className="bg-accent text-foreground text-lg px-4 py-2 rounded-lg mb-3">
+                      {price.quantity}
+                    </div>
+                    <div className="text-3xl text-primary mb-2">
+                      {price.price}
+                    </div>
+                    {price.materials && (
+                      <div className="text-xs text-muted-foreground">
+                        {price.materials}
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
             </div>
-          )}
 
-          <div>
-            <h4 className="font-bold text-primary mb-3">Tabel Ukuran:</h4>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse text-sm">
-                <thead>
-                  <tr className="bg-accent">
-                    {product.sizeChart.headers.map((header, idx) => (
-                      <th key={idx} className="px-3 py-2 text-foreground font-bold border border-foreground/20">
-                        {header}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {product.sizeChart.rows.map((row, idx) => (
-                    <tr key={idx} className="hover:bg-secondary/30">
-                      {Object.values(row).map((cell, cellIdx) => (
-                        <td key={cellIdx} className="px-3 py-2 text-center border border-border">
-                          {cell}
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            {product.include && (
+              <div className="bg-primary/10 border border-primary/20 rounded-lg p-3">
+                <span className="text-primary">INCLUDE: </span>
+                <span className="text-foreground">{product.include}</span>
+              </div>
+            )}
           </div>
-
-          <div>
-            <h4 className="font-bold text-primary mb-3">Harga:</h4>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {product.pricing.map((price, idx) => (
-                <div key={idx} className="border-2 border-accent rounded-xl p-4 text-center">
-                  <div className="bg-accent text-foreground font-black text-lg px-4 py-2 rounded-lg mb-3">
-                    {price.quantity}
-                  </div>
-                  <div className="text-3xl font-black text-primary mb-2">
-                    {price.price}
-                  </div>
-                  {price.materials && (
-                    <div className="text-xs text-muted-foreground">
-                      {price.materials}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {product.include && (
-            <div className="bg-primary/10 border border-primary/20 rounded-lg p-3">
-              <span className="text-primary font-bold">INCLUDE: </span>
-              <span className="text-foreground">{product.include}</span>
-            </div>
-          )}
-        </div>
-      )}
-    </div>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 };
 
@@ -457,7 +465,7 @@ const Products = () => {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-16 max-w-3xl mx-auto animate-fade-in">
           <div className="inline-block mb-4">
-            <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-bold uppercase tracking-wider">
+            <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm uppercase tracking-wider">
               Pricelist
             </span>
           </div>
@@ -469,7 +477,7 @@ const Products = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {products.map((product, index) => (
             <div
               key={index}
@@ -487,7 +495,7 @@ const Products = () => {
           </p>
           <a
             href="#contact"
-            className="inline-block px-8 py-4 bg-accent text-foreground font-bold rounded-full hover:bg-accent-dark transition-all duration-300 shadow-glow-accent hover:shadow-xl hover:scale-105"
+            className="inline-block px-8 py-4 bg-accent text-foreground rounded-full hover:bg-accent-dark transition-all duration-300 shadow-glow-accent hover:shadow-xl hover:scale-105"
           >
             Konsultasi Gratis Sekarang
           </a>
