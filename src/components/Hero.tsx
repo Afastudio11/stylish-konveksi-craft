@@ -41,31 +41,31 @@ const Hero = () => {
       }} />
 
       {/* Content */}
-      <div className="container mx-auto px-6 sm:px-8 lg:px-8 relative z-10 py-20 md:py-32">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-32">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
           {/* Left Column - Text Content */}
-          <div className="space-y-6 md:space-y-8 animate-slide-up">
+          <div className="space-y-6 md:space-y-8 animate-slide-up overflow-hidden">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight">
               <span className="text-white">Wujudkan</span><br />
               <span className="text-white">Brand Identity</span><br />
-              <span className="bg-accent text-foreground px-2 sm:px-2.5 inline-block shadow-glow-accent border-4 border-black mt-3 md:mt-4 break-words leading-[0.9] max-w-full" style={{ paddingTop: '2px', paddingBottom: '2px' }}>Premium Kamu.</span>
+              <span className="bg-accent text-foreground px-2 sm:px-2.5 inline-block shadow-glow-accent border-4 border-black mt-3 md:mt-4 break-words leading-[0.9]" style={{ paddingTop: '2px', paddingBottom: '2px', maxWidth: 'calc(100vw - 2rem)' }}>Premium Kamu.</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl pr-2">
+            <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl">
               Sekala Industry adalah mitra terpercaya untuk kebutuhan konveksi profesional. Dari seragam perusahaan hingga merchandise custom dengan kualitas terbaik.
             </p>
 
             {/* Stats - 4 kotak dengan border tebal */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 w-full max-w-full md:max-w-2xl">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 -mx-1 sm:mx-0">
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="p-3 sm:p-4 flex flex-col items-center justify-center text-center border-4 border-black min-w-0"
+                  className="p-2 sm:p-3 md:p-4 flex flex-col items-center justify-center text-center border-2 sm:border-4 border-black min-w-0"
                   style={{ backgroundColor: '#d4ff00' }}
                 >
-                  <div className="text-xl sm:text-2xl md:text-3xl font-black text-black">
+                  <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-black">
                     {stat.value}
                   </div>
-                  <div className="text-xs md:text-sm text-black font-bold mt-1 leading-tight">
+                  <div className="text-[10px] sm:text-xs md:text-sm text-black font-bold mt-1 leading-tight">
                     {stat.label}
                   </div>
                 </div>
@@ -73,14 +73,14 @@ const Hero = () => {
             </div>
 
             {/* Client Logos */}
-            <div className="relative overflow-hidden w-full max-w-full md:max-w-2xl">
+            <div className="relative overflow-hidden w-full">
               <div className="flex animate-marquee whitespace-nowrap">
                 {[...logos, ...logos, ...logos].map((logo, index) => (
                   <img 
                     key={index}
                     src={logo.image} 
                     alt={logo.name}
-                    className="h-10 w-auto object-contain flex-shrink-0 brightness-0 invert opacity-80 mx-6"
+                    className="h-8 sm:h-10 w-auto object-contain flex-shrink-0 brightness-0 invert opacity-80 mx-4 sm:mx-6"
                   />
                 ))}
               </div>
