@@ -128,7 +128,7 @@ const ProductGallery = () => {
           </p>
         </div>
 
-        <div className="relative h-[380px] md:h-[480px] mb-8">
+        <div className="relative h-[380px] md:h-[480px] mb-8 animate-slide-up" style={{ animationDelay: '0.1s' }}>
           <div className="absolute inset-0 flex items-center justify-center overflow-hidden" style={{ perspective: '1500px', perspectiveOrigin: 'center center' }}>
             <div className="relative w-full h-full flex items-center justify-center" style={{ transformStyle: 'preserve-3d' }}>
               {getVisibleProducts().map((product, idx) => {
@@ -219,7 +219,7 @@ const ProductGallery = () => {
           </button>
         </div>
 
-        <div className="flex justify-center gap-2 mb-12">
+        <div className="flex justify-center gap-2 mb-12 animate-slide-up" style={{ animationDelay: '0.2s' }}>
           {products.map((_, index) => (
             <button
               key={index}
