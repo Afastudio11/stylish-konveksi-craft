@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { MapPin, Phone, Mail } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -37,64 +36,7 @@ ${formData.message}`;
 
   return (
     <section id="contact" className="py-12 md:py-16 bg-background relative overflow-hidden">
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start max-w-7xl mx-auto">
-          {/* Left Side - Info */}
-          <div className="space-y-6">
-            <div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-3">
-                Contact Us
-              </h2>
-              <p className="text-base text-muted-foreground">
-                Ceritakan sedikit tentang Anda, dan kami akan memberikan informasi lebih lengkap tentang kami.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-foreground mb-3">
-                Ngobrol dengan tim kami hari ini
-              </h3>
-              <ol className="space-y-2 list-decimal list-inside text-sm text-muted-foreground">
-                <li>Pahami bagaimana produk kami dapat memenuhi kebutuhan Anda</li>
-                <li>Temukan kemampuan kami dan dapatkan jawaban atas pertanyaan Anda</li>
-                <li>Dapatkan penawaran yang disesuaikan</li>
-              </ol>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-foreground mb-4">
-                Temukan Sekala Industry
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-accent rounded-lg">
-                    <MapPin className="w-5 h-5 text-foreground" />
-                  </div>
-                  <p className="text-muted-foreground pt-2">
-                    Jl. Raya Sekala Industry No. 123, Jakarta, Indonesia 12345
-                  </p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-accent rounded-lg">
-                    <Phone className="w-5 h-5 text-foreground" />
-                  </div>
-                  <p className="text-muted-foreground pt-2">
-                    +62 857-5477-7068
-                  </p>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-accent rounded-lg">
-                    <Mail className="w-5 h-5 text-foreground" />
-                  </div>
-                  <p className="text-muted-foreground pt-2">
-                    info@sekalaindustry.com
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Side - Form */}
+      <div className="container mx-auto px-4 lg:px-8 relative z-10 max-w-2xl">
           <div className="relative">
             <div className="absolute inset-0 bg-black/20 rounded-3xl translate-x-2 translate-y-2"></div>
             <div className="relative bg-primary rounded-3xl p-8 shadow-xl">
@@ -218,7 +160,6 @@ ${formData.message}`;
               </form>
             </div>
           </div>
-        </div>
       </div>
     </section>
   );
