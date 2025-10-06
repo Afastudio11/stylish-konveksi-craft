@@ -91,7 +91,7 @@ const OrderSystem = () => {
         {/* Process Flow - Horizontal */}
         <div className="mb-12">
           <div className="flex items-center justify-center overflow-x-auto pb-4 pt-4">
-            <div className="flex gap-3 md:gap-4 lg:gap-6 px-4 max-w-6xl mx-auto justify-center">
+            <div className="flex gap-3 md:gap-4 px-4 max-w-6xl mx-auto justify-center">
               {processFlow.map((step, index) => {
                 const Icon = step.icon;
                 
@@ -102,15 +102,15 @@ const OrderSystem = () => {
                       className="flex flex-col items-center group cursor-pointer"
                     >
                       <div className="relative">
-                        <div className={`${step.color} p-4 md:p-5 lg:p-6 rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                          <Icon className={`w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 ${step.iconColor}`} />
+                        <div className={`${step.color} p-3 md:p-4 rounded-lg shadow-lg group-hover:scale-110 transition-transform duration-300 w-[60px] h-[60px] md:w-[70px] md:h-[70px] flex items-center justify-center`}>
+                          <Icon className={`w-6 h-6 md:w-8 md:h-8 ${step.iconColor}`} />
                         </div>
                         {/* Number Badge */}
                         <div className="absolute -top-2 -right-2 bg-black text-white w-6 h-6 md:w-7 md:h-7 rounded-full flex items-center justify-center text-xs md:text-sm font-black">
                           {index + 1}
                         </div>
                       </div>
-                      <span className="mt-3 text-xs md:text-sm lg:text-base font-bold text-foreground text-center max-w-[80px] md:max-w-none">{step.label}</span>
+                      <span className="mt-3 text-xs md:text-sm font-bold text-foreground text-center max-w-[80px] md:max-w-none">{step.label}</span>
                     </button>
                   </div>
                 );
@@ -121,37 +121,25 @@ const OrderSystem = () => {
 
         {/* Info Cards */}
         <div className="mb-12">
-          <div className="flex gap-3 md:gap-4 lg:gap-6 px-4 max-w-6xl mx-auto justify-center flex-wrap">
-            <div className="bg-accent rounded-2xl p-4 md:p-5 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 flex-shrink-0 w-[140px] md:w-[160px] lg:w-[180px]">
-              <div className="flex justify-center mb-3">
-                <Package className="w-8 h-8 md:w-9 md:h-9 text-black" />
-              </div>
-              <h4 className="text-xs font-bold text-black mb-2">MINIMUM ORDER</h4>
-              <p className="text-xl md:text-2xl font-black text-black">12 PCS</p>
+          <div className="flex gap-3 md:gap-4 px-4 max-w-6xl mx-auto justify-center flex-wrap">
+            <div className="bg-accent rounded-lg p-3 md:p-4 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 flex-shrink-0 w-[140px] md:w-[160px] h-[60px] md:h-[70px] flex flex-col items-center justify-center">
+              <h4 className="text-[10px] md:text-xs font-bold text-black mb-1">MINIMUM ORDER</h4>
+              <p className="text-base md:text-lg font-black text-black">12 PCS</p>
             </div>
 
-            <div className="bg-accent rounded-2xl p-4 md:p-5 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 flex-shrink-0 w-[140px] md:w-[160px] lg:w-[180px]">
-              <div className="flex justify-center mb-3">
-                <Clock className="w-8 h-8 md:w-9 md:h-9 text-black" />
-              </div>
-              <h4 className="text-xs font-bold text-black mb-2">ESTIMASI PRODUKSI</h4>
-              <p className="text-xl md:text-2xl font-black text-black">10-23 Hari</p>
+            <div className="bg-accent rounded-lg p-3 md:p-4 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 flex-shrink-0 w-[140px] md:w-[160px] h-[60px] md:h-[70px] flex flex-col items-center justify-center">
+              <h4 className="text-[10px] md:text-xs font-bold text-black mb-1">ESTIMASI PRODUKSI</h4>
+              <p className="text-base md:text-lg font-black text-black">10-23 Hari</p>
             </div>
 
-            <div className="bg-accent rounded-2xl p-4 md:p-5 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 flex-shrink-0 w-[140px] md:w-[160px] lg:w-[180px]">
-              <div className="flex justify-center mb-3">
-                <Wallet className="w-8 h-8 md:w-9 md:h-9 text-black" />
-              </div>
-              <h4 className="text-xs font-bold text-black mb-2">SISTEM BAYAR</h4>
-              <p className="text-lg md:text-xl font-black text-black">DP 50% + 50%</p>
+            <div className="bg-accent rounded-lg p-3 md:p-4 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 flex-shrink-0 w-[140px] md:w-[160px] h-[60px] md:h-[70px] flex flex-col items-center justify-center">
+              <h4 className="text-[10px] md:text-xs font-bold text-black mb-1">SISTEM BAYAR</h4>
+              <p className="text-sm md:text-base font-black text-black">DP 50% + 50%</p>
             </div>
 
-            <div className="bg-accent rounded-2xl p-4 md:p-5 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 flex-shrink-0 w-[140px] md:w-[160px] lg:w-[180px]">
-              <div className="flex justify-center mb-3">
-                <Sparkles className="w-8 h-8 md:w-9 md:h-9 text-black" />
-              </div>
-              <h4 className="text-xs font-bold text-black mb-2">BONUS</h4>
-              <p className="text-lg md:text-xl font-black text-black">Konsultasi Gratis</p>
+            <div className="bg-accent rounded-lg p-3 md:p-4 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 flex-shrink-0 w-[140px] md:w-[160px] h-[60px] md:h-[70px] flex flex-col items-center justify-center">
+              <h4 className="text-[10px] md:text-xs font-bold text-black mb-1">BONUS</h4>
+              <p className="text-sm md:text-base font-black text-black">Konsultasi Gratis</p>
             </div>
           </div>
         </div>
