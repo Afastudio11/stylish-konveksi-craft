@@ -76,7 +76,7 @@ const Header = () => {
               <Button 
                 onClick={() => scrollToSection("contact")}
                 size="sm"
-                className="bg-accent hover:bg-accent-dark text-primary font-bold px-6 py-2 transition-all duration-300 hover:scale-105 shadow-glow-accent"
+                className="bg-accent hover:bg-accent-dark text-foreground font-bold px-6 py-2 transition-all duration-300 hover:scale-105 shadow-glow-accent"
                 data-testid="button-contact-header"
               >
                 Hubungi Kami
@@ -115,7 +115,7 @@ const Header = () => {
             ))}
             <Button 
               onClick={() => scrollToSection("contact")}
-              className="bg-accent hover:bg-accent-dark text-primary font-bold w-full mt-2 shadow-glow-accent"
+              className="bg-accent hover:bg-accent-dark text-foreground font-bold w-full mt-2 shadow-glow-accent"
               data-testid="button-contact-mobile"
             >
               Hubungi Kami

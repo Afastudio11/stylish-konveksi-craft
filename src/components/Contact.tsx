@@ -84,7 +84,7 @@ const Contact = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg"
-                className="bg-accent hover:bg-accent/90 text-foreground font-bold px-8 transition-all hover:scale-105 shadow-xl"
+                className="bg-accent hover:bg-accent-dark text-foreground font-bold px-8 transition-all hover:scale-105 shadow-xl"
                 onClick={() => window.open('https://wa.me/6285754777068', '_blank')}
                 data-testid="button-whatsapp"
               >

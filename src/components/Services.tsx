@@ -35,7 +35,7 @@ const Services = () => {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-16 max-w-3xl mx-auto animate-fade-in">
           <div className="inline-block mb-4">
-            <span className="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-bold uppercase tracking-wider">
+            <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-bold uppercase tracking-wider">
               Layanan Kami
             </span>
           </div>
@@ -60,8 +60,8 @@ const Services = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-500" />
                 
                 <div className="relative z-10">
-                  <div className="w-16 h-16 bg-gradient-to-br from-accent/20 to-accent/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-glow-accent">
-                    <service.icon className="w-8 h-8 text-accent transition-transform duration-300 group-hover:scale-110" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-glow-primary">
+                    <service.icon className="w-8 h-8 text-primary transition-transform duration-300 group-hover:scale-110" />
                   </div>
                   
                   <h3 className="text-xl font-black text-card-foreground mb-3 group-hover:text-accent transition-colors duration-300">
@@ -85,8 +85,8 @@ const Services = () => {
           <p className="text-lg text-muted-foreground mb-6">
             Siap untuk memulai proyek konveksi Anda?
           </p>
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full border border-primary/20">
-            <Sparkles className="w-5 h-5 text-accent animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary/10 to-primary/20 rounded-full border border-primary/20">
+            <Sparkles className="w-5 h-5 text-primary animate-pulse" />
             <span className="text-foreground font-bold">Konsultasi Gratis Tersedia</span>
           </div>
         </div>
