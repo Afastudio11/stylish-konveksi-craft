@@ -354,12 +354,12 @@ const ProductCard = ({ product }: { product: Product }) => {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="relative flex items-center justify-center p-4 md:p-5 rounded-xl transition-all duration-300 hover:shadow-xl hover:scale-105 w-full h-[80px] md:h-[90px] group"
+        className="relative flex items-center justify-center p-3 md:p-4 rounded-lg transition-all duration-300 hover:shadow-xl hover:scale-105 w-full h-[60px] md:h-[70px] group"
         style={{ backgroundColor: '#d4ff00' }}
       >
-        <h3 className="text-sm md:text-base lg:text-lg font-bold text-black text-center px-2">{product.name}</h3>
-        <div className="absolute top-1 right-1 md:top-2 md:right-2 opacity-60 group-hover:opacity-100 transition-opacity">
-          <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-black" />
+        <h3 className="text-xs md:text-sm lg:text-base font-bold text-black text-center px-2">{product.name}</h3>
+        <div className="absolute top-1 right-1 opacity-60 group-hover:opacity-100 transition-opacity">
+          <ChevronRight className="w-3 h-3 md:w-4 md:h-4 text-black" />
         </div>
       </button>
 
@@ -456,80 +456,33 @@ const ProductCard = ({ product }: { product: Product }) => {
 };
 
 const Products = () => {
-  const boxGap = "gap-3 md:gap-4";
-  
   return (
     <section id="products" className="py-20 md:py-28 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        {/* Header Section with Products as Frame */}
-        <div className={`relative max-w-6xl mx-auto flex flex-col ${boxGap}`}>
-          {/* Top Row - 5 Products */}
-          <div className={`grid grid-cols-5 ${boxGap}`}>
-            {products.slice(0, 5).map((product, index) => (
-              <div
-                key={index}
-                className="animate-scale-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <ProductCard product={product} />
-              </div>
-            ))}
-          </div>
+        {/* Header */}
+        <div className="text-center mb-12 md:mb-16 animate-fade-in">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-2 md:mb-3">
+            Daftar Harga
+          </h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4 md:mb-6" style={{ color: '#343CCD' }}>
+            Produk Konveksi
+          </h2>
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            Lihat detail lengkap harga, ukuran, dan spesifikasi produk kami. Klik pada setiap produk untuk melihat informasi selengkapnya.
+          </p>
+        </div>
 
-          {/* Middle Row - 2 Left Products, Text Center, 2 Right Products */}
-          <div className={`grid grid-cols-[auto_1fr_auto] ${boxGap} items-start`}>
-            {/* Left Products - 2 boxes vertically */}
-            <div className={`flex flex-col ${boxGap}`}>
-              {products.slice(5, 7).map((product, index) => (
-                <div
-                  key={index}
-                  className="animate-scale-in"
-                  style={{ animationDelay: `${(index + 5) * 0.1}s` }}
-                >
-                  <ProductCard product={product} />
-                </div>
-              ))}
+        {/* Products Grid - Responsive */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-4">
+          {products.map((product, index) => (
+            <div
+              key={index}
+              className="animate-scale-in"
+              style={{ animationDelay: `${index * 0.05}s` }}
+            >
+              <ProductCard product={product} />
             </div>
-
-            {/* Center Text */}
-            <div className="text-center px-4 md:px-8 py-8 md:py-12 animate-fade-in" style={{ animationDelay: '0.7s' }}>
-              <h2 className="text-2xl md:text-4xl lg:text-5xl font-black text-foreground mb-2">
-                Daftar Harga
-              </h2>
-              <h2 className="text-2xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-4" style={{ color: '#343CCD' }}>
-                Produk Konveksi
-              </h2>
-              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed max-w-xl mx-auto">
-                Lihat detail lengkap harga, ukuran, dan spesifikasi produk kami. Klik pada setiap produk untuk melihat informasi selengkapnya.
-              </p>
-            </div>
-
-            {/* Right Products - 2 boxes vertically */}
-            <div className={`flex flex-col ${boxGap}`}>
-              {products.slice(7, 9).map((product, index) => (
-                <div
-                  key={index}
-                  className="animate-scale-in"
-                  style={{ animationDelay: `${(index + 7) * 0.1}s` }}
-                >
-                  <ProductCard product={product} />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Bottom Row - 5 Products */}
-          <div className={`grid grid-cols-5 ${boxGap}`}>
-            {products.slice(9, 14).map((product, index) => (
-              <div
-                key={index}
-                className="animate-scale-in"
-                style={{ animationDelay: `${(index + 9) * 0.1}s` }}
-              >
-                <ProductCard product={product} />
-              </div>
-            ))}
-          </div>
+          ))}
         </div>
       </div>
     </section>
