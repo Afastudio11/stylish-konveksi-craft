@@ -56,7 +56,7 @@ const Header = () => {
           </div>
 
           <nav className="hidden lg:flex items-center gap-1">
-            {["Beranda", "Tentang", "Layanan", "Produk", "Kontak"].map((item, index) => (
+            {["Beranda", "Tentang", "Layanan", "Pricelist", "Kontak"].map((item, index) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(["home", "about", "services", "products", "contact"][index])}
@@ -99,7 +99,7 @@ const Header = () => {
 
         {isMenuOpen && (
           <nav className="lg:hidden mt-6 pb-6 flex flex-col gap-3 animate-slide-down">
-            {["Beranda", "Tentang", "Layanan", "Produk", "Kontak"].map((item, index) => (
+            {["Beranda", "Tentang", "Layanan", "Pricelist", "Kontak"].map((item, index) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(["home", "about", "services", "products", "contact"][index])}
