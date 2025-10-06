@@ -1,19 +1,15 @@
+import HeroGallery from "./HeroGallery";
+
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden" style={{ backgroundColor: '#343CCD' }}>
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img 
-          src="/hero-products.png" 
-          alt="Sekala Industry Products" 
-          className="w-full h-full object-cover object-center"
-        />
-      </div>
+      {/* Background Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#343CCD] via-[#343CCD]/95 to-[#2a32a8]" />
 
       {/* Content */}
       <div className="container mx-auto px-4 lg:px-8 relative z-10 py-24 md:py-32">
-        <div className="max-w-4xl">
-          {/* Main Heading */}
+        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
+          {/* Left Column - Text Content */}
           <div className="space-y-8 animate-slide-up">
             <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-tight">
               Wujudkan<br />
@@ -24,6 +20,16 @@ const Hero = () => {
               Sekala Industry adalah mitra terpercaya untuk kebutuhan konveksi profesional. Dari seragam perusahaan hingga merchandise custom dengan kualitas terbaik.
             </p>
           </div>
+
+          {/* Right Column - Product Gallery */}
+          <div className="hidden lg:block animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            <HeroGallery />
+          </div>
+        </div>
+
+        {/* Mobile Gallery - Below text on small screens */}
+        <div className="lg:hidden mt-12 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+          <HeroGallery />
         </div>
       </div>
 
