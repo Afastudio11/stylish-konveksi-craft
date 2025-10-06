@@ -44,11 +44,11 @@ const HeroGallery = () => {
         <CarouselContent>
           {products.map((product) => (
             <CarouselItem key={product.id}>
-              <div className="relative w-full h-[400px] lg:h-[500px] rounded-xl overflow-hidden">
+              <div className="relative w-full h-[450px] lg:h-[550px]">
                 <img
                   src={product.image}
                   alt={product.alt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-2xl"
                   loading="eager"
                 />
               </div>
