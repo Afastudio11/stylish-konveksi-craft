@@ -103,16 +103,16 @@ const About = () => {
           </div>
 
           {/* Right Stats */}
-          <div className="grid grid-cols-2 gap-4 animate-slide-up" style={{ animationDelay: '0.1s' }}>
+          <div className="grid grid-cols-2 gap-4 animate-slide-up h-full" style={{ animationDelay: '0.1s' }}>
             {stats.map((stat, index) => (
               <div 
                 key={index}
-                className="group bg-gradient-to-br from-card to-card/50 p-5 rounded-xl border border-border hover:border-primary/50 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1"
+                className="group bg-gradient-to-br from-card to-card/50 p-8 rounded-xl border border-border hover:border-primary/50 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 flex flex-col justify-center"
                 data-testid={`about-stat-${index}`}
               >
                 <div className="relative">
                   <CountUpAnimation end={stat.value} suffix={stat.suffix} />
-                  <div className="text-xs text-muted-foreground font-semibold group-hover:text-foreground transition-colors">
+                  <div className="text-sm text-muted-foreground font-semibold group-hover:text-foreground transition-colors mt-1">
                     {stat.label}
                   </div>
                   

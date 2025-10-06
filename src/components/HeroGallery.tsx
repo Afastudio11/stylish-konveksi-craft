@@ -44,19 +44,19 @@ const HeroGallery = () => {
         <CarouselContent>
           {products.map((product) => (
             <CarouselItem key={product.id}>
-              <div className="relative w-full h-[450px] lg:h-[550px]">
+              <div className="relative w-full h-[300px] lg:h-[350px]">
                 <img
                   src={product.image}
                   alt={product.alt}
-                  className="w-full h-full object-cover rounded-2xl"
+                  className="w-full h-full object-cover rounded-xl"
                   loading="eager"
                 />
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="left-4 bg-accent/90 text-foreground border-0 hover:bg-accent shadow-lg" />
-        <CarouselNext className="right-4 bg-accent/90 text-foreground border-0 hover:bg-accent shadow-lg" />
+        <CarouselPrevious className="left-2 bg-accent/90 text-foreground border-0 hover:bg-accent shadow-lg h-8 w-8" />
+        <CarouselNext className="right-2 bg-accent/90 text-foreground border-0 hover:bg-accent shadow-lg h-8 w-8" />
       </Carousel>
     </div>
   );
