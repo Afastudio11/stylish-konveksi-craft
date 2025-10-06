@@ -354,7 +354,8 @@ const ProductCard = ({ product }: { product: Product }) => {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="relative flex items-center justify-center p-6 bg-primary rounded-2xl transition-all duration-300 hover:shadow-xl hover:scale-105 w-full min-h-[120px] group"
+        className="relative flex items-center justify-center p-6 rounded-2xl transition-all duration-300 hover:shadow-xl hover:scale-105 w-full min-h-[120px] group"
+        style={{ backgroundColor: '#d4ff00' }}
       >
         <h3 className="text-lg md:text-xl font-bold text-black text-center">{product.name}</h3>
         <div className="absolute top-2 right-2 opacity-60 group-hover:opacity-100 transition-opacity">
