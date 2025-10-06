@@ -25,7 +25,7 @@ const Footer = () => {
                 <div className="absolute inset-0 bg-accent/30 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
             </div>
-            <p className="text-white/70 leading-relaxed mb-4">
+            <p className="text-white/70 leading-relaxed mb-4 font-semibold">
               Solusi konveksi profesional dengan kualitas premium untuk kebutuhan bisnis dan organisasi Anda.
             </p>
             <div className="flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full w-fit">
