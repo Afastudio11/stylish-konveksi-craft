@@ -100,12 +100,16 @@ const ProductGallery = () => {
         </div>
 
         {/* Grid Gallery */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6" style={{ perspective: '1000px' }}>
           {products.map((product, index) => (
             <div
               key={product.id}
-              className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-scale-in"
-              style={{ animationDelay: `${index * 0.05}s` }}
+              className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-3 animate-scale-in"
+              style={{ 
+                animationDelay: `${index * 0.05}s`,
+                transformStyle: 'preserve-3d',
+                transition: 'all 0.5s ease-in-out'
+              }}
             >
               <div className="aspect-[3/4] relative overflow-hidden">
                 <img
@@ -114,7 +118,7 @@ const ProductGallery = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 
-                <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-500" />
                 
                 <div className="absolute top-3 left-3">
                   <span className="inline-block px-2.5 py-1 bg-primary text-white text-xs font-bold uppercase rounded shadow-lg">
