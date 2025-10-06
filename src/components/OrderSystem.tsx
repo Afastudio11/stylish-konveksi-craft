@@ -14,9 +14,9 @@ const OrderSystem = () => {
     { 
       icon: MessageCircle, 
       label: "Chat", 
-      color: "bg-primary", 
-      iconColor: "text-accent", 
-      lineColor: "bg-primary",
+      color: "bg-accent", 
+      iconColor: "text-black", 
+      lineColor: "bg-accent",
       title: "Chat dengan Tim Kami",
       description: "Mulai percakapan dengan tim kami melalui WhatsApp untuk memulai proses pemesanan. Kami siap membantu Anda kapan saja!"
     },
@@ -32,9 +32,9 @@ const OrderSystem = () => {
     { 
       icon: Handshake, 
       label: "Deal", 
-      color: "bg-primary", 
-      iconColor: "text-accent", 
-      lineColor: "bg-primary",
+      color: "bg-accent", 
+      iconColor: "text-black", 
+      lineColor: "bg-accent",
       title: "Kesepakatan Deal",
       description: "Setelah konsultasi, kami akan menyepakati detail produk, harga, dan timeline. Kesepakatan ini akan menjadi dasar untuk proses selanjutnya."
     },
@@ -50,9 +50,9 @@ const OrderSystem = () => {
     { 
       icon: Factory, 
       label: "Produksi", 
-      color: "bg-primary", 
-      iconColor: "text-accent", 
-      lineColor: "bg-primary",
+      color: "bg-accent", 
+      iconColor: "text-black", 
+      lineColor: "bg-accent",
       title: "Proses Produksi",
       description: "Produksi akan dimulai setelah pembayaran DP diterima. Estimasi waktu produksi adalah antara 10 hingga 23 hari kerja, tergantung kompleksitas desain dan jumlah pesanan. Pelanggan akan mendapatkan update secara berkala mengenai progress produksi untuk memastikan transparansi dan kenyamanan selama proses berlangsung."
     },
@@ -68,9 +68,9 @@ const OrderSystem = () => {
     { 
       icon: Truck, 
       label: "Pengiriman", 
-      color: "bg-primary", 
-      iconColor: "text-accent", 
-      lineColor: "bg-primary",
+      color: "bg-accent", 
+      iconColor: "text-black", 
+      lineColor: "bg-accent",
       title: "Pengiriman Produk",
       description: "Setelah pelunasan, produk akan segera dikirim ke alamat tujuan. Kami akan memberikan informasi tracking untuk memantau pengiriman produk Anda."
     }
@@ -122,7 +122,7 @@ const OrderSystem = () => {
           <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
             <div className="flex justify-center mb-4">
               <div className="p-3 rounded-xl" style={{ backgroundColor: '#d4ff00' }}>
-                <Package className="w-8 h-8 text-primary" />
+                <Package className="w-8 h-8 text-black" />
               </div>
             </div>
             <h4 className="text-lg font-bold text-foreground mb-2">Minimum Order</h4>
@@ -132,7 +132,7 @@ const OrderSystem = () => {
           <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
             <div className="flex justify-center mb-4">
               <div className="p-3 rounded-xl" style={{ backgroundColor: '#d4ff00' }}>
-                <Clock className="w-8 h-8 text-primary" />
+                <Clock className="w-8 h-8 text-black" />
               </div>
             </div>
             <h4 className="text-lg font-bold text-foreground mb-2">Estimasi Produksi</h4>
@@ -142,7 +142,7 @@ const OrderSystem = () => {
           <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
             <div className="flex justify-center mb-4">
               <div className="p-3 rounded-xl" style={{ backgroundColor: '#d4ff00' }}>
-                <Wallet className="w-8 h-8 text-primary" />
+                <Wallet className="w-8 h-8 text-black" />
               </div>
             </div>
             <h4 className="text-lg font-bold text-foreground mb-2">Sistem Bayar</h4>
@@ -152,7 +152,7 @@ const OrderSystem = () => {
           <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
             <div className="flex justify-center mb-4">
               <div className="p-3 rounded-xl" style={{ backgroundColor: '#d4ff00' }}>
-                <Sparkles className="w-8 h-8 text-primary" />
+                <Sparkles className="w-8 h-8 text-black" />
               </div>
             </div>
             <h4 className="text-lg font-bold text-foreground mb-2">Bonus</h4>
