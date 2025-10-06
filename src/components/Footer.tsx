@@ -76,24 +76,24 @@ const Footer = () => {
             </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-white/70 group">
-                <div className="p-2 bg-accent/20 rounded-lg group-hover:bg-accent/30 transition-colors">
-                  <Phone className="w-4 h-4 flex-shrink-0 text-accent" />
+                <div className="p-2 bg-white rounded-lg group-hover:bg-white/90 transition-colors">
+                  <Phone className="w-4 h-4 flex-shrink-0 text-primary" />
                 </div>
                 <a href="tel:085754777068" className="hover:text-accent transition-colors font-medium" data-testid="footer-phone">
                   0857-5477-7068
                 </a>
               </li>
               <li className="flex items-start gap-3 text-white/70 group">
-                <div className="p-2 bg-accent/20 rounded-lg group-hover:bg-accent/30 transition-colors">
-                  <Mail className="w-4 h-4 flex-shrink-0 text-accent" />
+                <div className="p-2 bg-white rounded-lg group-hover:bg-white/90 transition-colors">
+                  <Mail className="w-4 h-4 flex-shrink-0 text-primary" />
                 </div>
                 <a href="mailto:info@sekalaindustry.com" className="hover:text-accent transition-colors font-medium" data-testid="footer-email">
                   info@sekalaindustry.com
                 </a>
               </li>
               <li className="flex items-start gap-3 text-white/70 group">
-                <div className="p-2 bg-accent/20 rounded-lg group-hover:bg-accent/30 transition-colors">
-                  <MapPin className="w-4 h-4 flex-shrink-0 text-accent" />
+                <div className="p-2 bg-white rounded-lg group-hover:bg-white/90 transition-colors">
+                  <MapPin className="w-4 h-4 flex-shrink-0 text-primary" />
                 </div>
                 <span className="font-medium">Jawa Barat, Indonesia</span>
               </li>
