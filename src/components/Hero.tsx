@@ -40,8 +40,8 @@ const Hero = () => {
           <div className="space-y-8 animate-slide-up">
             <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight">
               <span className="text-white">Wujudkan</span><br />
-              <span className="text-white">Brand Identity </span>
-              <span className="bg-accent text-foreground px-4 py-2 inline-block shadow-glow-accent border-4 border-black">Premium Kamu.</span>
+              <span className="text-white">Brand Identity</span><br />
+              <span className="bg-accent text-foreground px-6 py-3 inline-block shadow-glow-accent border-4 border-black text-4xl md:text-5xl lg:text-6xl xl:text-7xl">Premium Kamu.</span>
             </h1>
             <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl">
               Sekala Industry adalah mitra terpercaya untuk kebutuhan konveksi profesional. Dari seragam perusahaan hingga merchandise custom dengan kualitas terbaik.
@@ -52,7 +52,7 @@ const Hero = () => {
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="p-4 rounded-md flex flex-col items-center justify-center text-center border-4 border-black"
+                  className="p-4 rounded-2xl flex flex-col items-center justify-center text-center border-4 border-black"
                   style={{ backgroundColor: '#d4ff00' }}
                 >
                   <div className="text-2xl md:text-3xl font-black text-black">
