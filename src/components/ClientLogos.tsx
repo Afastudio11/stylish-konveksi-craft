@@ -20,7 +20,10 @@ const ClientLogos = () => {
               <img 
                 src={logo.image} 
                 alt={logo.name}
-                className="h-14 w-auto object-contain brightness-0 invert opacity-90"
+                className="h-14 w-auto object-contain"
+                style={{
+                  filter: 'brightness(0) saturate(100%) invert(21%) sepia(96%) saturate(3066%) hue-rotate(222deg) brightness(98%) contrast(101%)'
+                }}
                 onError={(e) => {
                   console.error(`Failed to load image: ${logo.image}`);
                   e.currentTarget.style.display = 'none';
