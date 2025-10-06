@@ -36,21 +36,6 @@ const OrderSystem = () => {
 
   return (
     <section className="py-24 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
-        {/* Decorative Shapes */}
-        <img 
-          src="/attached_assets/BINTANG_1759737474409.png" 
-          alt="" 
-          className="absolute top-16 left-10 w-28 h-28 opacity-75 animate-float"
-        />
-        <img 
-          src="/attached_assets/AESTHETIC_1759737474409.png" 
-          alt="" 
-          className="absolute bottom-24 right-20 w-36 h-36 opacity-70"
-        />
-      </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-16 max-w-3xl mx-auto animate-fade-in">

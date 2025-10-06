@@ -457,21 +457,6 @@ const ProductCard = ({ product }: { product: Product }) => {
 const Products = () => {
   return (
     <section id="products" className="py-24 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-        {/* Decorative Shapes */}
-        <img 
-          src="/attached_assets/INOVATION_1759737474409.png" 
-          alt="" 
-          className="absolute top-32 left-20 w-28 h-28 opacity-70"
-        />
-        <img 
-          src="/attached_assets/CONNECTION_1759737474409.png" 
-          alt="" 
-          className="absolute bottom-40 right-16 w-32 h-32 opacity-80 animate-float"
-        />
-      </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-16 max-w-3xl mx-auto animate-fade-in">

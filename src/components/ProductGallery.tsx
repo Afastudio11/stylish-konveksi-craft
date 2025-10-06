@@ -118,26 +118,11 @@ const ProductGallery = () => {
 
   return (
     <section className="py-12 md:py-16 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
-        {/* Decorative Shapes */}
-        <img 
-          src="/attached_assets/CONNECTION_1759737474409.png" 
-          alt="" 
-          className="absolute top-10 right-10 w-32 h-32 opacity-60"
-        />
-        <img 
-          src="/attached_assets/INOVATION_1759737474409.png" 
-          alt="" 
-          className="absolute bottom-16 left-16 w-28 h-28 opacity-70 animate-float"
-        />
-      </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-12 md:mb-16 animate-slide-up">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-4">
-            Our <span className="text-accent">Portofolio</span>
+            Our <span className="text-primary">Portofolio</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Lihat berbagai produk konveksi berkualitas yang telah kami buat untuk klien kami
