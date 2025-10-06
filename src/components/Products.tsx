@@ -459,32 +459,92 @@ const Products = () => {
   return (
     <section id="products" className="py-20 md:py-28 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-12 items-start">
-          {/* Left Column - Title and Description */}
-          <div className="animate-fade-in">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-3">
-              Daftar Harga
-            </h2>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black gradient-text mb-5">
-              Produk Konveksi
-            </h2>
-            <p className="text-base text-muted-foreground leading-relaxed">
-              Lihat detail lengkap harga, ukuran, dan spesifikasi produk kami. Klik pada setiap produk untuk melihat informasi selengkapnya.
-            </p>
-          </div>
-
-          {/* Right Column - Product Grid */}
-          <div className="grid grid-cols-3 gap-3">
-            {products.map((product, index) => (
+        {/* Decorative Header Section */}
+        <div className="relative mb-16 py-12 md:py-20">
+          {/* Top Row Decorative Boxes */}
+          <div className="flex justify-center gap-4 md:gap-6 mb-8 md:mb-12">
+            {[1, 2, 3, 4, 5].map((i) => (
               <div
-                key={index}
-                className="animate-scale-in"
-                style={{ animationDelay: `${index * 0.05}s` }}
-              >
-                <ProductCard product={product} />
-              </div>
+                key={`top-${i}`}
+                className="w-16 h-12 md:w-24 md:h-16 rounded-lg animate-scale-in"
+                style={{ 
+                  backgroundColor: '#d4ff00',
+                  animationDelay: `${i * 0.1}s`
+                }}
+              />
             ))}
           </div>
+
+          {/* Middle Section with Side Decorative Boxes */}
+          <div className="flex items-center justify-center gap-4 md:gap-8">
+            {/* Left Side Boxes */}
+            <div className="flex flex-col gap-4 md:gap-6">
+              {[1, 2].map((i) => (
+                <div
+                  key={`left-${i}`}
+                  className="w-16 h-12 md:w-24 md:h-16 rounded-lg animate-scale-in"
+                  style={{ 
+                    backgroundColor: '#d4ff00',
+                    animationDelay: `${(i + 5) * 0.1}s`
+                  }}
+                />
+              ))}
+            </div>
+
+            {/* Center Text */}
+            <div className="text-center px-4 md:px-8 max-w-2xl animate-fade-in">
+              <h2 className="text-3xl md:text-4xl lg:text-6xl font-black text-foreground mb-2 md:mb-3">
+                Daftar Harga
+              </h2>
+              <h2 className="text-3xl md:text-4xl lg:text-6xl font-black mb-4 md:mb-6" style={{ color: '#4169e1' }}>
+                Produk Konveksi
+              </h2>
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                Lihat detail lengkap harga, ukuran, dan spesifikasi produk kami. Klik pada setiap produk untuk melihat informasi selengkapnya.
+              </p>
+            </div>
+
+            {/* Right Side Boxes */}
+            <div className="flex flex-col gap-4 md:gap-6">
+              {[1, 2].map((i) => (
+                <div
+                  key={`right-${i}`}
+                  className="w-16 h-12 md:w-24 md:h-16 rounded-lg animate-scale-in"
+                  style={{ 
+                    backgroundColor: '#d4ff00',
+                    animationDelay: `${(i + 7) * 0.1}s`
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom Row Decorative Boxes */}
+          <div className="flex justify-center gap-4 md:gap-6 mt-8 md:mt-12">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <div
+                key={`bottom-${i}`}
+                className="w-16 h-12 md:w-24 md:h-16 rounded-lg animate-scale-in"
+                style={{ 
+                  backgroundColor: '#d4ff00',
+                  animationDelay: `${(i + 9) * 0.1}s`
+                }}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Product Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
+          {products.map((product, index) => (
+            <div
+              key={index}
+              className="animate-scale-in"
+              style={{ animationDelay: `${(index + 14) * 0.05}s` }}
+            >
+              <ProductCard product={product} />
+            </div>
+          ))}
         </div>
       </div>
     </section>
