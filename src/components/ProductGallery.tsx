@@ -160,11 +160,11 @@ const ProductGallery = () => {
                       WebkitTransform: `translate3d(${translateX}px, 0, ${translateZ}px) rotateY(${rotateY}deg) scale3d(${scale}, ${scale}, 1)`,
                     }}
                   >
-                    <div className={`relative overflow-hidden rounded-2xl bg-white shadow-xl h-[380px] md:h-[450px] w-[280px] md:w-[320px] ${
-                      isCenter ? 'ring-4 ring-accent shadow-2xl' : ''
+                    <div className={`relative overflow-hidden rounded-2xl bg-white h-[380px] md:h-[450px] w-[280px] md:w-[320px] ${
+                      isCenter ? 'ring-[6px] ring-accent shadow-2xl' : 'ring-2 ring-white/20'
                     }`}
                     style={{
-                      transition: 'box-shadow 1s cubic-bezier(0.4, 0, 0.2, 1)',
+                      transition: 'all 1s cubic-bezier(0.4, 0, 0.2, 1)',
                       backfaceVisibility: 'hidden',
                       WebkitBackfaceVisibility: 'hidden',
                       transform: 'translateZ(0)',
@@ -176,15 +176,21 @@ const ProductGallery = () => {
                         className="w-full h-full object-cover"
                       />
                       
-                      <div className={`absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent ${
-                        isCenter ? 'opacity-80' : 'opacity-60'
+                      <div className={`absolute inset-0 bg-gradient-to-t from-primary via-primary/70 to-transparent ${
+                        isCenter ? 'opacity-90' : 'opacity-70'
                       }`}
                       style={{
                         transition: 'opacity 1s cubic-bezier(0.4, 0, 0.2, 1)'
                       }} />
                       
+                      <div className="absolute top-4 left-4">
+                        <span className="inline-block px-3 py-1 bg-primary text-white text-xs font-bold uppercase rounded shadow-lg">
+                          DETAILS
+                        </span>
+                      </div>
+                      
                       <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
-                        <span className="inline-block px-4 py-1.5 bg-accent text-foreground text-sm font-bold rounded-full mb-2 shadow-lg">
+                        <span className="inline-block px-4 py-1.5 bg-accent text-foreground text-sm font-bold rounded-full mb-3 shadow-lg">
                           {product.category}
                         </span>
                         <h3 className={`font-black text-white drop-shadow-lg ${
@@ -205,17 +211,17 @@ const ProductGallery = () => {
 
           <button
             onClick={scrollPrev}
-            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-primary backdrop-blur-md shadow-xl rounded-full flex items-center justify-center text-white hover:bg-accent hover:text-foreground transition-all duration-300 z-30 group border-2 border-white/20"
+            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-14 h-14 md:w-16 md:h-16 bg-primary shadow-2xl rounded-full flex items-center justify-center text-white hover:bg-primary/90 hover:scale-110 transition-all duration-300 z-30 group"
             aria-label="Previous"
           >
-            <ChevronLeft className="w-6 h-6 md:w-7 md:h-7 group-hover:scale-110 transition-transform" />
+            <ChevronLeft className="w-7 h-7 md:w-8 md:h-8" />
           </button>
           <button
             onClick={scrollNext}
-            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-primary backdrop-blur-md shadow-xl rounded-full flex items-center justify-center text-white hover:bg-accent hover:text-foreground transition-all duration-300 z-30 group border-2 border-white/20"
+            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-14 h-14 md:w-16 md:h-16 bg-primary shadow-2xl rounded-full flex items-center justify-center text-white hover:bg-primary/90 hover:scale-110 transition-all duration-300 z-30 group"
             aria-label="Next"
           >
-            <ChevronRight className="w-6 h-6 md:w-7 md:h-7 group-hover:scale-110 transition-transform" />
+            <ChevronRight className="w-7 h-7 md:w-8 md:h-8" />
           </button>
         </div>
 
