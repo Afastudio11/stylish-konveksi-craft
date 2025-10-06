@@ -84,20 +84,15 @@ const OrderSystem = () => {
               className="relative bg-gradient-to-br from-primary to-primary/80 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="absolute -top-6 -right-6 text-[120px] font-black text-accent opacity-20">
-                {step.number}
-              </div>
-              <div className="relative z-10">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
-                    <span className="text-2xl font-black text-foreground">{step.number}</span>
-                  </div>
-                  <h4 className="text-xl md:text-2xl font-black text-white">{step.title}</h4>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
+                  <span className="text-2xl font-black text-foreground">{step.number}</span>
                 </div>
-                <p className="text-white/90 leading-relaxed whitespace-pre-line">
-                  {step.description}
-                </p>
+                <h4 className="text-xl md:text-2xl font-black text-white">{step.title}</h4>
               </div>
+              <p className="text-white/90 leading-relaxed whitespace-pre-line">
+                {step.description}
+              </p>
             </div>
           ))}
         </div>
