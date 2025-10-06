@@ -65,22 +65,6 @@ const CountUpAnimation = ({ end, suffix }: { end: number; suffix: string }) => {
 const About = () => {
   return (
     <section id="about" className="py-16 bg-background relative overflow-hidden">
-      {/* Background Decorative Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/3 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-        {/* Decorative Shapes */}
-        <img 
-          src="/attached_assets/AESTHETIC_1759737474409.png" 
-          alt="" 
-          className="absolute top-20 right-10 w-32 h-32 opacity-80 animate-float"
-        />
-        <img 
-          src="/attached_assets/BINTANG_1759737474409.png" 
-          alt="" 
-          className="absolute bottom-20 left-10 w-24 h-24 opacity-70"
-        />
-      </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
