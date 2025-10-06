@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, Plus, Scissors, Sparkles, Ruler, Zap } from "lucide-react";
 
 interface PriceRange {
   quantity: string;
@@ -349,14 +349,13 @@ const ProductCard = ({ product }: { product: Product }) => {
 
       {isExpanded && (
         <div className="px-6 pb-6 space-y-6 animate-slide-down">
-          <p className="text-muted-foreground leading-relaxed">{product.description}</p>
-
           {product.options.length > 0 && (
             <div>
-              <h4 className="font-bold text-primary mb-2">Opsi Tambahan:</h4>
-              <div className="flex flex-wrap gap-2">
+              <h4 className="font-bold text-primary mb-3">Opsi Tambahan:</h4>
+              <div className="flex flex-wrap gap-3">
                 {product.options.map((option, idx) => (
-                  <span key={idx} className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-semibold">
+                  <span key={idx} className="px-4 py-2 bg-primary/10 text-primary border border-primary/30 rounded-lg text-sm font-semibold flex items-center gap-2 hover:bg-primary/20 transition-colors">
+                    <Plus className="w-4 h-4" />
                     {option}
                   </span>
                 ))}
