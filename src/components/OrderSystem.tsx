@@ -110,7 +110,7 @@ const OrderSystem = () => {
                           {index + 1}
                         </div>
                       </div>
-                      <span className="mt-3 text-xs md:text-sm font-bold text-foreground text-center">{step.label}</span>
+                      <span className="mt-3 text-[10px] md:text-sm font-bold text-foreground text-center leading-tight">{step.label}</span>
                     </button>
                   </div>
                 );
