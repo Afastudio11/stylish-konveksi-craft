@@ -56,7 +56,7 @@ const CountUpAnimation = ({ end, suffix }: { end: number; suffix: string }) => {
   }, [end, hasAnimated]);
 
   return (
-    <div ref={countRef} className="text-4xl md:text-5xl font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300">
+    <div ref={countRef} className="text-4xl md:text-5xl font-black text-black mb-2 group-hover:scale-110 transition-transform duration-300">
       {count}{suffix}
     </div>
   );
@@ -107,17 +107,21 @@ const About = () => {
             {stats.map((stat, index) => (
               <div 
                 key={index}
-                className="group bg-gradient-to-br from-card to-card/50 p-8 rounded-xl border border-border hover:border-primary/50 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 flex flex-col justify-center"
+                className="group p-8 rounded-xl border-2 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-center"
+                style={{ 
+                  backgroundColor: '#d4ff00',
+                  borderColor: '#b8db00'
+                }}
                 data-testid={`about-stat-${index}`}
               >
                 <div className="relative">
                   <CountUpAnimation end={stat.value} suffix={stat.suffix} />
-                  <div className="text-sm text-muted-foreground font-semibold group-hover:text-foreground transition-colors mt-1">
+                  <div className="text-sm text-black font-semibold transition-colors mt-1">
                     {stat.label}
                   </div>
                   
                   {/* Glow Effect on Hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+                  <div className="absolute inset-0 bg-black/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
                 </div>
               </div>
             ))}

@@ -3,8 +3,17 @@ import HeroGallery from "./HeroGallery";
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden" style={{ backgroundColor: '#343CCD' }}>
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src="/hero-background.png" 
+          alt="Sekala Industry Products" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+      
       {/* Background Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#343CCD] via-[#343CCD]/95 to-[#2a32a8]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#343CCD]/90 via-[#343CCD]/85 to-[#2a32a8]/90" />
 
       {/* Content */}
       <div className="container mx-auto px-4 lg:px-8 relative z-10 py-24 md:py-32">
