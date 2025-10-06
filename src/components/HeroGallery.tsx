@@ -1,4 +1,3 @@
-import { Card } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -40,21 +39,19 @@ const HeroGallery = () => {
             stopOnInteraction: false,
           }),
         ]}
-        className="w-full max-w-xl"
+        className="w-full"
       >
         <CarouselContent>
           {products.map((product) => (
             <CarouselItem key={product.id}>
-              <Card className="border-0 bg-white/10 backdrop-blur-md overflow-hidden shadow-2xl rounded-xl">
-                <div className="aspect-[4/3] relative">
-                  <img
-                    src={product.image}
-                    alt={product.alt}
-                    className="w-full h-full object-contain bg-white/5"
-                    loading="eager"
-                  />
-                </div>
-              </Card>
+              <div className="relative w-full h-[400px] lg:h-[500px] rounded-xl overflow-hidden">
+                <img
+                  src={product.image}
+                  alt={product.alt}
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                />
+              </div>
             </CarouselItem>
           ))}
         </CarouselContent>
