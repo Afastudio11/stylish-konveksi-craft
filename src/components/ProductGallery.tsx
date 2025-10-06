@@ -104,7 +104,7 @@ const ProductGallery = () => {
           {products.map((product, index) => (
             <div
               key={product.id}
-              className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-3 animate-scale-in"
+              className="group relative overflow-hidden border-4 border-black bg-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-3 animate-scale-in"
               style={{ 
                 animationDelay: `${index * 0.05}s`,
                 transformStyle: 'preserve-3d',
@@ -121,13 +121,13 @@ const ProductGallery = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-500" />
                 
                 <div className="absolute top-3 left-3">
-                  <span className="inline-block px-2.5 py-1 bg-primary text-white text-xs font-bold uppercase rounded shadow-lg">
+                  <span className="inline-block px-2.5 py-1 bg-primary text-white text-xs font-bold uppercase border-2 border-black shadow-lg">
                     DETAILS
                   </span>
                 </div>
                 
                 <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
-                  <span className="inline-block px-3 py-1 bg-accent text-foreground text-xs font-bold rounded-full mb-2 shadow-lg">
+                  <span className="inline-block px-3 py-1 bg-accent text-foreground text-xs font-bold border-2 border-black mb-2 shadow-lg">
                     {product.category}
                   </span>
                   <h3 className="font-black text-white text-sm md:text-base drop-shadow-lg">

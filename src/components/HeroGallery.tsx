@@ -44,7 +44,7 @@ const HeroGallery = () => {
         <CarouselContent>
           {products.map((product) => (
             <CarouselItem key={product.id}>
-              <div className="relative w-full h-[450px] lg:h-[550px] overflow-hidden rounded-2xl">
+              <div className="relative w-full h-[450px] lg:h-[550px] overflow-hidden border-4 border-black">
                 <img
                   src={product.image}
                   alt={product.alt}

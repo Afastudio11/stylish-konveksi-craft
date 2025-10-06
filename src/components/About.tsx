@@ -1,55 +1,54 @@
 import { CheckCircle2 } from "lucide-react";
 
-const services = [
-  "Desain gratis sebelum proses produksi.",
-  "Pemilihan bahan sesuai keinginan pelanggan dengan katalog bahan yang lengkap.",
-  "Konsultasi model untuk menghasilkan produk yang sesuai dengan kebutuhan.",
+const features = [
+  "Kualitas bahan premium dan tahan lama",
+  "Proses produksi cepat dan tepat waktu",
+  "Harga kompetitif untuk semua kalangan",
+  "Customisasi design sesuai kebutuhan",
+  "Layanan konsultasi gratis",
+  "After-sales support terpercaya",
 ];
 
 const About = () => {
   return (
     <section id="about" className="py-12 md:py-16 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="max-w-6xl mx-auto space-y-8">
-          <div className="inline-block mb-3">
-            <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wider">
-              Tentang Kami
-            </span>
-          </div>
-          
-          <div className="bg-primary p-6 md:p-8 rounded-lg animate-slide-up">
-            <p className="text-base md:text-lg text-white leading-relaxed mb-4">
-              Sekala Industry adalah pabrik percetakan dan konveksi yang didirikan pada tahun 2024 dan berlokasi di Kota Makassar. Kami melayani berbagai kebutuhan cetak dan jahit untuk komunitas, perusahaan, maupun instansi. Kantor pemasaran kami berada di Jl. Maccini Sawah No 47, Kota Makassar
-            </p>
-            
-            <p className="text-base md:text-lg text-white leading-relaxed">
-              Sekala Industry memproduksi berbagai produk seperti kaos, jaket, seragam kerja, baju perawat, wearpack, jas almamater, topi, rompi, dan produk lainnya. Dengan kapasitas produksi mencapai ribuan potong setiap bulannya, kami melayani pelanggan di seluruh wilayah Indonesia. Didukung oleh tim profesional, berpengalaman, serta penggunaan peralatan modern, kami berkomitmen untuk menjadi salah satu perusahaan konveksi dan percetakan terbaik di Makassar.
-            </p>
-          </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            {/* Kolom Kiri - Judul dan Body Text */}
+            <div className="animate-slide-up">
+              <div className="inline-block mb-3">
+                <span className="px-3 py-1.5 bg-primary/10 text-primary border-2 border-black text-xs font-bold uppercase tracking-wider">
+                  Tentang Kami
+                </span>
+              </div>
+              
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-4 text-balance">
+                Mitra Terpercaya untuk Kebutuhan <span className="gradient-text">Konveksi Anda</span>
+              </h2>
+              
+              <p className="text-base text-muted-foreground leading-relaxed">
+                Sekala Industry berdiri dengan komitmen untuk memberikan solusi konveksi terbaik bagi bisnis dan organisasi di Indonesia. 
+                Dengan pengalaman bertahun-tahun, kami memahami kebutuhan setiap klien dan menghadirkan produk berkualitas tinggi 
+                yang tidak hanya memenuhi ekspektasi, tetapi melampaui standar industri.
+              </p>
+            </div>
 
-          <div className="bg-muted/50 p-6 md:p-8 rounded-lg animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
-              Kepuasan pelanggan adalah prioritas utama kami. Oleh karena itu, kami menawarkan berbagai layanan, seperti:
-            </h3>
-            
-            <div className="grid gap-y-4 mb-6">
-              {services.map((service, index) => (
+            {/* Kolom Kanan - Bullet Points */}
+            <div className="grid gap-y-4 animate-slide-up" style={{ animationDelay: '0.1s' }}>
+              {features.map((feature, index) => (
                 <div 
                   key={index} 
                   className="flex items-start gap-3 group"
-                  data-testid={`about-service-${index}`}
+                  data-testid={`about-feature-${index}`}
                 >
-                  <div className="p-1.5 bg-accent rounded-md group-hover:bg-accent transition-all duration-300 group-hover:scale-110 mt-0.5">
+                  <div className="p-1.5 bg-accent border-2 border-black group-hover:bg-accent transition-all duration-300 group-hover:scale-110 mt-0.5">
                     <CheckCircle2 className="w-5 h-5 text-foreground flex-shrink-0" />
                   </div>
-                  <span className="text-base md:text-lg text-foreground group-hover:text-primary transition-colors">{service}</span>
+                  <span className="text-base md:text-lg text-foreground group-hover:text-primary transition-colors">{feature}</span>
                 </div>
               ))}
             </div>
-
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              Didirikan dengan semangat inovasi dan dedikasi, Sekala Industry terus melakukan evaluasi dan pembaruan untuk memberikan hasil terbaik yang sesuai dengan harapan pelanggan. Kami siap menjadi mitra yang dapat diandalkan dalam mencipta kan produk yang berkualitas tinggi dan penuh nilai.
-            </p>
           </div>
         </div>
       </div>

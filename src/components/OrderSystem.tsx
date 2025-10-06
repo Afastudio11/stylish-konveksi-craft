@@ -103,11 +103,11 @@ const OrderSystem = () => {
                       className="flex flex-col items-center group cursor-pointer"
                     >
                       <div className="relative">
-                        <div className={`${step.color} p-5 md:p-6 rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                        <div className={`${step.color} p-5 md:p-6 border-4 border-black shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                           <Icon className={`w-8 h-8 md:w-10 md:h-10 ${step.iconColor}`} />
                         </div>
                         {/* Number Badge */}
-                        <div className="absolute -top-2 -right-2 bg-black text-white w-7 h-7 rounded-full flex items-center justify-center text-sm font-black">
+                        <div className="absolute -top-2 -right-2 bg-black text-white w-7 h-7 border-2 border-black flex items-center justify-center text-sm font-black">
                           {index + 1}
                         </div>
                       </div>
@@ -121,7 +121,7 @@ const OrderSystem = () => {
 
           {/* Right Column - Info Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 content-center h-full">
-            <div className="bg-accent rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
+            <div className="bg-accent border-4 border-black p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
               <div className="flex justify-center mb-4">
                 <Package className="w-10 h-10 text-black" />
               </div>
@@ -129,7 +129,7 @@ const OrderSystem = () => {
               <p className="text-2xl font-black text-black">12 PCS</p>
             </div>
 
-            <div className="bg-accent rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
+            <div className="bg-accent border-4 border-black p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
               <div className="flex justify-center mb-4">
                 <Clock className="w-10 h-10 text-black" />
               </div>
@@ -137,7 +137,7 @@ const OrderSystem = () => {
               <p className="text-2xl font-black text-black">10-23 Hari</p>
             </div>
 
-            <div className="bg-accent rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
+            <div className="bg-accent border-4 border-black p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
               <div className="flex justify-center mb-4">
                 <Wallet className="w-10 h-10 text-black" />
               </div>
@@ -145,7 +145,7 @@ const OrderSystem = () => {
               <p className="text-xl font-black text-black">DP 50% + 50%</p>
             </div>
 
-            <div className="bg-accent rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
+            <div className="bg-accent border-4 border-black p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
               <div className="flex justify-center mb-4">
                 <Sparkles className="w-10 h-10 text-black" />
               </div>
@@ -161,7 +161,7 @@ const OrderSystem = () => {
             href="https://wa.me/6285754777068?text=Halo%20Sekala%20Industry,%20saya%20ingin%20konsultasi%20untuk%20pemesanan%20produk"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 text-black font-black text-lg rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-3 px-8 py-4 text-black font-black text-lg border-4 border-black shadow-2xl hover:shadow-lg transition-all duration-300 hover:scale-105"
             style={{ backgroundColor: '#d4ff00' }}
           >
             <MessageCircle className="w-6 h-6" />
@@ -180,7 +180,7 @@ const OrderSystem = () => {
             <DialogTitle className="text-2xl flex items-center gap-3">
               {selectedStep !== null && (
                 <>
-                  <div className={`p-3 ${processFlow[selectedStep].color} rounded-xl`}>
+                  <div className={`p-3 ${processFlow[selectedStep].color} border-4 border-black`}>
                     {(() => {
                       const Icon = processFlow[selectedStep].icon;
                       return <Icon className={`w-6 h-6 ${processFlow[selectedStep].iconColor}`} />;
