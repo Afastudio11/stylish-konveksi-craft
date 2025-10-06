@@ -48,7 +48,7 @@ const Hero = () => {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight">
               <span className="text-white">Wujudkan</span><br />
               <span className="text-white">Brand Identity</span><br />
-              <span className="bg-accent text-foreground px-3 sm:px-4 py-2 inline-block shadow-glow-accent border-4 border-black mt-3 md:mt-4 break-words">Premium Kamu.</span>
+              <span className="bg-accent text-foreground px-2 sm:px-2.5 inline-block shadow-glow-accent border-4 border-black mt-3 md:mt-4 break-words leading-[0.9]" style={{ paddingTop: '2px', paddingBottom: '2px' }}>Premium Kamu.</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl">
               Sekala Industry adalah mitra terpercaya untuk kebutuhan konveksi profesional. Dari seragam perusahaan hingga merchandise custom dengan kualitas terbaik.
