@@ -160,7 +160,7 @@ const ProductGallery = () => {
                       WebkitTransform: `translate3d(${translateX}px, 0, ${translateZ}px) rotateY(${rotateY}deg) scale3d(${scale}, ${scale}, 1)`,
                     }}
                   >
-                    <div className={`relative overflow-hidden rounded-2xl bg-white h-[380px] md:h-[450px] w-[280px] md:w-[320px] ${
+                    <div className={`relative overflow-hidden rounded-3xl bg-white h-[380px] md:h-[450px] w-[280px] md:w-[320px] ${
                       isCenter ? 'ring-[6px] ring-accent shadow-2xl' : 'ring-2 ring-white/20'
                     }`}
                     style={{

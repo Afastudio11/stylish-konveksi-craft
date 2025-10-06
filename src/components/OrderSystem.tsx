@@ -81,7 +81,7 @@ const OrderSystem = () => {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-10 max-w-3xl mx-auto animate-fade-in">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-4">
-            Sistem <span className="text-accent">Order</span>
+            Sistem <span style={{ color: '#343CCD' }}>Order</span>
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
             Proses pemesanan yang mudah dan transparan untuk kenyamanan Anda
