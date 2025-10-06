@@ -25,13 +25,13 @@ const OrderSystem = () => {
   ];
 
   const processFlow = [
-    { icon: MessageCircle, label: "Chat", color: "bg-black", iconColor: "text-accent", lineColor: "bg-black" },
-    { icon: Users, label: "Konsultasi", color: "bg-white", iconColor: "text-black", lineColor: "bg-white" },
-    { icon: Handshake, label: "Deal", color: "bg-black", iconColor: "text-accent", lineColor: "bg-black" },
-    { icon: FileText, label: "DP", color: "bg-white", iconColor: "text-black", lineColor: "bg-white" },
-    { icon: Factory, label: "Produksi", color: "bg-black", iconColor: "text-accent", lineColor: "bg-black" },
-    { icon: CreditCard, label: "Pelunasan", color: "bg-white", iconColor: "text-black", lineColor: "bg-white" },
-    { icon: Truck, label: "Pengiriman", color: "bg-black", iconColor: "text-accent", lineColor: "bg-black" }
+    { icon: MessageCircle, label: "Chat", color: "bg-primary", iconColor: "text-accent", lineColor: "bg-primary" },
+    { icon: Users, label: "Konsultasi", color: "bg-accent", iconColor: "text-black", lineColor: "bg-accent" },
+    { icon: Handshake, label: "Deal", color: "bg-primary", iconColor: "text-accent", lineColor: "bg-primary" },
+    { icon: FileText, label: "DP", color: "bg-accent", iconColor: "text-black", lineColor: "bg-accent" },
+    { icon: Factory, label: "Produksi", color: "bg-primary", iconColor: "text-accent", lineColor: "bg-primary" },
+    { icon: CreditCard, label: "Pelunasan", color: "bg-accent", iconColor: "text-black", lineColor: "bg-accent" },
+    { icon: Truck, label: "Pengiriman", color: "bg-primary", iconColor: "text-accent", lineColor: "bg-primary" }
   ];
 
   return (
@@ -62,7 +62,7 @@ const OrderSystem = () => {
               return (
                 <div key={index} className="flex items-center">
                   <div className="flex flex-col items-center group">
-                    <div className={`${step.color} p-6 rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300 ${step.color === 'bg-white' ? 'border-2 border-gray-200' : ''}`}>
+                    <div className={`${step.color} p-6 rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                       <Icon className={`w-8 h-8 ${step.iconColor}`} />
                     </div>
                     <span className="mt-3 text-foreground font-medium">{step.label}</span>
