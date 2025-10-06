@@ -1,5 +1,12 @@
 import HeroGallery from "./HeroGallery";
 
+const stats = [
+  { value: "500+", label: "Klien Puas" },
+  { value: "1000+", label: "Produk Terjual" },
+  { value: "5+", label: "Tahun Pengalaman" },
+  { value: "100%", label: "Kepuasan Pelanggan" },
+];
+
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden" style={{ backgroundColor: '#343CCD' }}>
@@ -13,7 +20,7 @@ const Hero = () => {
       </div>
       
       {/* Background Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#343CCD]/90 via-[#343CCD]/85 to-[#2a32a8]/90" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#343CCD] via-[#343CCD] to-[#2a32a8]" />
 
       {/* Content */}
       <div className="container mx-auto px-4 lg:px-8 relative z-10 py-24 md:py-32">
@@ -27,6 +34,24 @@ const Hero = () => {
             <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl">
               Sekala Industry adalah mitra terpercaya untuk kebutuhan konveksi profesional. Dari seragam perusahaan hingga merchandise custom dengan kualitas terbaik.
             </p>
+
+            {/* Stats - 4 kotak kecil berjejer */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-2xl">
+              {stats.map((stat, index) => (
+                <div
+                  key={index}
+                  className="p-4 rounded-lg flex flex-col items-center justify-center text-center"
+                  style={{ backgroundColor: '#d4ff00' }}
+                >
+                  <div className="text-2xl md:text-3xl font-black text-black">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs md:text-sm text-black font-semibold mt-1">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Right Column - Product Gallery */}

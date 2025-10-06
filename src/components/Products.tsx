@@ -457,7 +457,7 @@ const ProductCard = ({ product }: { product: Product }) => {
 
 const Products = () => {
   return (
-    <section id="products" className="py-12 md:py-16 bg-background relative overflow-hidden">
+    <section id="products" className="py-20 md:py-28 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-12 items-start">
           {/* Left Column - Title and Description */}
