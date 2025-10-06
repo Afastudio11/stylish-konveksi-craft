@@ -13,7 +13,7 @@ const Hero = () => {
           <div className="space-y-8 animate-slide-up">
             <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-tight">
               Wujudkan Brand Identity<br />
-              <span className="bg-accent text-foreground px-6 py-2 inline-block shadow-glow-accent mt-4">Premium Anda</span>
+              <span className="bg-accent text-foreground px-4 py-1 inline-block shadow-glow-accent mt-4 rounded-lg">Premium Anda</span>
             </h1>
             <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl">
               Sekala Industry adalah mitra terpercaya untuk kebutuhan konveksi profesional. Dari seragam perusahaan hingga merchandise custom dengan kualitas terbaik.
