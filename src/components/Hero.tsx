@@ -21,32 +21,44 @@ const Hero = () => {
       
       {/* Background Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#343CCD] via-[#343CCD] to-[#2a32a8]" />
+      
+      {/* Background Lines Pattern */}
+      <div className="absolute inset-0 opacity-10" style={{
+        backgroundImage: `repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 50px,
+          rgba(255, 255, 255, 0.1) 50px,
+          rgba(255, 255, 255, 0.1) 51px
+        )`
+      }} />
 
       {/* Content */}
       <div className="container mx-auto px-4 lg:px-8 relative z-10 py-24 md:py-32">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
           {/* Left Column - Text Content */}
           <div className="space-y-8 animate-slide-up">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-tight">
-              Wujudkan Brand Identity<br />
-              <span className="bg-accent text-foreground px-4 py-1 inline-block shadow-glow-accent mt-4 rounded-lg">Premium Anda</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight">
+              <span className="text-white">Wujudkan</span><br />
+              <span className="text-white">Brand Identity</span><br />
+              <span className="bg-accent text-foreground px-4 py-2 inline-block shadow-glow-accent mt-4 rounded-md">Premium Kamu.</span>
             </h1>
             <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl">
               Sekala Industry adalah mitra terpercaya untuk kebutuhan konveksi profesional. Dari seragam perusahaan hingga merchandise custom dengan kualitas terbaik.
             </p>
 
-            {/* Stats - 4 kotak kecil berjejer */}
+            {/* Stats - 4 kotak dengan border tebal */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-2xl">
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="p-4 rounded-lg flex flex-col items-center justify-center text-center"
+                  className="p-4 rounded-md flex flex-col items-center justify-center text-center border-4 border-black"
                   style={{ backgroundColor: '#d4ff00' }}
                 >
                   <div className="text-2xl md:text-3xl font-black text-black">
                     {stat.value}
                   </div>
-                  <div className="text-xs md:text-sm text-black font-semibold mt-1">
+                  <div className="text-xs md:text-sm text-black font-bold mt-1">
                     {stat.label}
                   </div>
                 </div>
