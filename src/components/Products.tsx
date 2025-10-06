@@ -469,11 +469,11 @@ const Products = () => {
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {products.map((product, index) => (
             <div
               key={index}
-              className="animate-slide-up"
+              className="animate-scale-in"
               style={{ animationDelay: `${index * 0.05}s` }}
             >
               <ProductCard product={product} />

@@ -56,16 +56,16 @@ const Header = () => {
           </div>
 
           <nav className="hidden lg:flex items-center gap-1">
-            {["Beranda", "Tentang", "Layanan", "Pricelist", "Kontak"].map((item, index) => (
+            {["Beranda", "Tentang", "Pricelist", "Kontak"].map((item, index) => (
               <button
                 key={item}
-                onClick={() => scrollToSection(["home", "about", "services", "products", "contact"][index])}
+                onClick={() => scrollToSection(["home", "about", "products", "contact"][index])}
                 className={`px-4 py-2 text-sm font-semibold transition-all duration-300 relative group rounded-lg ${
                   scrolled 
                     ? "text-foreground hover:text-accent" 
                     : "text-white/90 hover:text-white"
                 }`}
-                data-testid={`nav-${["home", "about", "services", "products", "contact"][index]}`}
+                data-testid={`nav-${["home", "about", "products", "contact"][index]}`}
               >
                 <span className="relative z-10">{item}</span>
                 <span className="absolute inset-0 bg-accent/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -99,10 +99,10 @@ const Header = () => {
 
         {isMenuOpen && (
           <nav className="lg:hidden mt-6 pb-6 flex flex-col gap-3 animate-slide-down">
-            {["Beranda", "Tentang", "Layanan", "Pricelist", "Kontak"].map((item, index) => (
+            {["Beranda", "Tentang", "Pricelist", "Kontak"].map((item, index) => (
               <button
                 key={item}
-                onClick={() => scrollToSection(["home", "about", "services", "products", "contact"][index])}
+                onClick={() => scrollToSection(["home", "about", "products", "contact"][index])}
                 className={`px-4 py-3 text-left font-semibold transition-all duration-300 rounded-lg ${
                   scrolled
                     ? "text-foreground hover:bg-accent/10 hover:text-accent"

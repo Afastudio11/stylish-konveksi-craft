@@ -87,7 +87,7 @@ The project is configured to work seamlessly in the Replit environment with:
 - Proper host and port configuration
 - Path aliases (@/) for clean imports
 
-## Recent Changes (October 3, 2025)
+## Recent Changes (October 6, 2025)
 - Migrated from GitHub to Replit
 - Updated Vite config for Replit environment (port 5000, 0.0.0.0 host)
 - Configured WebSocket HMR for Replit proxy support
@@ -97,12 +97,23 @@ The project is configured to work seamlessly in the Replit environment with:
 - Updated design to feature prominent "IS OPEN NOW!" messaging
 - Enhanced contact information display with large, eye-catching phone number
 - Added operating hours (9.00 AM - 17.00 PM) and hashtag (#KALACINTABERPOLA)
+- Fixed Hero section spacing (Y letter too close to yellow box)
+- Simplified Products (Pricelist) display with icon-based cards
+- Removed duplicate description in product cards
+- Improved color contrast for product options (better readability)
+- Changed Products layout from vertical accordion to horizontal grid (like Services)
+- Removed Services section from website
+- Updated navigation menu (removed "Layanan" link)
 
 ## Features
 The website includes:
-- Responsive hero section with company branding
-- Product showcase (jackets, uniforms, t-shirts)
-- Services section
-- About company information
-- Contact form/information
+- Responsive hero section with company branding and strong visual hierarchy
+- About company information section
+- Product gallery showcase
+- Comprehensive price list (Pricelist) with:
+  - 15 product categories (ROMPI, KEMEJA, KAOS POLO, HOODIE, SWEATER, PDH, BAJU SEKOLAH, ALMAMATER, TOGA, TUNIK, WEAR PACK, COACH JACKET, CELANA, VARSITY)
+  - Horizontal grid layout with icon-based cards
+  - Expandable cards showing detailed information (description, options, size charts, pricing)
+  - Icon representation for each product category
+- Contact information section
 - Professional navigation and footer
