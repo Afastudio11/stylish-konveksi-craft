@@ -1,6 +1,3 @@
-import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-
 const ProductGallery = () => {
   const products = [
     {
@@ -89,37 +86,11 @@ const ProductGallery = () => {
     }
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev === products.length - 1 ? 0 : prev + 1));
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [products.length]);
-
-  const scrollPrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? products.length - 1 : prev - 1));
-  };
-
-  const scrollNext = () => {
-    setCurrentIndex((prev) => (prev === products.length - 1 ? 0 : prev + 1));
-  };
-
-  const getVisibleProducts = () => {
-    const visible = [];
-    for (let i = -2; i <= 2; i++) {
-      const index = (currentIndex + i + products.length) % products.length;
-      visible.push({ ...products[index], position: i });
-    }
-    return visible;
-  };
-
   return (
-    <section className="py-10 md:py-12 bg-background relative overflow-hidden">
+    <section className="py-10 md:py-16 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="text-center mb-8 md:mb-10 animate-slide-up">
+        {/* Header */}
+        <div className="text-center mb-12 md:mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-3">
             Our <span className="text-primary">Portofolio</span>
           </h2>
@@ -128,115 +99,39 @@ const ProductGallery = () => {
           </p>
         </div>
 
-        <div className="relative h-[380px] md:h-[480px] mb-8 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-          <div className="absolute inset-0 flex items-center justify-center overflow-hidden" style={{ perspective: '1500px', perspectiveOrigin: 'center center' }}>
-            <div className="relative w-full h-full flex items-center justify-center" style={{ transformStyle: 'preserve-3d' }}>
-              {getVisibleProducts().map((product, idx) => {
-                const { position } = product;
-                const isCenter = position === 0;
+        {/* Grid Gallery */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          {products.map((product, index) => (
+            <div
+              key={product.id}
+              className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-scale-in"
+              style={{ animationDelay: `${index * 0.05}s` }}
+            >
+              <div className="aspect-[3/4] relative overflow-hidden">
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
                 
-                const scale = isCenter ? 1.1 : 0.7;
-                const opacity = Math.abs(position) <= 1 ? 1 : 0.3;
-                const translateX = position * 320;
-                const translateZ = isCenter ? 50 : -100;
-                const rotateY = position * 5;
-                const zIndex = isCenter ? 20 : 10 - Math.abs(position);
-
-                return (
-                  <div
-                    key={`${product.id}-${idx}`}
-                    className="absolute"
-                    style={{
-                      transform: `translate3d(${translateX}px, 0, ${translateZ}px) rotateY(${rotateY}deg) scale3d(${scale}, ${scale}, 1)`,
-                      opacity,
-                      zIndex,
-                      transition: 'transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s cubic-bezier(0.4, 0, 0.2, 1)',
-                      transformStyle: 'preserve-3d',
-                      willChange: 'transform, opacity',
-                      backfaceVisibility: 'hidden',
-                      WebkitBackfaceVisibility: 'hidden',
-                      WebkitFontSmoothing: 'antialiased',
-                      MozOsxFontSmoothing: 'grayscale',
-                      WebkitTransform: `translate3d(${translateX}px, 0, ${translateZ}px) rotateY(${rotateY}deg) scale3d(${scale}, ${scale}, 1)`,
-                    }}
-                  >
-                    <div className={`relative overflow-hidden rounded-3xl bg-white h-[380px] md:h-[450px] w-[280px] md:w-[320px] ${
-                      isCenter ? 'ring-[6px] ring-accent shadow-2xl' : 'ring-2 ring-white/20'
-                    }`}
-                    style={{
-                      transition: 'all 1s cubic-bezier(0.4, 0, 0.2, 1)',
-                      backfaceVisibility: 'hidden',
-                      WebkitBackfaceVisibility: 'hidden',
-                      transform: 'translateZ(0)',
-                      WebkitTransform: 'translateZ(0)',
-                    }}>
-                      <img
-                        src={product.image}
-                        alt={product.title}
-                        className="w-full h-full object-cover"
-                      />
-                      
-                      <div className={`absolute inset-0 bg-gradient-to-t from-primary via-primary/70 to-transparent ${
-                        isCenter ? 'opacity-90' : 'opacity-70'
-                      }`}
-                      style={{
-                        transition: 'opacity 1s cubic-bezier(0.4, 0, 0.2, 1)'
-                      }} />
-                      
-                      <div className="absolute top-4 left-4">
-                        <span className="inline-block px-3 py-1 bg-primary text-white text-xs font-bold uppercase rounded shadow-lg">
-                          DETAILS
-                        </span>
-                      </div>
-                      
-                      <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
-                        <span className="inline-block px-4 py-1.5 bg-accent text-foreground text-sm font-bold rounded-full mb-3 shadow-lg">
-                          {product.category}
-                        </span>
-                        <h3 className={`font-black text-white drop-shadow-lg ${
-                          isCenter ? 'text-xl md:text-2xl' : 'text-lg md:text-xl'
-                        }`}
-                        style={{
-                          transition: 'font-size 1s cubic-bezier(0.4, 0, 0.2, 1)'
-                        }}>
-                          {product.title}
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
+                <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+                
+                <div className="absolute top-3 left-3">
+                  <span className="inline-block px-2.5 py-1 bg-primary text-white text-xs font-bold uppercase rounded shadow-lg">
+                    DETAILS
+                  </span>
+                </div>
+                
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
+                  <span className="inline-block px-3 py-1 bg-accent text-foreground text-xs font-bold rounded-full mb-2 shadow-lg">
+                    {product.category}
+                  </span>
+                  <h3 className="font-black text-white text-sm md:text-base drop-shadow-lg">
+                    {product.title}
+                  </h3>
+                </div>
+              </div>
             </div>
-          </div>
-
-          <button
-            onClick={scrollPrev}
-            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-14 h-14 md:w-16 md:h-16 bg-primary shadow-2xl rounded-full flex items-center justify-center text-white hover:bg-primary/90 hover:scale-110 transition-all duration-300 z-30 group"
-            aria-label="Previous"
-          >
-            <ChevronLeft className="w-7 h-7 md:w-8 md:h-8" />
-          </button>
-          <button
-            onClick={scrollNext}
-            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-14 h-14 md:w-16 md:h-16 bg-primary shadow-2xl rounded-full flex items-center justify-center text-white hover:bg-primary/90 hover:scale-110 transition-all duration-300 z-30 group"
-            aria-label="Next"
-          >
-            <ChevronRight className="w-7 h-7 md:w-8 md:h-8" />
-          </button>
-        </div>
-
-        <div className="flex justify-center gap-2 mb-12 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-          {products.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`h-2.5 rounded-full transition-all duration-300 ${
-                index === currentIndex 
-                  ? "bg-accent w-10" 
-                  : "bg-primary/40 w-2.5 hover:bg-primary"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
           ))}
         </div>
       </div>
