@@ -64,7 +64,7 @@ const CountUpAnimation = ({ end, suffix }: { end: number; suffix: string }) => {
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-gradient-to-b from-background to-secondary/50 relative overflow-hidden">
+    <section id="about" className="py-16 bg-gradient-to-b from-background to-secondary/50 relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/3 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
