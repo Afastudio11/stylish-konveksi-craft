@@ -117,15 +117,15 @@ const OrderSystem = () => {
         </div>
 
         {/* Info Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-2 gap-4 md:gap-6 mb-12">
           <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
             <div className="flex justify-center mb-4">
               <div className="p-3 rounded-xl" style={{ backgroundColor: '#d4ff00' }}>
                 <Package className="w-8 h-8 text-black" />
               </div>
             </div>
-            <h4 className="text-lg font-bold text-foreground mb-2">Minimum Order</h4>
-            <p className="text-2xl font-black text-primary">12 PCS</p>
+            <h4 className="text-lg font-bold text-black mb-2">Minimum Order</h4>
+            <p className="text-2xl font-black text-black">12 PCS</p>
           </div>
 
           <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
@@ -134,8 +134,8 @@ const OrderSystem = () => {
                 <Clock className="w-8 h-8 text-black" />
               </div>
             </div>
-            <h4 className="text-lg font-bold text-foreground mb-2">Estimasi Produksi</h4>
-            <p className="text-2xl font-black text-primary">10-23 Hari</p>
+            <h4 className="text-lg font-bold text-black mb-2">Estimasi Produksi</h4>
+            <p className="text-2xl font-black text-black">10-23 Hari</p>
           </div>
 
           <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
@@ -144,8 +144,8 @@ const OrderSystem = () => {
                 <Wallet className="w-8 h-8 text-black" />
               </div>
             </div>
-            <h4 className="text-lg font-bold text-foreground mb-2">Sistem Bayar</h4>
-            <p className="text-xl font-black text-primary">DP 50% + 50%</p>
+            <h4 className="text-lg font-bold text-black mb-2">Sistem Bayar</h4>
+            <p className="text-xl font-black text-black">DP 50% + 50%</p>
           </div>
 
           <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
@@ -154,8 +154,8 @@ const OrderSystem = () => {
                 <Sparkles className="w-8 h-8 text-black" />
               </div>
             </div>
-            <h4 className="text-lg font-bold text-foreground mb-2">Bonus</h4>
-            <p className="text-xl font-black text-primary">Konsultasi Gratis</p>
+            <h4 className="text-lg font-bold text-black mb-2">Bonus</h4>
+            <p className="text-xl font-black text-black">Konsultasi Gratis</p>
           </div>
         </div>
 
