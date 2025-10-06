@@ -25,7 +25,7 @@ const Footer = () => {
                 <div className="absolute inset-0 bg-accent/30 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
             </div>
-            <p className="text-white/70 leading-relaxed mb-4 font-semibold">
+            <p className="text-white/70 leading-relaxed mb-4 font-medium">
               Solusi konveksi profesional dengan kualitas premium untuk kebutuhan bisnis dan organisasi Anda.
             </p>
             <div className="flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full w-fit">
@@ -45,7 +45,7 @@ const Footer = () => {
                 <li key={item}>
                   <button
                     onClick={() => scrollToSection(["home", "about", "services", "products", "contact"][index])}
-                    className="text-white/70 hover:text-accent transition-all duration-300 hover:translate-x-1 inline-block"
+                    className="text-white/70 hover:text-accent transition-all duration-300 hover:translate-x-1 inline-block font-medium"
                     data-testid={`footer-nav-${["home", "about", "services", "products", "contact"][index]}`}
                   >
                     {item}
@@ -63,7 +63,7 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3 text-white/70">
               {["Seragam Kantor", "Kaos Custom", "Jaket & Hoodie", "Polo Shirt", "Merchandise"].map((item) => (
-                <li key={item} className="hover:text-accent transition-colors cursor-default">{item}</li>
+                <li key={item} className="hover:text-accent transition-colors cursor-default font-medium">{item}</li>
               ))}
             </ul>
           </div>
@@ -79,7 +79,7 @@ const Footer = () => {
                 <div className="p-2 bg-accent/20 rounded-lg group-hover:bg-accent/30 transition-colors">
                   <Phone className="w-4 h-4 flex-shrink-0 text-accent" />
                 </div>
-                <a href="tel:085754777068" className="hover:text-accent transition-colors" data-testid="footer-phone">
+                <a href="tel:085754777068" className="hover:text-accent transition-colors font-medium" data-testid="footer-phone">
                   0857-5477-7068
                 </a>
               </li>
@@ -87,7 +87,7 @@ const Footer = () => {
                 <div className="p-2 bg-accent/20 rounded-lg group-hover:bg-accent/30 transition-colors">
                   <Mail className="w-4 h-4 flex-shrink-0 text-accent" />
                 </div>
-                <a href="mailto:info@sekalaindustry.com" className="hover:text-accent transition-colors" data-testid="footer-email">
+                <a href="mailto:info@sekalaindustry.com" className="hover:text-accent transition-colors font-medium" data-testid="footer-email">
                   info@sekalaindustry.com
                 </a>
               </li>
@@ -95,7 +95,7 @@ const Footer = () => {
                 <div className="p-2 bg-accent/20 rounded-lg group-hover:bg-accent/30 transition-colors">
                   <MapPin className="w-4 h-4 flex-shrink-0 text-accent" />
                 </div>
-                <span>Jawa Barat, Indonesia</span>
+                <span className="font-medium">Jawa Barat, Indonesia</span>
               </li>
             </ul>
           </div>
@@ -103,7 +103,7 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-center items-center gap-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-          <p className="text-white/60 text-sm">
+          <p className="text-white/60 text-sm font-medium">
             © 2024 Sekala Industry. All rights reserved.
           </p>
         </div>
