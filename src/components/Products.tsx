@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp, Plus, Scissors, Sparkles, Ruler, Zap } from "lucide-react";
+import { ChevronDown, ChevronUp, Plus, Shirt, ShoppingBag, Wind, Sparkles, School, GraduationCap, Users, Package } from "lucide-react";
 
 interface PriceRange {
   quantity: string;
@@ -14,6 +14,7 @@ interface SizeChart {
 
 interface Product {
   name: string;
+  icon: React.ComponentType<{ className?: string }>;
   description: string;
   options: string[];
   sizeChart: SizeChart;
@@ -24,6 +25,7 @@ interface Product {
 const products: Product[] = [
   {
     name: "ROMPI",
+    icon: Package,
     description: "Buat tampilan kerja atau komunitas semakin profesional dengan rompi custom dari kami! Cocok untuk seragam lapangan, event, atau kebutuhan fashion lainnya. Rompi kami dibuat dari bahan berkualitas tinggi yang ringan namun tetap kuat, tersedia dalam berbagai model dengan tambahan kantong fungsional dan fitur custom desain agar semakin eksklusif.",
     options: ["+5K-10K 1 TITIK BORDIR", "+7K RESLETING", "+10K SCOTLIGHT", "+5K FURING"],
     sizeChart: {
@@ -46,6 +48,7 @@ const products: Product[] = [
   },
   {
     name: "KEMEJA",
+    icon: Shirt,
     description: "Butuh kemeja yang tampil elegan dan profesional? Kami menyediakan kemeja custom dengan bahan berkualitas yang nyaman dikenakan sepanjang hari. Cocok untuk seragam kerja, komunitas, atau keperluan formal lainnya. Kemeja kami hadir dengan pilihan bordir atau sablon detail tinggi yang awet dan tidak mudah pudar, jadikan tim atau komunitasmu tampil lebih rapi dan berkelas dengan kemeja yang sesuai identitas mereka!",
     options: ["+5K-10K 1 TITIK BORDIR", "MENYESUAIKAN CUSTOM BORDIR"],
     sizeChart: {
@@ -68,6 +71,7 @@ const products: Product[] = [
   },
   {
     name: "KAOS POLO",
+    icon: Shirt,
     description: "Tampilkan gaya casual yang tetap elegan dengan kaos polo premium dari kami! Terbuat dari bahan berkualitas tinggi yang nyaman di kulit, kaos polo kami cocok untuk seragam kerja, komunitas, atau sekedar tampil lebih rapi dalam berbagai kesempatan. Dengan pilihan bordir logo atau desain eksklusif, kaos polo ini bisa memperkuat identitas tim atau perusahaanmu.",
     options: ["+5K OVERSIZE", "+5K LENGAN PANJANG", "+5K-10K RIB", "MENYESUAIKAN SABLON"],
     sizeChart: {
@@ -90,6 +94,7 @@ const products: Product[] = [
   },
   {
     name: "HOODIE",
+    icon: Wind,
     description: "Tampil keren dan tetap nyaman dengan hoodie custom dari kami! Terbuat dari bahan fleece premium yang lembut dan hangat, hoodie ini cocok dipakai untuk gaya casual sehari-hari maupun event komunitas. Bisa dipersonalisasi dengan desain bordir atau sablon berkualitas tinggi yang tahan lama. Tersedia model zipper atau pullover sesuai kebutuhanmu. Dapatkan hoodie eksklusif dengan desain yang hanya kamu miliki!",
     options: ["+5K OVERSIZE", "+5K RESLETING", "+5K-10K 1 TITIK BORDIR", "MENYESUAIKAN SABLON"],
     sizeChart: {
@@ -110,6 +115,7 @@ const products: Product[] = [
   },
   {
     name: "SWEATER",
+    icon: Wind,
     description: "Nikmati kenyamanan maksimal dengan sweater berkualitas tinggi yang bisa kamu custom sesuai selera! Dibuat dari bahan tebal namun tetap breathable, sweater ini cocok untuk menjaga tubuh tetap hangat saat cuaca dingin tanpa mengurangi gaya. Pilih sablon atau bordir eksklusif, kamu bisa menciptakan sweater dengan desain unik untuk komunitas, perusahaan, atau brand clothing-mu sendiri.",
     options: ["+5K OVERSIZE", "+5K RESLETING", "+5K-10K RIB", "+5K-10K 1 TITIK BORDIR", "MENYESUAIKAN SABLON"],
     sizeChart: {
@@ -130,6 +136,7 @@ const products: Product[] = [
   },
   {
     name: "PDH",
+    icon: Shirt,
     description: "Tampilkan citra profesional dengan PDH berkualitas tinggi dari kami! Dibuat dari bahan premium yang nyaman dan tahan lama, PDH kami hadir dengan desain eksklusif yang bisa disesuaikan dengan identitas perusahaan, komunitas, atau organisasi anda. Dengan jahitan rapi dan detail presisi, seragam ini tidak hanya memberikan kenyamanan maksimal untuk aktivitas harian, segera pesan PDH terbaik untuk tim anda dan tingkatkan kebersamaan serta kebanggaan dalam setiap langkah!",
     options: ["+5K-10K 1 TITIK BORDIR", "+7K RESLETING", "+10K SCOTLIGHT", "+15K JAHITAN TAILOR", "+10K LENGAN PANJANG"],
     sizeChart: {
@@ -152,6 +159,7 @@ const products: Product[] = [
   },
   {
     name: "BAJU SEKOLAH",
+    icon: School,
     description: "Tampil rapi dan nyaman dengan seragam sekolah berkualitas! Kami menyediakan bahan berkualitas yang nyaman dikenakan sepanjang hari untuk SD, SMP, dan SMA. Tersedia dalam berbagai model dengan pilihan bordir atau sablon berkualitas tinggi untuk identitas sekolahmu. Sesuai dengan kebutuhan siswa, wujudkan seragam yang merepresentasikan kebanggaan dalam setiap langkah!",
     options: ["+5K-10K 1 TITIK BORDIR", "+15K JAHITAN TAILOR"],
     sizeChart: {
@@ -176,6 +184,7 @@ const products: Product[] = [
   },
   {
     name: "ALMAMATER",
+    icon: GraduationCap,
     description: "Tunjukkan kebanggaan almamatermu dengan jaket almamater berkualitas tinggi! Terbuat dari bahan premium dengan jahitan rapi, jaket ini cocok untuk sekolah, kampus, atau komunitas yang ingin tampil lebih kompak dan profesional. Bisa diablon atau dibordir dengan logo dan nama institusi agar semakin eksklusif. Jangan tunda lagi, pesan sekarang dan ciptakan identitas unik bagi almamatermu!",
     options: ["+5K-10K 1 TITIK BORDIR", "+3K-5K LIST PINGGIRAN"],
     sizeChart: {
@@ -198,6 +207,7 @@ const products: Product[] = [
   },
   {
     name: "TOGA",
+    icon: GraduationCap,
     description: "Rayakan momen kelulusan dengan toga berkualitas tinggi yang memberikan kesan elegan dan berwibawa! Dibuat dari bahan nyaman dengan desain yang anggun, toga kami tersedia dalam berbagai warna dan model sesuai kebutuhan institusi pendidikanmu. Dapatkan toga yang menjadikan momen wisudamu semakin berkesan dan tak terlupakan!",
     options: ["+5K-10K 1 TITIK BORDIR", "MENYESUAIKAN SYAL"],
     sizeChart: {
@@ -220,6 +230,7 @@ const products: Product[] = [
   },
   {
     name: "TUNIK",
+    icon: Sparkles,
     description: "Tampil anggun dan tetap nyaman dengan tunik custom dari kami! Cocok untuk seragam kerja, event, atau kebutuhan komunitas, tunik kami tersedia dalam berbagai model dengan bahan premium yang adem dan nyaman dipakai sepanjang hari. Bisa disesuaikan dengan bordir atau sablon berkualitas tinggi untuk tampilan lebih eksklusif dan elegan.",
     options: [],
     sizeChart: {
@@ -241,6 +252,7 @@ const products: Product[] = [
   },
   {
     name: "WEAR PACK",
+    icon: Users,
     description: "Lindungi diri dengan wearpack berkualitas tinggi yang nyaman dan aman digunakan! Dirancang untuk kebutuhan industri, wearpack kami dibuat dari bahan tahan lama yang kuat melindungi dari debu, kotoran, dan bahaya kerja lainnya. Dilengkapi dengan kantong fungsional serta desain ergonomis yang memastikan kenyamanan maksimal sepanjang hari. Cocok untuk bengkel, konstruksi, manufaktur, dan berbagai sektor lainnya!",
     options: ["+5K-10K 1 TITIK BORDIR", "+7K RESLETING", "+10K SCOTLIGHT", "+15K JAHITAN TAILOR"],
     sizeChart: {
@@ -262,6 +274,7 @@ const products: Product[] = [
   },
   {
     name: "COACH JACKET",
+    icon: Wind,
     description: "Jaket sporty dengan desain timeless yang wajib kamu miliki! Coach jacket kami dibuat dari bahan water-resistant yang ringan namun tetap memberikan perlindungan optimal. Cocok untuk aktivitas outdoor, komunitas, hingga fashion streetwear, jaket ini bisa kamu custom dengan bordir atau sablon eksklusif agar tampilanmu semakin standout. Jangan lewatkan kesempatan untuk tampil keren dan profesional dalam satu jaket!",
     options: ["+5K RESLETING", "+5K-10K 1 TITIK BORDIR", "MENYESUAIKAN SABLON"],
     sizeChart: {
@@ -283,6 +296,7 @@ const products: Product[] = [
   },
   {
     name: "CELANA",
+    icon: ShoppingBag,
     description: "Tampilkan kesan profesional dengan celana formal berkualitas tinggi dari kami! Dibuat dari bahan premium yang nyaman, celana ini cocok untuk seragam kerja, formal, atau kebutuhan organisasi. Dengan potongan rapi dan desain yang bisa disesuaikan, celana ini memberikan tampilan elegan tanpa mengorbankan kenyamanan. Pesan sekarang untuk tampilan yang lebih berkelas!",
     options: [],
     sizeChart: {
@@ -304,6 +318,7 @@ const products: Product[] = [
   },
   {
     name: "VARSITY",
+    icon: Wind,
     description: "Jangan biarkan gaya biasa-biasa saja, upgrade tampilanmu dengan varsity jacket custom yang berkualitas! Kombinasi bahan premium dan desain klasik menjadikan varsity ini pilihan sempurna untuk komunitas, sekolah, atau brand fashion. Bisa dipersonalisasi dengan bordir logo atau desain khas yang membuat jaket ini semakin eksklusif.",
     options: ["+5K OVERSIZE", "MENYESUAIKAN KULIT SINTETIS (OSCAR)", "MENYESUAIKAN BORDIR", "MENYESUAIKAN FURING"],
     sizeChart: {
@@ -327,6 +342,7 @@ const products: Product[] = [
 
 const ProductCard = ({ product }: { product: Product }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const Icon = product.icon;
 
   return (
     <div className="bg-card rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 overflow-hidden">
@@ -334,9 +350,11 @@ const ProductCard = ({ product }: { product: Product }) => {
         className="p-6 cursor-pointer flex justify-between items-center hover:bg-secondary/30 transition-colors"
         onClick={() => setIsExpanded(!isExpanded)}
       >
-        <div>
-          <h3 className="text-2xl font-black text-card-foreground mb-2">{product.name}</h3>
-          <p className="text-sm text-muted-foreground line-clamp-2">{product.description}</p>
+        <div className="flex items-center gap-4">
+          <div className="p-3 bg-primary/10 rounded-xl">
+            <Icon className="w-8 h-8 text-primary" />
+          </div>
+          <h3 className="text-2xl font-black text-card-foreground">{product.name}</h3>
         </div>
         <div className="ml-4 flex-shrink-0">
           {isExpanded ? (
@@ -349,6 +367,10 @@ const ProductCard = ({ product }: { product: Product }) => {
 
       {isExpanded && (
         <div className="px-6 pb-6 space-y-6 animate-slide-down">
+          <div>
+            <p className="text-muted-foreground leading-relaxed">{product.description}</p>
+          </div>
+
           {product.options.length > 0 && (
             <div>
               <h4 className="font-bold text-primary mb-3">Opsi Tambahan:</h4>
