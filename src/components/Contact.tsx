@@ -36,8 +36,21 @@ ${formData.message}`;
   };
 
   return (
-    <section id="contact" className="py-24 bg-background">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section id="contact" className="py-24 bg-background relative overflow-hidden">
+      {/* Decorative Shapes */}
+      <div className="absolute inset-0 pointer-events-none">
+        <img 
+          src="/attached_assets/AESTHETIC_1759737474409.png" 
+          alt="" 
+          className="absolute top-16 left-10 w-32 h-32 opacity-60"
+        />
+        <img 
+          src="/attached_assets/BINTANG_1759737474409.png" 
+          alt="" 
+          className="absolute bottom-32 right-16 w-36 h-36 opacity-70 animate-float"
+        />
+      </div>
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-start max-w-7xl mx-auto">
           {/* Left Side - Info */}
           <div className="space-y-8">
