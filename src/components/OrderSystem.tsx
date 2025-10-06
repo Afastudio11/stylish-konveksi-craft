@@ -63,7 +63,7 @@ const OrderSystem = () => {
                 <div key={index} className="flex items-center">
                   <div className="flex flex-col items-center group">
                     <div className={`${step.color} p-6 rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon className="w-8 h-8 text-foreground" />
+                      <Icon className="w-8 h-8 text-white" />
                     </div>
                     <span className="mt-3 text-foreground font-medium">{step.label}</span>
                   </div>
