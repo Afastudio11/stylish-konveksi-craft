@@ -459,84 +459,67 @@ const Products = () => {
   return (
     <section id="products" className="py-20 md:py-28 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        {/* Decorative Header Section */}
-        <div className="relative mb-16 py-12 md:py-20">
-          {/* Top Row Decorative Boxes */}
-          <div className="flex justify-center gap-4 md:gap-6 mb-8 md:mb-12">
-            {[1, 2, 3, 4, 5].map((i) => (
+        {/* Header Section with Products as Decoration */}
+        <div className="relative mb-12 md:mb-16">
+          {/* Top Row - First 5 Products */}
+          <div className="grid grid-cols-5 gap-3 md:gap-4 mb-4 md:mb-6">
+            {products.slice(0, 5).map((product, index) => (
               <div
-                key={`top-${i}`}
-                className="w-16 h-12 md:w-24 md:h-16 rounded-lg animate-scale-in"
-                style={{ 
-                  backgroundColor: '#d4ff00',
-                  animationDelay: `${i * 0.1}s`
-                }}
-              />
+                key={index}
+                className="animate-scale-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <ProductCard product={product} />
+              </div>
             ))}
           </div>
 
-          {/* Middle Section with Side Decorative Boxes */}
-          <div className="flex items-center justify-center gap-4 md:gap-8">
-            {/* Left Side Boxes */}
-            <div className="flex flex-col gap-4 md:gap-6">
-              {[1, 2].map((i) => (
-                <div
-                  key={`left-${i}`}
-                  className="w-16 h-12 md:w-24 md:h-16 rounded-lg animate-scale-in"
-                  style={{ 
-                    backgroundColor: '#d4ff00',
-                    animationDelay: `${(i + 5) * 0.1}s`
-                  }}
-                />
-              ))}
+          {/* Middle Row - Product on left, Text in center, Product on right */}
+          <div className="grid grid-cols-[1fr_2fr_1fr] gap-3 md:gap-4 items-center mb-4 md:mb-6">
+            {/* Left Product */}
+            <div className="animate-scale-in" style={{ animationDelay: '0.5s' }}>
+              <ProductCard product={products[5]} />
             </div>
 
             {/* Center Text */}
-            <div className="text-center px-4 md:px-8 max-w-2xl animate-fade-in">
-              <h2 className="text-3xl md:text-4xl lg:text-6xl font-black text-foreground mb-2 md:mb-3">
+            <div className="text-center px-4 md:px-8 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-black text-foreground mb-2">
                 Daftar Harga
               </h2>
-              <h2 className="text-3xl md:text-4xl lg:text-6xl font-black mb-4 md:mb-6" style={{ color: '#4169e1' }}>
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-4" style={{ color: '#4169e1' }}>
                 Produk Konveksi
               </h2>
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
                 Lihat detail lengkap harga, ukuran, dan spesifikasi produk kami. Klik pada setiap produk untuk melihat informasi selengkapnya.
               </p>
             </div>
 
-            {/* Right Side Boxes */}
-            <div className="flex flex-col gap-4 md:gap-6">
-              {[1, 2].map((i) => (
-                <div
-                  key={`right-${i}`}
-                  className="w-16 h-12 md:w-24 md:h-16 rounded-lg animate-scale-in"
-                  style={{ 
-                    backgroundColor: '#d4ff00',
-                    animationDelay: `${(i + 7) * 0.1}s`
-                  }}
-                />
-              ))}
+            {/* Right Product */}
+            <div className="animate-scale-in" style={{ animationDelay: '0.7s' }}>
+              <ProductCard product={products[9]} />
             </div>
           </div>
 
-          {/* Bottom Row Decorative Boxes */}
-          <div className="flex justify-center gap-4 md:gap-6 mt-8 md:mt-12">
-            {[1, 2, 3, 4, 5].map((i) => (
+          {/* Bottom Row - Remaining Products */}
+          <div className="grid grid-cols-5 gap-3 md:gap-4">
+            {products.slice(6, 9).map((product, index) => (
               <div
-                key={`bottom-${i}`}
-                className="w-16 h-12 md:w-24 md:h-16 rounded-lg animate-scale-in"
-                style={{ 
-                  backgroundColor: '#d4ff00',
-                  animationDelay: `${(i + 9) * 0.1}s`
-                }}
-              />
+                key={index}
+                className="animate-scale-in"
+                style={{ animationDelay: `${(index + 8) * 0.1}s` }}
+              >
+                <ProductCard product={product} />
+              </div>
             ))}
+            <div className="animate-scale-in" style={{ animationDelay: '1.1s' }}>
+              <ProductCard product={products[11]} />
+            </div>
           </div>
         </div>
 
-        {/* Product Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
-          {products.map((product, index) => (
+        {/* Remaining Products Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+          {[products[10], products[12], products[13]].map((product, index) => (
             <div
               key={index}
               className="animate-scale-in"
