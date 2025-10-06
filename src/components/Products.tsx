@@ -354,12 +354,12 @@ const ProductCard = ({ product }: { product: Product }) => {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="relative flex items-center justify-center p-6 rounded-2xl transition-all duration-300 hover:shadow-xl hover:scale-105 w-full min-h-[120px] group"
+        className="relative flex items-center justify-center p-4 md:p-5 rounded-xl transition-all duration-300 hover:shadow-xl hover:scale-105 w-full h-[80px] md:h-[90px] group"
         style={{ backgroundColor: '#d4ff00' }}
       >
-        <h3 className="text-lg md:text-xl font-bold text-black text-center">{product.name}</h3>
-        <div className="absolute top-2 right-2 opacity-60 group-hover:opacity-100 transition-opacity">
-          <ChevronRight className="w-5 h-5 text-black" />
+        <h3 className="text-sm md:text-base lg:text-lg font-bold text-black text-center px-2">{product.name}</h3>
+        <div className="absolute top-1 right-1 md:top-2 md:right-2 opacity-60 group-hover:opacity-100 transition-opacity">
+          <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-black" />
         </div>
       </button>
 
@@ -456,13 +456,15 @@ const ProductCard = ({ product }: { product: Product }) => {
 };
 
 const Products = () => {
+  const boxGap = "gap-3 md:gap-4";
+  
   return (
     <section id="products" className="py-20 md:py-28 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        {/* Header Section with Products as Decoration */}
-        <div className="relative mb-12 md:mb-16">
-          {/* Top Row - First 5 Products */}
-          <div className="grid grid-cols-5 gap-3 md:gap-4 mb-4 md:mb-6">
+        {/* Header Section with Products as Frame */}
+        <div className="relative max-w-6xl mx-auto">
+          {/* Top Row - 5 Products */}
+          <div className={`grid grid-cols-5 ${boxGap} mb-3 md:mb-4`}>
             {products.slice(0, 5).map((product, index) => (
               <div
                 key={index}
@@ -474,60 +476,60 @@ const Products = () => {
             ))}
           </div>
 
-          {/* Middle Row - Product on left, Text in center, Product on right */}
-          <div className="grid grid-cols-[1fr_2fr_1fr] gap-3 md:gap-4 items-center mb-4 md:mb-6">
-            {/* Left Product */}
-            <div className="animate-scale-in" style={{ animationDelay: '0.5s' }}>
-              <ProductCard product={products[5]} />
+          {/* Middle Row - 2 Left Products, Text Center, 2 Right Products */}
+          <div className={`grid grid-cols-[auto_1fr_auto] ${boxGap} items-start mb-3 md:mb-4`}>
+            {/* Left Products - 2 boxes vertically */}
+            <div className={`flex flex-col ${boxGap}`}>
+              {products.slice(5, 7).map((product, index) => (
+                <div
+                  key={index}
+                  className="animate-scale-in"
+                  style={{ animationDelay: `${(index + 5) * 0.1}s` }}
+                >
+                  <ProductCard product={product} />
+                </div>
+              ))}
             </div>
 
             {/* Center Text */}
-            <div className="text-center px-4 md:px-8 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            <div className="text-center px-4 md:px-8 py-8 md:py-12 animate-fade-in" style={{ animationDelay: '0.7s' }}>
               <h2 className="text-2xl md:text-4xl lg:text-5xl font-black text-foreground mb-2">
                 Daftar Harga
               </h2>
               <h2 className="text-2xl md:text-4xl lg:text-5xl font-black mb-3 md:mb-4" style={{ color: '#4169e1' }}>
                 Produk Konveksi
               </h2>
-              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed max-w-xl mx-auto">
                 Lihat detail lengkap harga, ukuran, dan spesifikasi produk kami. Klik pada setiap produk untuk melihat informasi selengkapnya.
               </p>
             </div>
 
-            {/* Right Product */}
-            <div className="animate-scale-in" style={{ animationDelay: '0.7s' }}>
-              <ProductCard product={products[9]} />
+            {/* Right Products - 2 boxes vertically */}
+            <div className={`flex flex-col ${boxGap}`}>
+              {products.slice(7, 9).map((product, index) => (
+                <div
+                  key={index}
+                  className="animate-scale-in"
+                  style={{ animationDelay: `${(index + 7) * 0.1}s` }}
+                >
+                  <ProductCard product={product} />
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Bottom Row - Remaining Products */}
-          <div className="grid grid-cols-5 gap-3 md:gap-4">
-            {products.slice(6, 9).map((product, index) => (
+          {/* Bottom Row - 5 Products */}
+          <div className={`grid grid-cols-5 ${boxGap}`}>
+            {products.slice(9, 14).map((product, index) => (
               <div
                 key={index}
                 className="animate-scale-in"
-                style={{ animationDelay: `${(index + 8) * 0.1}s` }}
+                style={{ animationDelay: `${(index + 9) * 0.1}s` }}
               >
                 <ProductCard product={product} />
               </div>
             ))}
-            <div className="animate-scale-in" style={{ animationDelay: '1.1s' }}>
-              <ProductCard product={products[11]} />
-            </div>
           </div>
-        </div>
-
-        {/* Remaining Products Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
-          {[products[10], products[12], products[13]].map((product, index) => (
-            <div
-              key={index}
-              className="animate-scale-in"
-              style={{ animationDelay: `${(index + 14) * 0.05}s` }}
-            >
-              <ProductCard product={product} />
-            </div>
-          ))}
         </div>
       </div>
     </section>
