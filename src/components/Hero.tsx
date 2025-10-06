@@ -1,10 +1,11 @@
+import { useState, useEffect, useRef } from "react";
 import HeroGallery from "./HeroGallery";
 
 const stats = [
-  { value: "500+", label: "Klien Puas" },
-  { value: "1000+", label: "Produk Terjual" },
-  { value: "5+", label: "Tahun Pengalaman" },
-  { value: "100%", label: "Kepuasan Pelanggan" },
+  { value: 500, suffix: "+", label: "Klien Puas" },
+  { value: 1000, suffix: "+", label: "Produk Terjual" },
+  { value: 5, suffix: "+", label: "Tahun Pengalaman" },
+  { value: 100, suffix: "%", label: "Kepuasan Pelanggan" },
 ];
 
 const logos = [
@@ -14,7 +15,62 @@ const logos = [
   { name: "Antam", image: "/antam.png" },
 ];
 
+const useCountAnimation = (end: number, duration: number = 2000, shouldStart: boolean) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!shouldStart) return;
+
+    let startTime: number | null = null;
+    const startValue = 0;
+
+    const animate = (currentTime: number) => {
+      if (startTime === null) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      const currentCount = Math.floor(easeOutQuart * (end - startValue) + startValue);
+      
+      setCount(currentCount);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        setCount(end);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, [end, duration, shouldStart]);
+
+  return count;
+};
+
 const Hero = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const statsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => {
+      if (statsRef.current) {
+        observer.unobserve(statsRef.current);
+      }
+    };
+  }, []);
+
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden" style={{ backgroundColor: '#343CCD' }}>
       {/* Background Image */}
@@ -55,21 +111,25 @@ const Hero = () => {
             </p>
 
             {/* Stats - 4 kotak dengan border tebal */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 -mx-1 sm:mx-0">
-              {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="p-2 sm:p-3 md:p-4 flex flex-col items-center justify-center text-center border-2 sm:border-4 border-black min-w-0"
-                  style={{ backgroundColor: '#d4ff00' }}
-                >
-                  <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-black">
-                    {stat.value}
+            <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 -mx-1 sm:mx-0">
+              {stats.map((stat, index) => {
+                const count = useCountAnimation(stat.value, 2000, isVisible);
+                
+                return (
+                  <div
+                    key={index}
+                    className="p-2 sm:p-3 md:p-4 flex flex-col items-center justify-center text-center border-2 sm:border-4 border-black min-w-0"
+                    style={{ backgroundColor: '#d4ff00' }}
+                  >
+                    <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-black">
+                      {count}{stat.suffix}
+                    </div>
+                    <div className="text-[10px] sm:text-xs md:text-sm text-black font-bold mt-1 leading-tight">
+                      {stat.label}
+                    </div>
                   </div>
-                  <div className="text-[10px] sm:text-xs md:text-sm text-black font-bold mt-1 leading-tight">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Client Logos */}
