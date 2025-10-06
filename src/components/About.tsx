@@ -18,7 +18,7 @@ const About = () => {
             {/* Kolom Kiri - Judul dan Body Text */}
             <div className="animate-slide-up">
               <div className="inline-block mb-3">
-                <span className="px-3 py-1.5 bg-primary/10 text-primary border-2 border-black text-xs font-bold uppercase tracking-wider">
+                <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wider">
                   Tentang Kami
                 </span>
               </div>
@@ -42,7 +42,7 @@ const About = () => {
                   className="flex items-start gap-3 group"
                   data-testid={`about-feature-${index}`}
                 >
-                  <div className="p-1.5 bg-accent border-2 border-black group-hover:bg-accent transition-all duration-300 group-hover:scale-110 mt-0.5">
+                  <div className="p-1.5 bg-accent rounded-md group-hover:bg-accent transition-all duration-300 group-hover:scale-110 mt-0.5">
                     <CheckCircle2 className="w-5 h-5 text-foreground flex-shrink-0" />
                   </div>
                   <span className="text-base md:text-lg text-foreground group-hover:text-primary transition-colors">{feature}</span>

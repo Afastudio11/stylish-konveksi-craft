@@ -354,7 +354,7 @@ const ProductCard = ({ product }: { product: Product }) => {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="relative flex items-center justify-center p-3 md:p-4 border-4 border-black transition-all duration-300 hover:shadow-xl hover:scale-105 w-full h-[60px] md:h-[70px] group"
+        className="relative flex items-center justify-center p-3 md:p-4 rounded-lg transition-all duration-300 hover:shadow-xl hover:scale-105 w-full h-[60px] md:h-[70px] group"
         style={{ backgroundColor: '#d4ff00' }}
       >
         <h3 className="text-xs md:text-sm lg:text-base font-bold text-black text-center px-2">{product.name}</h3>
@@ -367,7 +367,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-2xl flex items-center gap-3">
-              <div className="p-3 bg-primary/10 border-4 border-black">
+              <div className="p-3 bg-primary/10 rounded-xl">
                 <Icon className="w-6 h-6 text-primary" />
               </div>
               {product.name}
@@ -384,7 +384,7 @@ const ProductCard = ({ product }: { product: Product }) => {
                 <h4 className="text-primary mb-3">Opsi Tambahan:</h4>
                 <div className="flex flex-wrap gap-3">
                   {product.options.map((option, idx) => (
-                    <span key={idx} className="px-4 py-2 bg-primary/10 text-primary border-2 border-black text-sm flex items-center gap-2 hover:bg-primary/20 transition-colors">
+                    <span key={idx} className="px-4 py-2 bg-primary/10 text-primary border border-primary/30 rounded-lg text-sm flex items-center gap-2 hover:bg-primary/20 transition-colors">
                       <Plus className="w-4 h-4" />
                       {option}
                     </span>

@@ -88,40 +88,41 @@ const OrderSystem = () => {
           </p>
         </div>
 
-        {/* Two Column Layout */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-12 items-start">
-          {/* Left Column - Alur Pembelian (Grid 3 columns with arrows) */}
-          <div className="flex items-center justify-center h-full">
-            <div className="grid grid-cols-3 gap-x-6 gap-y-8 md:gap-x-8 md:gap-y-10 relative py-4">
+        {/* Process Flow - Horizontal */}
+        <div className="mb-12">
+          <div className="flex items-center justify-center overflow-x-auto pb-4">
+            <div className="flex gap-3 md:gap-4 lg:gap-6 px-4">
               {processFlow.map((step, index) => {
                 const Icon = step.icon;
                 
                 return (
-                  <div key={index} className={`relative flex flex-col items-center ${index === 6 ? 'col-start-2' : ''}`}>
+                  <div key={index} className="relative flex flex-col items-center flex-shrink-0">
                     <button 
                       onClick={() => setSelectedStep(index)}
                       className="flex flex-col items-center group cursor-pointer"
                     >
                       <div className="relative">
-                        <div className={`${step.color} p-5 md:p-6 border-4 border-black shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                          <Icon className={`w-8 h-8 md:w-10 md:h-10 ${step.iconColor}`} />
+                        <div className={`${step.color} p-4 md:p-5 lg:p-6 rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                          <Icon className={`w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 ${step.iconColor}`} />
                         </div>
                         {/* Number Badge */}
-                        <div className="absolute -top-2 -right-2 bg-black text-white w-7 h-7 border-2 border-black flex items-center justify-center text-sm font-black">
+                        <div className="absolute -top-2 -right-2 bg-black text-white w-6 h-6 md:w-7 md:h-7 rounded-full flex items-center justify-center text-xs md:text-sm font-black">
                           {index + 1}
                         </div>
                       </div>
-                      <span className="mt-3 text-sm md:text-base font-bold text-foreground text-center">{step.label}</span>
+                      <span className="mt-3 text-xs md:text-sm lg:text-base font-bold text-foreground text-center whitespace-nowrap">{step.label}</span>
                     </button>
                   </div>
                 );
               })}
             </div>
           </div>
+        </div>
 
-          {/* Right Column - Info Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 content-center h-full">
-            <div className="bg-accent border-4 border-black p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
+        {/* Info Cards */}
+        <div className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
+            <div className="bg-accent rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
               <div className="flex justify-center mb-4">
                 <Package className="w-10 h-10 text-black" />
               </div>
@@ -129,7 +130,7 @@ const OrderSystem = () => {
               <p className="text-2xl font-black text-black">12 PCS</p>
             </div>
 
-            <div className="bg-accent border-4 border-black p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
+            <div className="bg-accent rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
               <div className="flex justify-center mb-4">
                 <Clock className="w-10 h-10 text-black" />
               </div>
@@ -137,7 +138,7 @@ const OrderSystem = () => {
               <p className="text-2xl font-black text-black">10-23 Hari</p>
             </div>
 
-            <div className="bg-accent border-4 border-black p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
+            <div className="bg-accent rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
               <div className="flex justify-center mb-4">
                 <Wallet className="w-10 h-10 text-black" />
               </div>
@@ -145,7 +146,7 @@ const OrderSystem = () => {
               <p className="text-xl font-black text-black">DP 50% + 50%</p>
             </div>
 
-            <div className="bg-accent border-4 border-black p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
+            <div className="bg-accent rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
               <div className="flex justify-center mb-4">
                 <Sparkles className="w-10 h-10 text-black" />
               </div>
@@ -161,7 +162,7 @@ const OrderSystem = () => {
             href="https://wa.me/6285754777068?text=Halo%20Sekala%20Industry,%20saya%20ingin%20konsultasi%20untuk%20pemesanan%20produk"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 text-black font-black text-lg border-4 border-black shadow-2xl hover:shadow-lg transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-3 px-8 py-4 text-black font-black text-lg rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 hover:scale-105"
             style={{ backgroundColor: '#d4ff00' }}
           >
             <MessageCircle className="w-6 h-6" />
@@ -180,7 +181,7 @@ const OrderSystem = () => {
             <DialogTitle className="text-2xl flex items-center gap-3">
               {selectedStep !== null && (
                 <>
-                  <div className={`p-3 ${processFlow[selectedStep].color} border-4 border-black`}>
+                  <div className={`p-3 ${processFlow[selectedStep].color} rounded-xl`}>
                     {(() => {
                       const Icon = processFlow[selectedStep].icon;
                       return <Icon className={`w-6 h-6 ${processFlow[selectedStep].iconColor}`} />;

@@ -28,8 +28,8 @@ const Footer = () => {
             <p className="text-white/70 leading-relaxed mb-4 font-medium">
               Solusi konveksi profesional dengan kualitas premium untuk kebutuhan bisnis dan organisasi Anda.
             </p>
-            <div className="flex items-center gap-2 px-4 py-2 bg-accent/20 border-2 border-black w-fit">
-              <div className="w-2 h-2 bg-accent animate-pulse" />
+            <div className="flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full w-fit">
+              <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
               <span className="text-accent font-semibold text-sm">We're Open</span>
             </div>
           </div>
@@ -37,7 +37,7 @@ const Footer = () => {
           {/* Quick Links */}
           <div className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
             <h4 className="font-black mb-6 text-lg flex items-center gap-2">
-              <span className="w-1 h-6 bg-accent" />
+              <span className="w-1 h-6 bg-accent rounded-full" />
               Menu
             </h4>
             <ul className="space-y-3">
@@ -58,7 +58,7 @@ const Footer = () => {
           {/* Services */}
           <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <h4 className="font-black mb-6 text-lg flex items-center gap-2">
-              <span className="w-1 h-6 bg-accent" />
+              <span className="w-1 h-6 bg-accent rounded-full" />
               Layanan
             </h4>
             <ul className="space-y-3 text-white/70">
@@ -71,12 +71,12 @@ const Footer = () => {
           {/* Contact */}
           <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
             <h4 className="font-black mb-6 text-lg flex items-center gap-2">
-              <span className="w-1 h-6 bg-accent" />
+              <span className="w-1 h-6 bg-accent rounded-full" />
               Kontak
             </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-white/70 group">
-                <div className="p-2 bg-white border-2 border-black group-hover:bg-white/90 transition-colors">
+                <div className="p-2 bg-white rounded-lg group-hover:bg-white/90 transition-colors">
                   <Phone className="w-4 h-4 flex-shrink-0 text-primary" />
                 </div>
                 <a href="tel:085754777068" className="hover:text-accent transition-colors font-medium" data-testid="footer-phone">
@@ -84,7 +84,7 @@ const Footer = () => {
                 </a>
               </li>
               <li className="flex items-start gap-3 text-white/70 group">
-                <div className="p-2 bg-white border-2 border-black group-hover:bg-white/90 transition-colors">
+                <div className="p-2 bg-white rounded-lg group-hover:bg-white/90 transition-colors">
                   <Mail className="w-4 h-4 flex-shrink-0 text-primary" />
                 </div>
                 <a href="mailto:info@sekalaindustry.com" className="hover:text-accent transition-colors font-medium" data-testid="footer-email">
@@ -92,7 +92,7 @@ const Footer = () => {
                 </a>
               </li>
               <li className="flex items-start gap-3 text-white/70 group">
-                <div className="p-2 bg-white border-2 border-black group-hover:bg-white/90 transition-colors">
+                <div className="p-2 bg-white rounded-lg group-hover:bg-white/90 transition-colors">
                   <MapPin className="w-4 h-4 flex-shrink-0 text-primary" />
                 </div>
                 <span className="font-medium">Jawa Barat, Indonesia</span>
