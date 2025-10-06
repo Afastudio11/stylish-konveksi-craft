@@ -35,7 +35,7 @@ const OrderSystem = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-secondary/30 to-background relative overflow-hidden">
+    <section className="py-24 bg-background relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
