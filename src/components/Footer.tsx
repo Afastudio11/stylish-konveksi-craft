@@ -13,11 +13,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-foreground to-primary-dark text-white py-16 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-accent/10 to-transparent" />
-      </div>
+    <footer className="bg-primary text-white py-16 relative overflow-hidden">
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">

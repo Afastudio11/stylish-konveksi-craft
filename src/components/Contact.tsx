@@ -1,105 +1,211 @@
-import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
-const contactInfo = [
-  {
-    icon: Phone,
-    title: "Telepon / WhatsApp",
-    value: "0857-5477-7068",
-    link: "tel:085754777068",
-  },
-  {
-    icon: Mail,
-    title: "Email",
-    value: "info@sekalaindustry.com",
-    link: "mailto:info@sekalaindustry.com",
-  },
-  {
-    icon: MapPin,
-    title: "Lokasi",
-    value: "Jawa Barat, Indonesia",
-    link: "#",
-  },
-  {
-    icon: Clock,
-    title: "Jam Operasional",
-    value: "Senin - Sabtu, 09:00 - 17:00",
-    link: "#",
-  },
-];
-
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    orderSize: "",
+    productType: "",
+    message: "",
+    agreePolicy: false
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Format message for WhatsApp
+    const whatsappMessage = `Halo Sekala Industry,
+
+Nama: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Jumlah Order: ${formData.orderSize}
+Jenis Produk: ${formData.productType}
+
+Pesan:
+${formData.message}`;
+
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    window.open(`https://wa.me/6285754777068?text=${encodedMessage}`, '_blank');
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value, type } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
+    }));
+  };
+
   return (
     <section id="contact" className="py-24 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="max-w-5xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-16 animate-fade-in">
-            <span className="text-sm font-semibold text-primary uppercase tracking-wider mb-4 block">
-              Hubungi Kami
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
-              Siap Membantu <span className="text-primary">Kebutuhan Anda</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Tim kami siap memberikan konsultasi dan solusi terbaik untuk proyek konveksi Anda
-            </p>
-          </div>
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-accent rounded-3xl p-8 md:p-12 shadow-2xl">
+            <div className="text-center mb-8">
+              <h2 className="text-4xl md:text-5xl font-black text-foreground mb-4">
+                Contact us
+              </h2>
+              <p className="text-foreground text-lg">
+                Hubungi kami dan kami akan merespons dalam 24 jam.
+              </p>
+            </div>
 
-          {/* Contact Cards */}
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
-            {contactInfo.map((info, index) => (
-              <a
-                key={index}
-                href={info.link}
-                className="group bg-card p-6 rounded-2xl border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                    <info.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-card-foreground mb-1 text-sm">
-                      {info.title}
-                    </h3>
-                    <p className="text-foreground font-medium">
-                      {info.value}
-                    </p>
-                  </div>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* First Name and Last Name */}
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
+                    First name
+                  </label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    placeholder="First name"
+                    required
+                    className="w-full px-4 py-3 rounded-lg bg-white border-0 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
                 </div>
-              </a>
-            ))}
-          </div>
+                <div>
+                  <label htmlFor="lastName" className="block text-sm font-medium text-foreground mb-2">
+                    Last name
+                  </label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    placeholder="Last name"
+                    required
+                    className="w-full px-4 py-3 rounded-lg bg-white border-0 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+              </div>
 
-          {/* CTA Section */}
-          <div className="bg-gradient-primary p-12 rounded-3xl text-center shadow-2xl">
-            <h3 className="text-3xl font-bold text-primary-foreground mb-4">
-              Mulai Proyek Anda Sekarang
-            </h3>
-            <p className="text-primary-foreground/90 text-lg mb-8 max-w-2xl mx-auto">
-              Konsultasikan kebutuhan konveksi Anda dengan tim profesional kami. 
-              Dapatkan penawaran terbaik dan layanan yang memuaskan.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
+              {/* Email */}
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Email address"
+                  required
+                  className="w-full px-4 py-3 rounded-lg bg-white border-0 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+              </div>
+
+              {/* Order Size and Product Type */}
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="orderSize" className="block text-sm font-medium text-foreground mb-2">
+                    Jumlah Order
+                  </label>
+                  <select
+                    id="orderSize"
+                    name="orderSize"
+                    value={formData.orderSize}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 rounded-lg bg-white border-0 text-foreground focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer"
+                    style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23000' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 1rem center' }}
+                  >
+                    <option value="">Pilih jumlah</option>
+                    <option value="12-23 pcs">12-23 pcs</option>
+                    <option value="24-64 pcs">24-64 pcs</option>
+                    <option value="65+ pcs">65+ pcs</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="productType" className="block text-sm font-medium text-foreground mb-2">
+                    Jenis Produk
+                  </label>
+                  <select
+                    id="productType"
+                    name="productType"
+                    value={formData.productType}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 rounded-lg bg-white border-0 text-foreground focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer"
+                    style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23000' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 1rem center' }}
+                  >
+                    <option value="">Pilih produk</option>
+                    <option value="Kaos Polo">Kaos Polo</option>
+                    <option value="Kemeja">Kemeja</option>
+                    <option value="Hoodie">Hoodie</option>
+                    <option value="Sweater">Sweater</option>
+                    <option value="Jaket">Jaket</option>
+                    <option value="Rompi">Rompi</option>
+                    <option value="PDH">PDH</option>
+                    <option value="Seragam">Seragam</option>
+                    <option value="Lainnya">Lainnya</option>
+                  </select>
+                </div>
+              </div>
+
+              {/* Message */}
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Tinggalkan pesan untuk kami..."
+                  rows={5}
+                  required
+                  className="w-full px-4 py-3 rounded-lg bg-white border-0 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                />
+              </div>
+
+              {/* Privacy Policy Checkbox */}
+              <div className="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  id="agreePolicy"
+                  name="agreePolicy"
+                  checked={formData.agreePolicy}
+                  onChange={handleChange}
+                  required
+                  className="mt-1 w-4 h-4 rounded border-0 text-primary focus:ring-2 focus:ring-primary cursor-pointer"
+                />
+                <label htmlFor="agreePolicy" className="text-sm text-foreground cursor-pointer">
+                  Anda setuju dengan kebijakan privasi kami yang ramah.
+                </label>
+              </div>
+
+              {/* Submit Button */}
+              <Button
+                type="submit"
                 size="lg"
-                className="bg-accent hover:bg-accent-dark text-foreground font-bold px-8 transition-all hover:scale-105 shadow-xl"
-                onClick={() => window.open('https://wa.me/6285754777068', '_blank')}
-                data-testid="button-whatsapp"
+                className="w-full bg-foreground text-accent hover:bg-foreground/90 font-medium py-6 rounded-lg transition-all hover:scale-[1.02]"
               >
-                <MessageCircle className="mr-2 w-5 h-5" />
-                Chat WhatsApp
+                Send message
               </Button>
-              <Button 
-                size="lg"
-                className="bg-white hover:bg-white/90 text-primary font-bold px-8 transition-all hover:scale-105 shadow-xl border-2 border-white"
-                onClick={() => window.location.href = 'tel:085754777068'}
-                data-testid="button-call"
-              >
-                <Phone className="mr-2 w-5 h-5" />
-                Telepon Kami
-              </Button>
+            </form>
+
+            {/* Trust Badges */}
+            <div className="mt-12 pt-8 border-t border-foreground/10">
+              <p className="text-center text-foreground text-sm mb-6">
+                Dipercaya oleh berbagai perusahaan dan organisasi
+              </p>
+              <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+                <div className="text-foreground font-bold text-sm">Perusahaan</div>
+                <div className="text-foreground font-bold text-sm">Sekolah</div>
+                <div className="text-foreground font-bold text-sm">Universitas</div>
+                <div className="text-foreground font-bold text-sm">Komunitas</div>
+                <div className="text-foreground font-bold text-sm">Event Organizer</div>
+              </div>
             </div>
           </div>
         </div>

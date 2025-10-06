@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Plus, Shirt, ShoppingBag, Wind, Sparkles, School, GraduationCap, Users, Package } from "lucide-react";
+import { Plus, Shirt, ShirtIcon, Layers, Circle, Waves, School, GraduationCap, Flower2, HardHat, CloudRain, Move, Award } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -31,7 +31,7 @@ interface Product {
 const products: Product[] = [
   {
     name: "ROMPI",
-    icon: Package,
+    icon: Layers,
     description: "Buat tampilan kerja atau komunitas semakin profesional dengan rompi custom dari kami! Cocok untuk seragam lapangan, event, atau kebutuhan fashion lainnya. Rompi kami dibuat dari bahan berkualitas tinggi yang ringan namun tetap kuat, tersedia dalam berbagai model dengan tambahan kantong fungsional dan fitur custom desain agar semakin eksklusif.",
     options: ["+5K-10K 1 TITIK BORDIR", "+7K RESLETING", "+10K SCOTLIGHT", "+5K FURING"],
     sizeChart: {
@@ -77,7 +77,7 @@ const products: Product[] = [
   },
   {
     name: "KAOS POLO",
-    icon: Shirt,
+    icon: ShirtIcon,
     description: "Tampilkan gaya casual yang tetap elegan dengan kaos polo premium dari kami! Terbuat dari bahan berkualitas tinggi yang nyaman di kulit, kaos polo kami cocok untuk seragam kerja, komunitas, atau sekedar tampil lebih rapi dalam berbagai kesempatan. Dengan pilihan bordir logo atau desain eksklusif, kaos polo ini bisa memperkuat identitas tim atau perusahaanmu.",
     options: ["+5K OVERSIZE", "+5K LENGAN PANJANG", "+5K-10K RIB", "MENYESUAIKAN SABLON"],
     sizeChart: {
@@ -100,7 +100,7 @@ const products: Product[] = [
   },
   {
     name: "HOODIE",
-    icon: Wind,
+    icon: Circle,
     description: "Tampil keren dan tetap nyaman dengan hoodie custom dari kami! Terbuat dari bahan fleece premium yang lembut dan hangat, hoodie ini cocok dipakai untuk gaya casual sehari-hari maupun event komunitas. Bisa dipersonalisasi dengan desain bordir atau sablon berkualitas tinggi yang tahan lama. Tersedia model zipper atau pullover sesuai kebutuhanmu. Dapatkan hoodie eksklusif dengan desain yang hanya kamu miliki!",
     options: ["+5K OVERSIZE", "+5K RESLETING", "+5K-10K 1 TITIK BORDIR", "MENYESUAIKAN SABLON"],
     sizeChart: {
@@ -121,7 +121,7 @@ const products: Product[] = [
   },
   {
     name: "SWEATER",
-    icon: Wind,
+    icon: Waves,
     description: "Nikmati kenyamanan maksimal dengan sweater berkualitas tinggi yang bisa kamu custom sesuai selera! Dibuat dari bahan tebal namun tetap breathable, sweater ini cocok untuk menjaga tubuh tetap hangat saat cuaca dingin tanpa mengurangi gaya. Pilih sablon atau bordir eksklusif, kamu bisa menciptakan sweater dengan desain unik untuk komunitas, perusahaan, atau brand clothing-mu sendiri.",
     options: ["+5K OVERSIZE", "+5K RESLETING", "+5K-10K RIB", "+5K-10K 1 TITIK BORDIR", "MENYESUAIKAN SABLON"],
     sizeChart: {
@@ -236,7 +236,7 @@ const products: Product[] = [
   },
   {
     name: "TUNIK",
-    icon: Sparkles,
+    icon: Flower2,
     description: "Tampil anggun dan tetap nyaman dengan tunik custom dari kami! Cocok untuk seragam kerja, event, atau kebutuhan komunitas, tunik kami tersedia dalam berbagai model dengan bahan premium yang adem dan nyaman dipakai sepanjang hari. Bisa disesuaikan dengan bordir atau sablon berkualitas tinggi untuk tampilan lebih eksklusif dan elegan.",
     options: [],
     sizeChart: {
@@ -258,7 +258,7 @@ const products: Product[] = [
   },
   {
     name: "WEAR PACK",
-    icon: Users,
+    icon: HardHat,
     description: "Lindungi diri dengan wearpack berkualitas tinggi yang nyaman dan aman digunakan! Dirancang untuk kebutuhan industri, wearpack kami dibuat dari bahan tahan lama yang kuat melindungi dari debu, kotoran, dan bahaya kerja lainnya. Dilengkapi dengan kantong fungsional serta desain ergonomis yang memastikan kenyamanan maksimal sepanjang hari. Cocok untuk bengkel, konstruksi, manufaktur, dan berbagai sektor lainnya!",
     options: ["+5K-10K 1 TITIK BORDIR", "+7K RESLETING", "+10K SCOTLIGHT", "+15K JAHITAN TAILOR"],
     sizeChart: {
@@ -280,7 +280,7 @@ const products: Product[] = [
   },
   {
     name: "COACH JACKET",
-    icon: Wind,
+    icon: CloudRain,
     description: "Jaket sporty dengan desain timeless yang wajib kamu miliki! Coach jacket kami dibuat dari bahan water-resistant yang ringan namun tetap memberikan perlindungan optimal. Cocok untuk aktivitas outdoor, komunitas, hingga fashion streetwear, jaket ini bisa kamu custom dengan bordir atau sablon eksklusif agar tampilanmu semakin standout. Jangan lewatkan kesempatan untuk tampil keren dan profesional dalam satu jaket!",
     options: ["+5K RESLETING", "+5K-10K 1 TITIK BORDIR", "MENYESUAIKAN SABLON"],
     sizeChart: {
@@ -302,7 +302,7 @@ const products: Product[] = [
   },
   {
     name: "CELANA",
-    icon: ShoppingBag,
+    icon: Move,
     description: "Tampilkan kesan profesional dengan celana formal berkualitas tinggi dari kami! Dibuat dari bahan premium yang nyaman, celana ini cocok untuk seragam kerja, formal, atau kebutuhan organisasi. Dengan potongan rapi dan desain yang bisa disesuaikan, celana ini memberikan tampilan elegan tanpa mengorbankan kenyamanan. Pesan sekarang untuk tampilan yang lebih berkelas!",
     options: [],
     sizeChart: {
@@ -324,7 +324,7 @@ const products: Product[] = [
   },
   {
     name: "VARSITY",
-    icon: Wind,
+    icon: Award,
     description: "Jangan biarkan gaya biasa-biasa saja, upgrade tampilanmu dengan varsity jacket custom yang berkualitas! Kombinasi bahan premium dan desain klasik menjadikan varsity ini pilihan sempurna untuk komunitas, sekolah, atau brand fashion. Bisa dipersonalisasi dengan bordir logo atau desain khas yang membuat jaket ini semakin eksklusif.",
     options: ["+5K OVERSIZE", "MENYESUAIKAN KULIT SINTETIS (OSCAR)", "MENYESUAIKAN BORDIR", "MENYESUAIKAN FURING"],
     sizeChart: {
