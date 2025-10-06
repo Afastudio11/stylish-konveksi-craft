@@ -7,6 +7,13 @@ const stats = [
   { value: "100%", label: "Kepuasan Pelanggan" },
 ];
 
+const logos = [
+  { name: "Mercedes-Benz", image: "/mercedes-benz.png" },
+  { name: "Pegadaian", image: "/pegadaian.png" },
+  { name: "Kota Makassar", image: "/makassar.png" },
+  { name: "Antam", image: "/antam.png" },
+];
+
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden" style={{ backgroundColor: '#343CCD' }}>
@@ -63,6 +70,20 @@ const Hero = () => {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Client Logos */}
+            <div className="relative overflow-hidden max-w-2xl">
+              <div className="flex animate-marquee whitespace-nowrap">
+                {[...logos, ...logos, ...logos].map((logo, index) => (
+                  <img 
+                    key={index}
+                    src={logo.image} 
+                    alt={logo.name}
+                    className="h-10 w-auto object-contain flex-shrink-0 brightness-0 invert opacity-80 mx-6"
+                  />
+                ))}
+              </div>
             </div>
           </div>
 
