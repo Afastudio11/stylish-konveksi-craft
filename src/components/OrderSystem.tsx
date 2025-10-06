@@ -97,7 +97,7 @@ const OrderSystem = () => {
                 const Icon = step.icon;
                 
                 return (
-                  <div key={index} className="relative flex flex-col items-center">
+                  <div key={index} className={`relative flex flex-col items-center ${index === 6 ? 'col-start-2' : ''}`}>
                     <button 
                       onClick={() => setSelectedStep(index)}
                       className="flex flex-col items-center group cursor-pointer"
@@ -121,43 +121,35 @@ const OrderSystem = () => {
 
           {/* Right Column - Info Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 content-center h-full">
-            <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-            <div className="flex justify-center mb-4">
-              <div className="p-3 rounded-xl" style={{ backgroundColor: '#d4ff00' }}>
-                <Package className="w-8 h-8 text-black" />
+            <div className="bg-accent rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
+              <div className="flex justify-center mb-4">
+                <Package className="w-10 h-10 text-black" />
               </div>
-            </div>
-              <h4 className="text-lg font-bold text-black mb-2">Minimum Order</h4>
+              <h4 className="text-sm font-bold text-black mb-2">MINIMUM ORDER</h4>
               <p className="text-2xl font-black text-black">12 PCS</p>
             </div>
 
-            <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-            <div className="flex justify-center mb-4">
-              <div className="p-3 rounded-xl" style={{ backgroundColor: '#d4ff00' }}>
-                <Clock className="w-8 h-8 text-black" />
+            <div className="bg-accent rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
+              <div className="flex justify-center mb-4">
+                <Clock className="w-10 h-10 text-black" />
               </div>
-            </div>
-              <h4 className="text-lg font-bold text-black mb-2">Estimasi Produksi</h4>
+              <h4 className="text-sm font-bold text-black mb-2">ESTIMASI PRODUKSI</h4>
               <p className="text-2xl font-black text-black">10-23 Hari</p>
             </div>
 
-            <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-            <div className="flex justify-center mb-4">
-              <div className="p-3 rounded-xl" style={{ backgroundColor: '#d4ff00' }}>
-                <Wallet className="w-8 h-8 text-black" />
+            <div className="bg-accent rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
+              <div className="flex justify-center mb-4">
+                <Wallet className="w-10 h-10 text-black" />
               </div>
-            </div>
-              <h4 className="text-lg font-bold text-black mb-2">Sistem Bayar</h4>
+              <h4 className="text-sm font-bold text-black mb-2">SISTEM BAYAR</h4>
               <p className="text-xl font-black text-black">DP 50% + 50%</p>
             </div>
 
-            <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-            <div className="flex justify-center mb-4">
-              <div className="p-3 rounded-xl" style={{ backgroundColor: '#d4ff00' }}>
-                <Sparkles className="w-8 h-8 text-black" />
+            <div className="bg-accent rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
+              <div className="flex justify-center mb-4">
+                <Sparkles className="w-10 h-10 text-black" />
               </div>
-            </div>
-              <h4 className="text-lg font-bold text-black mb-2">Bonus</h4>
+              <h4 className="text-sm font-bold text-black mb-2">BONUS</h4>
               <p className="text-xl font-black text-black">Konsultasi Gratis</p>
             </div>
           </div>
