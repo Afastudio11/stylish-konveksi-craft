@@ -77,20 +77,19 @@ const OrderSystem = () => {
   ];
 
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
-
+    <section className="py-12 md:py-16 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="text-center mb-16 max-w-3xl mx-auto animate-fade-in">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6">
+        <div className="text-center mb-10 max-w-3xl mx-auto animate-fade-in">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-4">
             Sistem <span className="text-accent">Order</span>
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-base text-muted-foreground leading-relaxed">
             Proses pemesanan yang mudah dan transparan untuk kenyamanan Anda
           </p>
         </div>
 
         {/* Alur Pembelian */}
-        <div className="mb-16">
+        <div className="mb-10">
           <h3 className="text-2xl md:text-3xl font-black text-center mb-12 text-foreground">
             Alur Pembelian
           </h3>

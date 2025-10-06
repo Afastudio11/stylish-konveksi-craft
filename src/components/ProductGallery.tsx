@@ -117,19 +117,18 @@ const ProductGallery = () => {
   };
 
   return (
-    <section className="py-12 md:py-16 bg-background relative overflow-hidden">
-
+    <section className="py-10 md:py-12 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="text-center mb-12 md:mb-16 animate-slide-up">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-4">
+        <div className="text-center mb-8 md:mb-10 animate-slide-up">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-3">
             Our <span className="text-primary">Portofolio</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto">
             Lihat berbagai produk konveksi berkualitas yang telah kami buat untuk klien kami
           </p>
         </div>
 
-        <div className="relative h-[450px] md:h-[550px] mb-12">
+        <div className="relative h-[380px] md:h-[480px] mb-8">
           <div className="absolute inset-0 flex items-center justify-center overflow-hidden" style={{ perspective: '1500px', perspectiveOrigin: 'center center' }}>
             <div className="relative w-full h-full flex items-center justify-center" style={{ transformStyle: 'preserve-3d' }}>
               {getVisibleProducts().map((product, idx) => {

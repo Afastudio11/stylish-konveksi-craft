@@ -36,25 +36,25 @@ ${formData.message}`;
   };
 
   return (
-    <section id="contact" className="py-24 bg-background relative overflow-hidden">
+    <section id="contact" className="py-12 md:py-16 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-start max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start max-w-7xl mx-auto">
           {/* Left Side - Info */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             <div>
-              <h2 className="text-5xl md:text-6xl font-black text-foreground mb-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-3">
                 Contact Us
               </h2>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-base text-muted-foreground">
                 Ceritakan sedikit tentang Anda, dan kami akan memberikan informasi lebih lengkap tentang kami.
               </p>
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold text-foreground mb-4">
+              <h3 className="text-xl font-bold text-foreground mb-3">
                 Ngobrol dengan tim kami hari ini
               </h3>
-              <ol className="space-y-3 list-decimal list-inside text-muted-foreground">
+              <ol className="space-y-2 list-decimal list-inside text-sm text-muted-foreground">
                 <li>Pahami bagaimana produk kami dapat memenuhi kebutuhan Anda</li>
                 <li>Temukan kemampuan kami dan dapatkan jawaban atas pertanyaan Anda</li>
                 <li>Dapatkan penawaran yang disesuaikan</li>
@@ -62,7 +62,7 @@ ${formData.message}`;
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold text-foreground mb-6">
+              <h3 className="text-xl font-bold text-foreground mb-4">
                 Temukan Sekala Industry
               </h3>
               <div className="space-y-4">

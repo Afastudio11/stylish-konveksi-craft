@@ -457,24 +457,24 @@ const ProductCard = ({ product }: { product: Product }) => {
 
 const Products = () => {
   return (
-    <section id="products" className="py-24 bg-background relative overflow-hidden">
+    <section id="products" className="py-12 md:py-16 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-12 items-start">
           {/* Left Column - Title and Description */}
           <div className="animate-fade-in">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-3">
               Daftar Harga
             </h2>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black gradient-text mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black gradient-text mb-5">
               Produk Konveksi
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-base text-muted-foreground leading-relaxed">
               Lihat detail lengkap harga, ukuran, dan spesifikasi produk kami. Klik pada setiap produk untuk melihat informasi selengkapnya.
             </p>
           </div>
 
           {/* Right Column - Product Grid */}
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-3">
             {products.map((product, index) => (
               <div
                 key={index}
