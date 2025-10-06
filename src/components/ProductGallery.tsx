@@ -155,22 +155,25 @@ const ProductGallery = () => {
                       transform: `translate3d(${translateX}px, 0, ${translateZ}px) rotateY(${rotateY}deg) scale3d(${scale}, ${scale}, 1)`,
                       opacity,
                       zIndex,
-                      transition: 'transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.8s ease-in-out',
+                      transition: 'transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s cubic-bezier(0.4, 0, 0.2, 1)',
                       transformStyle: 'preserve-3d',
                       willChange: 'transform, opacity',
                       backfaceVisibility: 'hidden',
                       WebkitBackfaceVisibility: 'hidden',
                       WebkitFontSmoothing: 'antialiased',
                       MozOsxFontSmoothing: 'grayscale',
+                      WebkitTransform: `translate3d(${translateX}px, 0, ${translateZ}px) rotateY(${rotateY}deg) scale3d(${scale}, ${scale}, 1)`,
                     }}
                   >
                     <div className={`relative overflow-hidden rounded-2xl bg-white shadow-xl h-[380px] md:h-[450px] w-[280px] md:w-[320px] ${
                       isCenter ? 'ring-4 ring-accent shadow-2xl' : ''
                     }`}
                     style={{
-                      transition: 'box-shadow 0.8s ease-in-out',
+                      transition: 'box-shadow 1s cubic-bezier(0.4, 0, 0.2, 1)',
                       backfaceVisibility: 'hidden',
                       WebkitBackfaceVisibility: 'hidden',
+                      transform: 'translateZ(0)',
+                      WebkitTransform: 'translateZ(0)',
                     }}>
                       <img
                         src={product.image}
@@ -182,7 +185,7 @@ const ProductGallery = () => {
                         isCenter ? 'opacity-80' : 'opacity-60'
                       }`}
                       style={{
-                        transition: 'opacity 0.8s ease-in-out'
+                        transition: 'opacity 1s cubic-bezier(0.4, 0, 0.2, 1)'
                       }} />
                       
                       <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
@@ -193,7 +196,7 @@ const ProductGallery = () => {
                           isCenter ? 'text-xl md:text-2xl' : 'text-lg md:text-xl'
                         }`}
                         style={{
-                          transition: 'font-size 0.8s ease-in-out'
+                          transition: 'font-size 1s cubic-bezier(0.4, 0, 0.2, 1)'
                         }}>
                           {product.title}
                         </h3>
