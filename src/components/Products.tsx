@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Plus, Shirt, ShirtIcon, Layers, Circle, Waves, School, GraduationCap, Flower2, HardHat, CloudRain, Move, Award } from "lucide-react";
+import { Plus, Shirt, ShirtIcon, Layers, Circle, Waves, School, GraduationCap, Flower2, HardHat, CloudRain, Move, Award, ChevronRight } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -354,12 +354,12 @@ const ProductCard = ({ product }: { product: Product }) => {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="flex flex-col items-center gap-3 p-6 bg-card rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:scale-105 w-full"
+        className="relative flex items-center justify-center p-6 bg-primary rounded-2xl transition-all duration-300 hover:shadow-xl hover:scale-105 w-full min-h-[120px] group"
       >
-        <div className="p-4 bg-primary/10 rounded-xl">
-          <Icon className="w-8 h-8 text-primary" />
+        <h3 className="text-lg md:text-xl font-bold text-black text-center">{product.name}</h3>
+        <div className="absolute top-2 right-2 opacity-60 group-hover:opacity-100 transition-opacity">
+          <ChevronRight className="w-5 h-5 text-black" />
         </div>
-        <h3 className="text-lg text-card-foreground">{product.name}</h3>
       </button>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -457,32 +457,33 @@ const ProductCard = ({ product }: { product: Product }) => {
 const Products = () => {
   return (
     <section id="products" className="py-24 bg-background relative overflow-hidden">
-
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="text-center mb-16 max-w-3xl mx-auto animate-fade-in">
-          <div className="inline-block mb-4">
-            <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm uppercase tracking-wider">
-              Pricelist
-            </span>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Left Column - Title and Description */}
+          <div className="animate-fade-in">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-4">
+              Daftar Harga
+            </h2>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black gradient-text mb-6">
+              Produk Konveksi
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Lihat detail lengkap harga, ukuran, dan spesifikasi produk kami. Klik pada setiap produk untuk melihat informasi selengkapnya.
+            </p>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 text-balance">
-            Daftar Harga <span className="gradient-text">Produk Konveksi</span>
-          </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Lihat detail lengkap harga, ukuran, dan spesifikasi produk kami. Klik pada setiap produk untuk melihat informasi selengkapnya.
-          </p>
-        </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {products.map((product, index) => (
-            <div
-              key={index}
-              className="animate-scale-in"
-              style={{ animationDelay: `${index * 0.05}s` }}
-            >
-              <ProductCard product={product} />
-            </div>
-          ))}
+          {/* Right Column - Product Grid */}
+          <div className="grid grid-cols-3 gap-4">
+            {products.map((product, index) => (
+              <div
+                key={index}
+                className="animate-scale-in"
+                style={{ animationDelay: `${index * 0.05}s` }}
+              >
+                <ProductCard product={product} />
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="mt-16 text-center">
