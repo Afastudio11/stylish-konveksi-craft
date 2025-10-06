@@ -459,7 +459,7 @@ const Products = () => {
   return (
     <section id="products" className="py-24 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Title and Description */}
           <div className="animate-fade-in">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-4">
@@ -485,12 +485,6 @@ const Products = () => {
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="mt-16 text-center">
-          <p className="text-lg text-muted-foreground">
-            #KALACINTABERPOLA - Hubungi kami untuk konsultasi dan pemesanan
-          </p>
         </div>
       </div>
     </section>

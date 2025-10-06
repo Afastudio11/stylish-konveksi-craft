@@ -102,15 +102,10 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-center items-center gap-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
           <p className="text-white/60 text-sm">
             © 2024 Sekala Industry. All rights reserved.
           </p>
-          <div className="flex items-center gap-2 px-6 py-2 bg-accent/10 rounded-full border border-accent/20">
-            <span className="text-accent font-black tracking-widest text-sm">
-              #KALACINTABERPOLA
-            </span>
-          </div>
         </div>
       </div>
     </footer>

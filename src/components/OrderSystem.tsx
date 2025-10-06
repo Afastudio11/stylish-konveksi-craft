@@ -1,37 +1,79 @@
+import { useState } from "react";
 import { MessageCircle, Users, Handshake, FileText, Factory, CreditCard, Truck } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const OrderSystem = () => {
-  const orderSteps = [
-    {
-      number: "1",
+  const [selectedStep, setSelectedStep] = useState<number | null>(null);
+
+  const processFlow = [
+    { 
+      icon: MessageCircle, 
+      label: "Chat", 
+      color: "bg-primary", 
+      iconColor: "text-accent", 
+      lineColor: "bg-primary",
+      title: "Chat dengan Tim Kami",
+      description: "Mulai percakapan dengan tim kami melalui WhatsApp untuk memulai proses pemesanan. Kami siap membantu Anda kapan saja!"
+    },
+    { 
+      icon: Users, 
+      label: "Konsultasi", 
+      color: "bg-accent", 
+      iconColor: "text-black", 
+      lineColor: "bg-accent",
       title: "Konsultasi Awal",
       description: "Costumer dapat memulai proses pemesanan dengan menghubungi kami melalui WhatsApp. Tim kami akan melakukan sesi konsultasi untuk memahami kebutuhan Anda, mulai dari jenis produk, bahan yang diinginkan, hingga estimasi kuantitas. Setelah spesifikasi disepakati, kami akan mengirimkan penawaran harga dalam bentuk invoice."
     },
-    {
-      number: "2",
-      title: "Minimum Order",
-      description: "Sekala Industry menetapkan jumlah minimum pemesanan sebesar 12 PCS. Ketentuan ini berlaku untuk efisiensi dalam proses produksi dan optimalisasi biaya. Pemesanan dalam jumlah lebih besar dapat memberikan fleksibilitas tambahan, baik dari sisi harga maupun pilihan bahan."
+    { 
+      icon: Handshake, 
+      label: "Deal", 
+      color: "bg-primary", 
+      iconColor: "text-accent", 
+      lineColor: "bg-primary",
+      title: "Kesepakatan Deal",
+      description: "Setelah konsultasi, kami akan menyepakati detail produk, harga, dan timeline. Kesepakatan ini akan menjadi dasar untuk proses selanjutnya."
     },
-    {
-      number: "3",
-      title: "Sistem Pembayaran",
-      description: "Pembayaran dilakukan dalam dua tahap sebagai berikut:\n\nTahap 1 - Down Payment (DP) sebesar 50% dari total nilai invoice sebagai konfirmasi pemesanan dan dasar dimulainya proses produksi.\n\nTahap 2 - Pelunasan sebesar 50% dilakukan setelah produksi selesai dan produk siap untuk dikirim. Tim kami akan menghubungi pelanggan untuk pemberitahuan pelunasan sebelum pengiriman dilakukan."
+    { 
+      icon: FileText, 
+      label: "DP", 
+      color: "bg-accent", 
+      iconColor: "text-black", 
+      lineColor: "bg-accent",
+      title: "Down Payment (DP)",
+      description: "Pembayaran DP sebesar 50% dari total nilai invoice sebagai konfirmasi pemesanan dan dasar dimulainya proses produksi. Minimum order adalah 12 PCS untuk efisiensi produksi."
     },
-    {
-      number: "4",
+    { 
+      icon: Factory, 
+      label: "Produksi", 
+      color: "bg-primary", 
+      iconColor: "text-accent", 
+      lineColor: "bg-primary",
       title: "Proses Produksi",
       description: "Produksi akan dimulai setelah pembayaran DP diterima. Estimasi waktu produksi adalah antara 10 hingga 23 hari kerja, tergantung kompleksitas desain dan jumlah pesanan. Pelanggan akan mendapatkan update secara berkala mengenai progress produksi untuk memastikan transparansi dan kenyamanan selama proses berlangsung."
+    },
+    { 
+      icon: CreditCard, 
+      label: "Pelunasan", 
+      color: "bg-accent", 
+      iconColor: "text-black", 
+      lineColor: "bg-accent",
+      title: "Pelunasan",
+      description: "Pelunasan sebesar 50% dilakukan setelah produksi selesai dan produk siap untuk dikirim. Tim kami akan menghubungi pelanggan untuk pemberitahuan pelunasan sebelum pengiriman dilakukan."
+    },
+    { 
+      icon: Truck, 
+      label: "Pengiriman", 
+      color: "bg-primary", 
+      iconColor: "text-accent", 
+      lineColor: "bg-primary",
+      title: "Pengiriman Produk",
+      description: "Setelah pelunasan, produk akan segera dikirim ke alamat tujuan. Kami akan memberikan informasi tracking untuk memantau pengiriman produk Anda."
     }
-  ];
-
-  const processFlow = [
-    { icon: MessageCircle, label: "Chat", color: "bg-primary", iconColor: "text-accent", lineColor: "bg-primary" },
-    { icon: Users, label: "Konsultasi", color: "bg-accent", iconColor: "text-black", lineColor: "bg-accent" },
-    { icon: Handshake, label: "Deal", color: "bg-primary", iconColor: "text-accent", lineColor: "bg-primary" },
-    { icon: FileText, label: "DP", color: "bg-accent", iconColor: "text-black", lineColor: "bg-accent" },
-    { icon: Factory, label: "Produksi", color: "bg-primary", iconColor: "text-accent", lineColor: "bg-primary" },
-    { icon: CreditCard, label: "Pelunasan", color: "bg-accent", iconColor: "text-black", lineColor: "bg-accent" },
-    { icon: Truck, label: "Pengiriman", color: "bg-primary", iconColor: "text-accent", lineColor: "bg-primary" }
   ];
 
   return (
@@ -48,7 +90,7 @@ const OrderSystem = () => {
         </div>
 
         {/* Alur Pembelian */}
-        <div className="mb-20">
+        <div>
           <h3 className="text-2xl md:text-3xl font-black text-center mb-12 text-foreground">
             Alur Pembelian
           </h3>
@@ -57,12 +99,15 @@ const OrderSystem = () => {
               const Icon = step.icon;
               return (
                 <div key={index} className="flex items-center">
-                  <div className="flex flex-col items-center group">
+                  <button 
+                    onClick={() => setSelectedStep(index)}
+                    className="flex flex-col items-center group cursor-pointer"
+                  >
                     <div className={`${step.color} p-6 rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                       <Icon className={`w-8 h-8 ${step.iconColor}`} />
                     </div>
                     <span className="mt-3 text-foreground font-medium">{step.label}</span>
-                  </div>
+                  </button>
                   {index < processFlow.length - 1 && (
                     <div className={`hidden md:block w-12 h-0.5 ${step.lineColor} mx-2`} />
                   )}
@@ -71,34 +116,35 @@ const OrderSystem = () => {
             })}
           </div>
         </div>
+      </div>
 
-        {/* Order Steps */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {orderSteps.map((step, index) => (
-            <div
-              key={index}
-              className="relative bg-gradient-to-br from-primary to-primary/80 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-slide-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
-                  <span className="text-2xl font-black text-foreground">{step.number}</span>
-                </div>
-                <h4 className="text-xl md:text-2xl font-black text-white">{step.title}</h4>
-              </div>
-              <p className="text-white/90 leading-relaxed whitespace-pre-line">
-                {step.description}
+      {/* Dialog for Step Details */}
+      <Dialog open={selectedStep !== null} onOpenChange={() => setSelectedStep(null)}>
+        <DialogContent className="max-w-2xl">
+          <DialogHeader>
+            <DialogTitle className="text-2xl flex items-center gap-3">
+              {selectedStep !== null && (
+                <>
+                  <div className={`p-3 ${processFlow[selectedStep].color} rounded-xl`}>
+                    {(() => {
+                      const Icon = processFlow[selectedStep].icon;
+                      return <Icon className={`w-6 h-6 ${processFlow[selectedStep].iconColor}`} />;
+                    })()}
+                  </div>
+                  {processFlow[selectedStep].title}
+                </>
+              )}
+            </DialogTitle>
+          </DialogHeader>
+          {selectedStep !== null && (
+            <div className="mt-4">
+              <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                {processFlow[selectedStep].description}
               </p>
             </div>
-          ))}
-        </div>
-
-        <div className="mt-16 text-center">
-          <p className="text-xl text-primary font-medium">
-            #KALACINTABERPOLA
-          </p>
-        </div>
-      </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
