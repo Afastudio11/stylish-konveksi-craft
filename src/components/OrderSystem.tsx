@@ -98,15 +98,9 @@ const OrderSystem = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <p className="text-xl text-primary font-medium mb-6">
+          <p className="text-xl text-primary font-medium">
             #KALACINTABERPOLA
           </p>
-          <a
-            href="#contact"
-            className="inline-block px-8 py-4 bg-accent text-foreground rounded-full hover:bg-accent-dark transition-all duration-300 shadow-glow-accent hover:shadow-xl hover:scale-105"
-          >
-            Mulai Konsultasi Sekarang
-          </a>
         </div>
       </div>
     </section>

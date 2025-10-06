@@ -238,15 +238,6 @@ const ProductGallery = () => {
             />
           ))}
         </div>
-
-        <div className="text-center animate-fade-in">
-          <a
-            href="#contact"
-            className="inline-block px-8 py-4 bg-accent text-foreground font-bold rounded-full hover:bg-accent-dark transition-all duration-300 shadow-glow-accent hover:shadow-xl hover:scale-105"
-          >
-            Konsultasi Gratis Sekarang
-          </a>
-        </div>
       </div>
     </section>
   );

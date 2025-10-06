@@ -490,15 +490,9 @@ const Products = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <p className="text-lg text-muted-foreground mb-6">
+          <p className="text-lg text-muted-foreground">
             #KALACINTABERPOLA - Hubungi kami untuk konsultasi dan pemesanan
           </p>
-          <a
-            href="#contact"
-            className="inline-block px-8 py-4 bg-accent text-foreground rounded-full hover:bg-accent-dark transition-all duration-300 shadow-glow-accent hover:shadow-xl hover:scale-105"
-          >
-            Konsultasi Gratis Sekarang
-          </a>
         </div>
       </div>
     </section>
