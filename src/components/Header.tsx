@@ -74,7 +74,7 @@ const Header = () => {
             ))}
             <div className="ml-2">
               <Button 
-                onClick={() => scrollToSection("contact")}
+                onClick={() => window.open('https://wa.me/6285754777068?text=Halo%20Sekala%20Industry,%20saya%20ingin%20konsultasi%20untuk%20pemesanan%20produk', '_blank')}
                 size="sm"
                 className="bg-accent hover:bg-accent-dark text-foreground font-bold px-6 py-2 transition-all duration-300 hover:scale-105 shadow-glow-accent"
                 data-testid="button-contact-header"
@@ -114,7 +114,7 @@ const Header = () => {
               </button>
             ))}
             <Button 
-              onClick={() => scrollToSection("contact")}
+              onClick={() => window.open('https://wa.me/6285754777068?text=Halo%20Sekala%20Industry,%20saya%20ingin%20konsultasi%20untuk%20pemesanan%20produk', '_blank')}
               className="bg-accent hover:bg-accent-dark text-foreground font-bold w-full mt-2 shadow-glow-accent"
               data-testid="button-contact-mobile"
             >
