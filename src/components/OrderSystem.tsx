@@ -90,8 +90,8 @@ const OrderSystem = () => {
 
         {/* Process Flow - Horizontal */}
         <div className="mb-12">
-          <div className="flex items-center justify-center overflow-x-auto pb-4">
-            <div className="flex gap-3 md:gap-4 lg:gap-6 px-4">
+          <div className="flex items-center justify-center overflow-x-auto pb-4 pt-4">
+            <div className="flex gap-3 md:gap-4 lg:gap-6 px-4 max-w-6xl mx-auto justify-center">
               {processFlow.map((step, index) => {
                 const Icon = step.icon;
                 
@@ -110,7 +110,7 @@ const OrderSystem = () => {
                           {index + 1}
                         </div>
                       </div>
-                      <span className="mt-3 text-xs md:text-sm lg:text-base font-bold text-foreground text-center whitespace-nowrap">{step.label}</span>
+                      <span className="mt-3 text-xs md:text-sm lg:text-base font-bold text-foreground text-center max-w-[80px] md:max-w-none">{step.label}</span>
                     </button>
                   </div>
                 );
