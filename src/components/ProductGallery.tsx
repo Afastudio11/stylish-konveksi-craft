@@ -152,21 +152,25 @@ const ProductGallery = () => {
                     key={`${product.id}-${idx}`}
                     className="absolute"
                     style={{
-                      transform: `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,
+                      transform: `translate3d(${translateX}px, 0, ${translateZ}px) rotateY(${rotateY}deg) scale3d(${scale}, ${scale}, 1)`,
                       opacity,
                       zIndex,
-                      transition: 'all 1.2s cubic-bezier(0.165, 0.84, 0.44, 1)',
+                      transition: 'transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.8s ease-in-out',
                       transformStyle: 'preserve-3d',
                       willChange: 'transform, opacity',
                       backfaceVisibility: 'hidden',
+                      WebkitBackfaceVisibility: 'hidden',
+                      WebkitFontSmoothing: 'antialiased',
+                      MozOsxFontSmoothing: 'grayscale',
                     }}
                   >
                     <div className={`relative overflow-hidden rounded-2xl bg-white shadow-xl h-[380px] md:h-[450px] w-[280px] md:w-[320px] ${
                       isCenter ? 'ring-4 ring-accent shadow-2xl' : ''
                     }`}
                     style={{
-                      transition: 'all 1.2s cubic-bezier(0.165, 0.84, 0.44, 1)',
-                      willChange: 'box-shadow'
+                      transition: 'box-shadow 0.8s ease-in-out',
+                      backfaceVisibility: 'hidden',
+                      WebkitBackfaceVisibility: 'hidden',
                     }}>
                       <img
                         src={product.image}
@@ -178,7 +182,7 @@ const ProductGallery = () => {
                         isCenter ? 'opacity-80' : 'opacity-60'
                       }`}
                       style={{
-                        transition: 'opacity 1.2s cubic-bezier(0.165, 0.84, 0.44, 1)'
+                        transition: 'opacity 0.8s ease-in-out'
                       }} />
                       
                       <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
@@ -189,7 +193,7 @@ const ProductGallery = () => {
                           isCenter ? 'text-xl md:text-2xl' : 'text-lg md:text-xl'
                         }`}
                         style={{
-                          transition: 'font-size 1.2s cubic-bezier(0.165, 0.84, 0.44, 1)'
+                          transition: 'font-size 0.8s ease-in-out'
                         }}>
                           {product.title}
                         </h3>
