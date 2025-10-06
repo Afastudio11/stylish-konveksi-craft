@@ -121,37 +121,37 @@ const OrderSystem = () => {
 
         {/* Info Cards */}
         <div className="mb-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
-            <div className="bg-accent rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <div className="flex justify-center mb-4">
-                <Package className="w-10 h-10 text-black" />
+          <div className="flex gap-3 md:gap-4 lg:gap-6 px-4 max-w-6xl mx-auto justify-center flex-wrap">
+            <div className="bg-accent rounded-2xl p-4 md:p-5 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 flex-shrink-0 w-[140px] md:w-[160px] lg:w-[180px]">
+              <div className="flex justify-center mb-3">
+                <Package className="w-8 h-8 md:w-9 md:h-9 text-black" />
               </div>
-              <h4 className="text-sm font-bold text-black mb-2">MINIMUM ORDER</h4>
-              <p className="text-2xl font-black text-black">12 PCS</p>
+              <h4 className="text-xs font-bold text-black mb-2">MINIMUM ORDER</h4>
+              <p className="text-xl md:text-2xl font-black text-black">12 PCS</p>
             </div>
 
-            <div className="bg-accent rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <div className="flex justify-center mb-4">
-                <Clock className="w-10 h-10 text-black" />
+            <div className="bg-accent rounded-2xl p-4 md:p-5 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 flex-shrink-0 w-[140px] md:w-[160px] lg:w-[180px]">
+              <div className="flex justify-center mb-3">
+                <Clock className="w-8 h-8 md:w-9 md:h-9 text-black" />
               </div>
-              <h4 className="text-sm font-bold text-black mb-2">ESTIMASI PRODUKSI</h4>
-              <p className="text-2xl font-black text-black">10-23 Hari</p>
+              <h4 className="text-xs font-bold text-black mb-2">ESTIMASI PRODUKSI</h4>
+              <p className="text-xl md:text-2xl font-black text-black">10-23 Hari</p>
             </div>
 
-            <div className="bg-accent rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <div className="flex justify-center mb-4">
-                <Wallet className="w-10 h-10 text-black" />
+            <div className="bg-accent rounded-2xl p-4 md:p-5 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 flex-shrink-0 w-[140px] md:w-[160px] lg:w-[180px]">
+              <div className="flex justify-center mb-3">
+                <Wallet className="w-8 h-8 md:w-9 md:h-9 text-black" />
               </div>
-              <h4 className="text-sm font-bold text-black mb-2">SISTEM BAYAR</h4>
-              <p className="text-xl font-black text-black">DP 50% + 50%</p>
+              <h4 className="text-xs font-bold text-black mb-2">SISTEM BAYAR</h4>
+              <p className="text-lg md:text-xl font-black text-black">DP 50% + 50%</p>
             </div>
 
-            <div className="bg-accent rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <div className="flex justify-center mb-4">
-                <Sparkles className="w-10 h-10 text-black" />
+            <div className="bg-accent rounded-2xl p-4 md:p-5 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 flex-shrink-0 w-[140px] md:w-[160px] lg:w-[180px]">
+              <div className="flex justify-center mb-3">
+                <Sparkles className="w-8 h-8 md:w-9 md:h-9 text-black" />
               </div>
-              <h4 className="text-sm font-bold text-black mb-2">BONUS</h4>
-              <p className="text-xl font-black text-black">Konsultasi Gratis</p>
+              <h4 className="text-xs font-bold text-black mb-2">BONUS</h4>
+              <p className="text-lg md:text-xl font-black text-black">Konsultasi Gratis</p>
             </div>
           </div>
         </div>

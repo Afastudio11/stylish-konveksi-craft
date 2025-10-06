@@ -41,25 +41,25 @@ const Hero = () => {
       }} />
 
       {/* Content */}
-      <div className="container mx-auto px-4 lg:px-8 relative z-10 py-20 md:py-32">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-8 relative z-10 py-20 md:py-32">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
           {/* Left Column - Text Content */}
           <div className="space-y-6 md:space-y-8 animate-slide-up">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight">
               <span className="text-white">Wujudkan</span><br />
               <span className="text-white">Brand Identity</span><br />
-              <span className="bg-accent text-foreground px-2 sm:px-2.5 inline-block shadow-glow-accent border-4 border-black mt-3 md:mt-4 break-words leading-[0.9]" style={{ paddingTop: '2px', paddingBottom: '2px' }}>Premium Kamu.</span>
+              <span className="bg-accent text-foreground px-2 sm:px-2.5 inline-block shadow-glow-accent border-4 border-black mt-3 md:mt-4 break-words leading-[0.9] max-w-full" style={{ paddingTop: '2px', paddingBottom: '2px' }}>Premium Kamu.</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl">
+            <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl pr-2">
               Sekala Industry adalah mitra terpercaya untuk kebutuhan konveksi profesional. Dari seragam perusahaan hingga merchandise custom dengan kualitas terbaik.
             </p>
 
             {/* Stats - 4 kotak dengan border tebal */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 max-w-2xl">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 w-full max-w-full md:max-w-2xl">
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="p-3 sm:p-4 flex flex-col items-center justify-center text-center border-4 border-black"
+                  className="p-3 sm:p-4 flex flex-col items-center justify-center text-center border-4 border-black min-w-0"
                   style={{ backgroundColor: '#d4ff00' }}
                 >
                   <div className="text-xl sm:text-2xl md:text-3xl font-black text-black">
@@ -73,7 +73,7 @@ const Hero = () => {
             </div>
 
             {/* Client Logos */}
-            <div className="relative overflow-hidden max-w-2xl">
+            <div className="relative overflow-hidden w-full max-w-full md:max-w-2xl">
               <div className="flex animate-marquee whitespace-nowrap">
                 {[...logos, ...logos, ...logos].map((logo, index) => (
                   <img 
