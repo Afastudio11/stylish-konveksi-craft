@@ -89,29 +89,30 @@ const OrderSystem = () => {
         </div>
 
         {/* Two Column Layout */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-12">
-          {/* Left Column - Alur Pembelian (Vertical) */}
-          <div>
-            <h3 className="text-2xl md:text-3xl font-black text-center lg:text-left mb-8 text-foreground">
-              Alur Pembelian
-            </h3>
-            <div className="flex flex-col space-y-4">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-12 items-start">
+          {/* Left Column - Alur Pembelian (Grid 3 columns with arrows) */}
+          <div className="flex items-center justify-center h-full">
+            <div className="grid grid-cols-3 gap-x-6 gap-y-8 md:gap-x-8 md:gap-y-10 relative py-4">
               {processFlow.map((step, index) => {
                 const Icon = step.icon;
+                
                 return (
-                  <div key={index} className="flex flex-col items-center">
+                  <div key={index} className="relative flex flex-col items-center">
                     <button 
                       onClick={() => setSelectedStep(index)}
-                      className="flex items-center gap-4 w-full group cursor-pointer"
+                      className="flex flex-col items-center group cursor-pointer"
                     >
-                      <div className={`${step.color} p-5 rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
-                        <Icon className={`w-7 h-7 ${step.iconColor}`} />
+                      <div className="relative">
+                        <div className={`${step.color} p-5 md:p-6 rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                          <Icon className={`w-8 h-8 md:w-10 md:h-10 ${step.iconColor}`} />
+                        </div>
+                        {/* Number Badge */}
+                        <div className="absolute -top-2 -right-2 bg-black text-white w-7 h-7 rounded-full flex items-center justify-center text-sm font-black">
+                          {index + 1}
+                        </div>
                       </div>
-                      <span className="text-lg font-bold text-foreground">{step.label}</span>
+                      <span className="mt-3 text-sm md:text-base font-bold text-foreground text-center">{step.label}</span>
                     </button>
-                    {index < processFlow.length - 1 && (
-                      <div className={`w-0.5 h-8 ${step.lineColor} my-2 ml-9`} />
-                    )}
                   </div>
                 );
               })}
@@ -119,7 +120,7 @@ const OrderSystem = () => {
           </div>
 
           {/* Right Column - Info Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 content-start">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 content-center h-full">
             <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
             <div className="flex justify-center mb-4">
               <div className="p-3 rounded-xl" style={{ backgroundColor: '#d4ff00' }}>
