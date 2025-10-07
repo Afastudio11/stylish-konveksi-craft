@@ -18,7 +18,7 @@ const ClientLogos = () => {
   const duplicatedLogos = [...logos, ...logos];
   
   return (
-    <section className="py-3 bg-gray-50 overflow-hidden">
+    <section className="py-3 bg-white overflow-hidden">
       <div className="relative">
         <div className="flex animate-marquee-seamless whitespace-nowrap">
           {duplicatedLogos.map((logo, index) => (
