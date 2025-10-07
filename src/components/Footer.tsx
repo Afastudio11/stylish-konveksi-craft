@@ -87,15 +87,15 @@ const Footer = () => {
                 <div className="p-2 bg-white rounded-lg group-hover:bg-white/90 transition-colors">
                   <Mail className="w-4 h-4 flex-shrink-0 text-primary" />
                 </div>
-                <a href="mailto:info@sekalaindustry.com" className="hover:text-accent transition-colors font-medium" data-testid="footer-email">
-                  info@sekalaindustry.com
+                <a href="mailto:sekalaindustry@gmail.com" className="hover:text-accent transition-colors font-medium" data-testid="footer-email">
+                  sekalaindustry@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3 text-white/70 group">
                 <div className="p-2 bg-white rounded-lg group-hover:bg-white/90 transition-colors">
                   <MapPin className="w-4 h-4 flex-shrink-0 text-primary" />
                 </div>
-                <span className="font-medium">Jawa Barat, Indonesia</span>
+                <span className="font-medium">Jl. Maccini Sawah No 48, Maccini, Kota Makassar, Sulawesi Selatan</span>
               </li>
             </ul>
           </div>
