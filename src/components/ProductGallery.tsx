@@ -87,7 +87,7 @@ const ProductGallery = () => {
   ];
 
   return (
-    <section className="py-10 md:py-16 bg-background relative overflow-hidden">
+    <section className="py-10 md:py-16 bg-gray-50 relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16 animate-fade-in">

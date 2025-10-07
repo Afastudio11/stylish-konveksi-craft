@@ -457,7 +457,7 @@ const ProductCard = ({ product }: { product: Product }) => {
 
 const Products = () => {
   return (
-    <section id="products" className="py-20 md:py-28 bg-background relative overflow-hidden">
+    <section id="products" className="py-20 md:py-28 bg-gray-50 relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16 animate-fade-in">

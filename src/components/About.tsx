@@ -11,7 +11,7 @@ const features = [
 
 const About = () => {
   return (
-    <section id="about" className="py-12 md:py-16 bg-background relative overflow-hidden">
+    <section id="about" className="py-12 md:py-16 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">

@@ -77,7 +77,7 @@ const OrderSystem = () => {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-background relative overflow-hidden">
+    <section className="py-12 md:py-16 bg-gray-50 relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-10 max-w-3xl mx-auto animate-fade-in">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-4">
