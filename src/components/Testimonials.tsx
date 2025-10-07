@@ -60,7 +60,7 @@ const Testimonials = () => {
         {/* Header */}
         <div className="text-center mb-12 md:mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-3">
-            Apa Kata <span className="text-primary">Mereka</span>
+            Apa Kata <span className="text-primary">Mereka?</span>
           </h2>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
             Testimoni dari klien yang puas dengan layanan kami
