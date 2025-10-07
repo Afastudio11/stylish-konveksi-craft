@@ -24,12 +24,12 @@ const ClientLogos = () => {
           {duplicatedLogos.map((logo, index) => (
             <div
               key={index}
-              className="mx-10 inline-flex items-center justify-center flex-shrink-0"
+              className="mx-10 inline-flex items-center justify-center flex-shrink-0 w-28 h-14"
             >
               <img 
                 src={logo.image} 
                 alt={logo.name}
-                className="h-14 w-auto object-contain"
+                className="w-full h-full object-contain"
                 onError={(e) => {
                   console.error(`Failed to load image: ${logo.image}`);
                   e.currentTarget.style.display = 'none';
