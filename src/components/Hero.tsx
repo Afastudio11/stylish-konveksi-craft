@@ -9,11 +9,21 @@ const stats = [
 ];
 
 const logos = [
-  { name: "Mercedes-Benz", image: "/mercedes-benz.png" },
-  { name: "Pegadaian", image: "/pegadaian.png" },
-  { name: "Kota Makassar", image: "/makassar.png" },
-  { name: "Antam", image: "/antam.png" },
+  { name: "Universitas Hasanuddin", image: "/unhas.png" },
+  { name: "Tiga Rasa", image: "/tiga-rasa.png" },
+  { name: "SD Telkom Makassar", image: "/sd-telkom.png" },
+  { name: "Universitas Ciputra", image: "/uc.png" },
+  { name: "PLN", image: "/pln.png" },
+  { name: "Kabupaten Bantaeng", image: "/bantaeng.png" },
+  { name: "Universitas Tadulako", image: "/untad.png" },
+  { name: "Kota Makassar", image: "/kota-makassar.png" },
+  { name: "KNPI", image: "/knpi.png" },
+  { name: "Universitas Muhammadiyah Makassar", image: "/unismuh.png" },
+  { name: "BPJS Kesehatan", image: "/bpjs.png" },
+  { name: "Bank Mandiri", image: "/mandiri.png" },
+  { name: "Universitas Muslim Indonesia", image: "/umi.png" },
 ];
+
 
 const useCountAnimation = (end: number, duration: number = 2000, shouldStart: boolean) => {
   const [count, setCount] = useState(0);
@@ -135,12 +145,12 @@ const Hero = () => {
             {/* Client Logos */}
             <div className="relative overflow-hidden w-full">
               <div className="flex animate-marquee whitespace-nowrap">
-                {[...logos, ...logos, ...logos].map((logo, index) => (
+                {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
                   <img 
                     key={index}
                     src={logo.image} 
                     alt={logo.name}
-                    className="h-8 sm:h-10 w-auto object-contain flex-shrink-0 brightness-0 invert opacity-80 mx-4 sm:mx-6"
+                    className="h-10 sm:h-12 w-auto object-contain flex-shrink-0 mx-4 sm:mx-6"
                   />
                 ))}
               </div>

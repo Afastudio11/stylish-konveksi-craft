@@ -15,7 +15,7 @@ const logos = [
 ];
 
 const ClientLogos = () => {
-  const duplicatedLogos = [...logos, ...logos, ...logos, ...logos, ...logos];
+  const duplicatedLogos = [...logos, ...logos, ...logos, ...logos];
   
   return (
     <section className="py-3 overflow-hidden">
@@ -30,10 +30,6 @@ const ClientLogos = () => {
                 src={logo.image} 
                 alt={logo.name}
                 className="w-full h-full object-contain"
-                onError={(e) => {
-                  console.error(`Failed to load image: ${logo.image}`);
-                  e.currentTarget.style.display = 'none';
-                }}
               />
             </div>
           ))}

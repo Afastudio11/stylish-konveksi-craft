@@ -295,5 +295,5 @@ Secondary: #000000 (black), #E3E3E3 (light gray), #FFFFFF (white)
 }
 
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 20s linear infinite;
 }
