@@ -1,8 +1,17 @@
 const logos = [
-  { name: "Mercedes-Benz", image: "/mercedes-benz.png" },
-  { name: "Pegadaian", image: "/pegadaian.png" },
-  { name: "Kota Makassar", image: "/makassar.png" },
-  { name: "Antam", image: "/antam.png" },
+  { name: "Universitas Hasanuddin", image: "/unhas.png" },
+  { name: "Tiga Rasa", image: "/tiga-rasa.png" },
+  { name: "SD Telkom Makassar", image: "/sd-telkom.png" },
+  { name: "Universitas Ciputra", image: "/uc.png" },
+  { name: "PLN", image: "/pln.png" },
+  { name: "Kabupaten Bantaeng", image: "/bantaeng.png" },
+  { name: "Universitas Tadulako", image: "/untad.png" },
+  { name: "Kota Makassar", image: "/kota-makassar.png" },
+  { name: "KNPI", image: "/knpi.png" },
+  { name: "Universitas Muhammadiyah Makassar", image: "/unismuh.png" },
+  { name: "BPJS Kesehatan", image: "/bpjs.png" },
+  { name: "Bank Mandiri", image: "/mandiri.png" },
+  { name: "Universitas Muslim Indonesia", image: "/umi.png" },
 ];
 
 const ClientLogos = () => {
@@ -21,9 +30,6 @@ const ClientLogos = () => {
                 src={logo.image} 
                 alt={logo.name}
                 className="h-14 w-auto object-contain"
-                style={{
-                  filter: 'brightness(0) saturate(100%) invert(21%) sepia(96%) saturate(3066%) hue-rotate(222deg) brightness(98%) contrast(101%)'
-                }}
                 onError={(e) => {
                   console.error(`Failed to load image: ${logo.image}`);
                   e.currentTarget.style.display = 'none';
