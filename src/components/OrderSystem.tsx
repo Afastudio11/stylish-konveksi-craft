@@ -89,9 +89,9 @@ const OrderSystem = () => {
         </div>
 
         {/* Process Flow - Horizontal */}
-        <div className="mb-12">
-          <div className="overflow-x-auto pb-4 pt-4 -mx-4 px-4">
-            <div className="flex gap-2 md:gap-3 min-w-max md:w-full md:max-w-6xl md:mx-auto md:justify-center">
+        <div className="mb-16 md:mb-20">
+          <div className="overflow-x-auto pb-6 pt-6 -mx-4 px-4">
+            <div className="flex gap-4 md:gap-6 min-w-max md:w-full md:max-w-6xl md:mx-auto md:justify-center">
               {processFlow.map((step, index) => {
                 const Icon = step.icon;
                 
@@ -99,18 +99,18 @@ const OrderSystem = () => {
                   <div key={index} className="relative flex flex-col items-center flex-shrink-0">
                     <button 
                       onClick={() => setSelectedStep(index)}
-                      className="flex flex-col items-center group cursor-pointer"
+                      className="flex flex-col items-center group cursor-pointer transition-all duration-500 ease-out"
                     >
                       <div className="relative">
-                        <div className={`${step.color} p-3 md:p-4 rounded-lg shadow-lg group-hover:scale-110 transition-transform duration-300 w-[70px] h-[60px] md:w-[80px] md:h-[70px] flex items-center justify-center`}>
-                          <Icon className={`w-6 h-6 md:w-8 md:h-8 ${step.iconColor}`} />
+                        <div className={`${step.color} p-4 md:p-5 rounded-2xl shadow-lg group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500 ease-out w-[80px] h-[70px] md:w-[90px] md:h-[80px] flex items-center justify-center`}>
+                          <Icon className={`w-7 h-7 md:w-9 md:h-9 ${step.iconColor} transition-transform duration-500 group-hover:scale-110`} />
                         </div>
                         {/* Number Badge */}
-                        <div className="absolute -top-2 -right-2 bg-black text-white w-6 h-6 md:w-7 md:h-7 rounded-full flex items-center justify-center text-xs md:text-sm font-black">
+                        <div className="absolute -top-3 -right-3 bg-black text-white w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center text-sm md:text-base font-black shadow-md">
                           {index + 1}
                         </div>
                       </div>
-                      <span className="mt-2 text-[9px] md:text-sm font-bold text-foreground text-center leading-tight max-w-[70px] md:max-w-none">{step.label}</span>
+                      <span className="mt-3 text-xs md:text-base font-bold text-foreground text-center leading-snug max-w-[80px] md:max-w-none transition-colors duration-300 group-hover:text-primary">{step.label}</span>
                     </button>
                   </div>
                 );
@@ -120,26 +120,26 @@ const OrderSystem = () => {
         </div>
 
         {/* Info Cards */}
-        <div className="mb-12">
-          <div className="grid grid-cols-2 md:flex gap-2 md:gap-3 px-4 md:px-4 max-w-6xl mx-auto">
-            <div className="bg-accent rounded-lg p-2 md:p-4 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 md:flex-1 h-[80px] md:h-[70px] flex flex-col items-center justify-center">
-              <h4 className="text-[9px] md:text-xs font-bold text-black mb-1 leading-tight">MINIMUM ORDER</h4>
-              <p className="text-sm md:text-lg font-black text-black">12 PCS</p>
+        <div className="mb-16 md:mb-20">
+          <div className="grid grid-cols-2 md:flex gap-4 md:gap-5 px-4 md:px-4 max-w-6xl mx-auto">
+            <div className="bg-accent rounded-2xl p-4 md:p-6 text-center hover:shadow-2xl transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-1 md:flex-1 min-h-[100px] md:min-h-[90px] flex flex-col items-center justify-center">
+              <h4 className="text-xs md:text-sm font-bold text-black mb-2 leading-tight tracking-wide">MINIMUM ORDER</h4>
+              <p className="text-lg md:text-2xl font-black text-black">12 PCS</p>
             </div>
 
-            <div className="bg-accent rounded-lg p-2 md:p-4 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 md:flex-1 h-[80px] md:h-[70px] flex flex-col items-center justify-center">
-              <h4 className="text-[9px] md:text-xs font-bold text-black mb-1 leading-tight">ESTIMASI PRODUKSI</h4>
-              <p className="text-sm md:text-lg font-black text-black">10-23 Hari</p>
+            <div className="bg-accent rounded-2xl p-4 md:p-6 text-center hover:shadow-2xl transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-1 md:flex-1 min-h-[100px] md:min-h-[90px] flex flex-col items-center justify-center">
+              <h4 className="text-xs md:text-sm font-bold text-black mb-2 leading-tight tracking-wide">ESTIMASI PRODUKSI</h4>
+              <p className="text-lg md:text-2xl font-black text-black">10-23 Hari</p>
             </div>
 
-            <div className="bg-accent rounded-lg p-2 md:p-4 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 md:flex-1 h-[80px] md:h-[70px] flex flex-col items-center justify-center">
-              <h4 className="text-[9px] md:text-xs font-bold text-black mb-1 leading-tight">SISTEM BAYAR</h4>
-              <p className="text-xs md:text-base font-black text-black">DP 50% + 50%</p>
+            <div className="bg-accent rounded-2xl p-4 md:p-6 text-center hover:shadow-2xl transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-1 md:flex-1 min-h-[100px] md:min-h-[90px] flex flex-col items-center justify-center">
+              <h4 className="text-xs md:text-sm font-bold text-black mb-2 leading-tight tracking-wide">SISTEM BAYAR</h4>
+              <p className="text-base md:text-xl font-black text-black">DP 50% + 50%</p>
             </div>
 
-            <div className="bg-accent rounded-lg p-2 md:p-4 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 md:flex-1 h-[80px] md:h-[70px] flex flex-col items-center justify-center">
-              <h4 className="text-[9px] md:text-xs font-bold text-black mb-1 leading-tight">BONUS</h4>
-              <p className="text-xs md:text-base font-black text-black">Konsultasi Gratis</p>
+            <div className="bg-accent rounded-2xl p-4 md:p-6 text-center hover:shadow-2xl transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-1 md:flex-1 min-h-[100px] md:min-h-[90px] flex flex-col items-center justify-center">
+              <h4 className="text-xs md:text-sm font-bold text-black mb-2 leading-tight tracking-wide">BONUS</h4>
+              <p className="text-base md:text-xl font-black text-black">Konsultasi Gratis</p>
             </div>
           </div>
         </div>
@@ -150,13 +150,13 @@ const OrderSystem = () => {
             href="https://wa.me/6285754777068?text=Halo%20Sekala%20Industry,%20saya%20ingin%20konsultasi%20untuk%20pemesanan%20produk"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 text-black font-black text-lg rounded-full shadow-2xl hover:shadow-lg transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-3 px-10 py-5 text-black font-black text-lg md:text-xl rounded-full shadow-2xl hover:shadow-xl transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-1"
             style={{ backgroundColor: '#d4ff00' }}
           >
-            <MessageCircle className="w-6 h-6" />
+            <MessageCircle className="w-6 h-6 transition-transform duration-500 group-hover:rotate-12" />
             Mulai Konsultasi Sekarang
           </a>
-          <p className="mt-4 text-muted-foreground">
+          <p className="mt-6 text-base md:text-lg text-muted-foreground">
             Tim kami siap membantu mewujudkan kebutuhan konveksi Anda
           </p>
         </div>
