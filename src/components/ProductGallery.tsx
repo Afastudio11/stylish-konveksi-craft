@@ -92,7 +92,7 @@ const ProductGallery = () => {
         {/* Header */}
         <div className="text-center mb-12 md:mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-3">
-            Our <span className="text-primary">Portofolio</span>
+            Our <span className="text-primary">Product</span>
           </h2>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
             Lihat berbagai produk konveksi berkualitas yang telah kami buat untuk klien kami

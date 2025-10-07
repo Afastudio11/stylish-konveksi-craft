@@ -297,3 +297,16 @@ Secondary: #000000 (black), #E3E3E3 (light gray), #FFFFFF (white)
 .animate-marquee {
   animation: marquee 20s linear infinite;
 }
+
+@keyframes marquee-seamless {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-seamless {
+  animation: marquee-seamless 30s linear infinite;
+}

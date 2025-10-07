@@ -15,16 +15,16 @@ const logos = [
 ];
 
 const ClientLogos = () => {
-  const duplicatedLogos = [...logos, ...logos, ...logos, ...logos];
+  const duplicatedLogos = [...logos, ...logos];
   
   return (
     <section className="py-3 overflow-hidden">
       <div className="relative">
-        <div className="flex animate-marquee whitespace-nowrap">
+        <div className="flex animate-marquee-seamless whitespace-nowrap">
           {duplicatedLogos.map((logo, index) => (
             <div
               key={index}
-              className="mx-10 inline-flex items-center justify-center flex-shrink-0 w-28 h-14"
+              className="mx-6 inline-flex items-center justify-center flex-shrink-0 w-36 h-18"
             >
               <img 
                 src={logo.image} 
