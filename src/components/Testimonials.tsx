@@ -1,58 +1,93 @@
-import { Quote } from "lucide-react";
-
-const testimonials = [
+const customerPhotos = [
   {
     id: 1,
-    name: "Budi Santoso",
-    position: "Manager Operasional",
-    company: "PT Maju Bersama",
-    text: "Kualitas produk konveksi dari Sekala Industry sangat memuaskan. Bahan berkualitas tinggi dan jahitan rapi - mitra terpercaya untuk kebutuhan konveksi profesional.",
-    avatar: "B"
+    image: "/attached_assets/IMG-20251008-WA0020_1759894910497.jpg",
+    alt: "Pelanggan Sekala Industry"
   },
   {
     id: 2,
-    name: "Siti Nurhaliza",
-    position: "HRD Manager",
-    company: "Bank Mandiri",
-    text: "Pelayanan yang sangat baik dan responsif. Tim Sekala Industry membantu kami mewujudkan desain seragam yang profesional untuk karyawan.",
-    avatar: "S"
+    image: "/attached_assets/IMG-20251008-WA0002_1759894910497.jpg",
+    alt: "Pelanggan Sekala Industry"
   },
   {
     id: 3,
-    name: "Ahmad Hidayat",
-    position: "Ketua Organisasi",
-    company: "KNPI Sulawesi Selatan",
-    text: "Hasil cetak sablon dan bordir sangat tajam dan awet. Harga yang ditawarkan juga sangat kompetitif - sangat direkomendasikan untuk kebutuhan organisasi.",
-    avatar: "A"
+    image: "/attached_assets/IMG-20251008-WA0003_1759894910497.jpg",
+    alt: "Pelanggan Sekala Industry"
   },
   {
     id: 4,
-    name: "Dewi Lestari",
-    position: "Event Organizer",
-    company: "Creative Event",
-    text: "Sekala Industry adalah partner terbaik untuk kebutuhan merchandise event kami. Selalu puas dengan hasil dan kecepatan produksinya - sangat reliable.",
-    avatar: "D"
+    image: "/attached_assets/IMG-20251008-WA0004_1759894910498.jpg",
+    alt: "Pelanggan Sekala Industry"
   },
   {
     id: 5,
-    name: "Rizki Maulana",
-    position: "Owner",
-    company: "Tiga Rasa",
-    text: "Kerjasama yang sangat profesional. Dari konsultasi, produksi hingga pengiriman semuanya berjalan lancar dan memuaskan - highly recommended partner.",
-    avatar: "R"
+    image: "/attached_assets/IMG-20251008-WA0005_1759894910498.jpg",
+    alt: "Pelanggan Sekala Industry"
   },
   {
     id: 6,
-    name: "Indah Permata",
-    position: "Koordinator Acara",
-    company: "Universitas Hasanuddin",
-    text: "Pengalaman bekerja sama dengan Sekala Industry sangat menyenangkan. Produk berkualitas tinggi dengan harga yang kompetitif - pilihan tepat untuk kampus.",
-    avatar: "I"
+    image: "/attached_assets/IMG-20251008-WA0006_1759894910499.jpg",
+    alt: "Pelanggan Sekala Industry"
+  },
+  {
+    id: 7,
+    image: "/attached_assets/IMG-20251008-WA0007_1759894910499.jpg",
+    alt: "Pelanggan Sekala Industry"
+  },
+  {
+    id: 8,
+    image: "/attached_assets/IMG-20251008-WA0008_1759894910499.jpg",
+    alt: "Pelanggan Sekala Industry"
+  },
+  {
+    id: 9,
+    image: "/attached_assets/IMG-20251008-WA0009_1759894910500.jpg",
+    alt: "Pelanggan Sekala Industry"
+  },
+  {
+    id: 10,
+    image: "/attached_assets/IMG-20251008-WA0010_1759894910500.jpg",
+    alt: "Pelanggan Sekala Industry"
+  },
+  {
+    id: 11,
+    image: "/attached_assets/IMG-20251008-WA0011_1759894910500.jpg",
+    alt: "Pelanggan Sekala Industry"
+  },
+  {
+    id: 12,
+    image: "/attached_assets/IMG-20251008-WA0012_1759894910501.jpg",
+    alt: "Pelanggan Sekala Industry"
+  },
+  {
+    id: 13,
+    image: "/attached_assets/IMG-20251008-WA0013_1759894910501.jpg",
+    alt: "Pelanggan Sekala Industry"
+  },
+  {
+    id: 14,
+    image: "/attached_assets/IMG-20251008-WA0014_1759894910501.jpg",
+    alt: "Pelanggan Sekala Industry"
+  },
+  {
+    id: 15,
+    image: "/attached_assets/IMG-20251008-WA0015_1759894910502.jpg",
+    alt: "Pelanggan Sekala Industry"
+  },
+  {
+    id: 16,
+    image: "/attached_assets/IMG-20251008-WA0016_1759894910502.jpg",
+    alt: "Pelanggan Sekala Industry"
+  },
+  {
+    id: 17,
+    image: "/attached_assets/IMG-20251008-WA0018_1759894910502.jpg",
+    alt: "Pelanggan Sekala Industry"
   }
 ];
 
 const Testimonials = () => {
-  const duplicatedTestimonials = [...testimonials, ...testimonials];
+  const duplicatedPhotos = [...customerPhotos, ...customerPhotos];
 
   return (
     <section className="py-16 md:py-24 bg-white overflow-hidden">
@@ -63,43 +98,23 @@ const Testimonials = () => {
             Apa Kata <span className="text-primary">Mereka?</span>
           </h2>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-            Testimoni dari klien yang puas dengan layanan kami
+            Kepuasan pelanggan adalah prioritas kami
           </p>
         </div>
 
-        {/* Scrolling Grid */}
+        {/* Scrolling Photo Gallery */}
         <div className="relative">
           <div className="flex gap-6 animate-scroll-testimonials">
-            {duplicatedTestimonials.map((testimonial, index) => (
+            {duplicatedPhotos.map((photo, index) => (
               <div
-                key={`${testimonial.id}-${index}`}
-                className="flex-shrink-0 w-[320px] md:w-[380px] bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                key={`${photo.id}-${index}`}
+                className="flex-shrink-0 w-[320px] md:w-[380px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
               >
-                {/* Quote Icon */}
-                <Quote className="w-10 h-10 text-primary mb-4" />
-                
-                {/* Testimonial Text */}
-                <p className="text-sm md:text-base text-foreground/80 leading-relaxed mb-6">
-                  {testimonial.text}
-                </p>
-
-                {/* Profile Section */}
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center text-white text-xl font-bold flex-shrink-0">
-                    {testimonial.avatar}
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-foreground text-sm md:text-base">
-                      {testimonial.name}
-                    </h4>
-                    <p className="text-xs md:text-sm text-muted-foreground">
-                      {testimonial.position}
-                    </p>
-                    <p className="text-xs text-muted-foreground/70">
-                      {testimonial.company}
-                    </p>
-                  </div>
-                </div>
+                <img
+                  src={photo.image}
+                  alt={photo.alt}
+                  className="w-full h-[400px] md:h-[480px] object-cover"
+                />
               </div>
             ))}
           </div>
