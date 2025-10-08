@@ -15,7 +15,7 @@ const logos = [
 ];
 
 const ClientLogos = () => {
-  const duplicatedLogos = [...logos, ...logos, ...logos, ...logos, ...logos, ...logos];
+  const duplicatedLogos = [...logos, ...logos];
   
   return (
     <section className="py-3 bg-white overflow-hidden">
