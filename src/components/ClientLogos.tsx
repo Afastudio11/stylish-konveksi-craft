@@ -29,9 +29,7 @@ const ClientLogos = () => {
               <img 
                 src={logo.image} 
                 alt={logo.name}
-                className={`max-w-full max-h-full object-contain mix-blend-multiply ${
-                  logo.name === "Bank Mandiri" ? "scale-50" : ""
-                }`}
+                className="max-w-full max-h-full object-contain mix-blend-multiply"
                 loading="lazy"
                 decoding="async"
               />
