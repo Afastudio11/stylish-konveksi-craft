@@ -29,7 +29,7 @@ const ClientLogos = () => {
               <img 
                 src={logo.image} 
                 alt={logo.name}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain mix-blend-multiply"
                 loading="lazy"
                 decoding="async"
               />
