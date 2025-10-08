@@ -429,7 +429,7 @@ const ProductCard = ({ product }: { product: Product }) => {
                     <div className="bg-accent text-foreground text-lg px-4 py-2 rounded-lg mb-3">
                       {price.quantity}
                     </div>
-                    <div className="text-3xl text-primary mb-2">
+                    <div className="text-3xl font-bold text-primary mb-2">
                       {price.price}
                     </div>
                     {price.materials && (
