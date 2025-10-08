@@ -20,7 +20,7 @@ const ClientLogos = () => {
   return (
     <section className="py-3 bg-white overflow-hidden">
       <div className="relative">
-        <div className="flex animate-marquee-seamless whitespace-nowrap">
+        <div className="inline-flex animate-marquee-seamless whitespace-nowrap">
           {duplicatedLogos.map((logo, index) => (
             <div
               key={index}
