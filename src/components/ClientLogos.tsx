@@ -15,7 +15,7 @@ const logos = [
 ];
 
 const ClientLogos = () => {
-  const duplicatedLogos = [...logos, ...logos];
+  const duplicatedLogos = [...logos, ...logos, ...logos, ...logos, ...logos, ...logos];
   
   return (
     <section className="py-3 bg-white overflow-hidden">
@@ -24,12 +24,14 @@ const ClientLogos = () => {
           {duplicatedLogos.map((logo, index) => (
             <div
               key={index}
-              className="mx-6 inline-flex items-center justify-center flex-shrink-0 w-36 h-18"
+              className="mx-4 md:mx-6 inline-flex items-center justify-center flex-shrink-0 w-28 md:w-36 h-16 md:h-18"
             >
               <img 
                 src={logo.image} 
                 alt={logo.name}
                 className="w-full h-full object-contain"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           ))}

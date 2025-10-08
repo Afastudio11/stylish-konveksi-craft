@@ -287,28 +287,30 @@ Secondary: #000000 (black), #E3E3E3 (light gray), #FFFFFF (white)
 
 @keyframes marquee {
   0% {
-    transform: translateX(0);
+    transform: translateX(0) translateZ(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateZ(0);
   }
 }
 
 .animate-marquee {
-  animation: marquee 20s linear infinite;
+  animation: marquee 25s linear infinite;
+  will-change: transform;
 }
 
 @keyframes marquee-seamless {
   from {
-    transform: translateX(0);
+    transform: translateX(0) translateZ(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateZ(0);
   }
 }
 
 .animate-marquee-seamless {
   animation: marquee-seamless 30s linear infinite;
+  will-change: transform;
 }
 
 @keyframes scroll-testimonials {

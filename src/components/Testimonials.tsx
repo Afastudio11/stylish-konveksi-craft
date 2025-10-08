@@ -1,3 +1,12 @@
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+
 const customerPhotos = [
   {
     id: 1,
@@ -87,8 +96,6 @@ const customerPhotos = [
 ];
 
 const Testimonials = () => {
-  const duplicatedPhotos = [...customerPhotos, ...customerPhotos, ...customerPhotos, ...customerPhotos];
-
   return (
     <section className="py-16 md:py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
@@ -102,23 +109,40 @@ const Testimonials = () => {
           </p>
         </div>
 
-        {/* Scrolling Photo Gallery */}
+        {/* Carousel Gallery - Bisa digeser otomatis & manual */}
         <div className="relative">
-          <div className="flex gap-6 animate-scroll-testimonials will-change-transform">
-            {duplicatedPhotos.map((photo, index) => (
-              <div
-                key={`${photo.id}-${index}`}
-                className="flex-shrink-0 w-[320px] md:w-[380px] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
-              >
-                <img
-                  src={photo.image}
-                  alt={photo.alt}
-                  className="w-full h-[400px] md:h-[480px] object-cover"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 3000,
+                stopOnInteraction: false,
+              }),
+            ]}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {customerPhotos.map((photo, index) => (
+                <CarouselItem key={photo.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <img
+                      src={photo.image}
+                      alt={photo.alt}
+                      className="w-full h-[350px] md:h-[480px] object-cover"
+                      loading="lazy"
+                      decoding="async"
+                      fetchpriority="low"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-2 md:left-4 bg-primary/90 text-white border-0 hover:bg-primary shadow-lg" />
+            <CarouselNext className="right-2 md:right-4 bg-primary/90 text-white border-0 hover:bg-primary shadow-lg" />
+          </Carousel>
         </div>
       </div>
     </section>

@@ -145,12 +145,14 @@ const Hero = () => {
             {/* Client Logos */}
             <div className="relative overflow-hidden w-full">
               <div className="flex animate-marquee whitespace-nowrap">
-                {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
+                {[...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos].map((logo, index) => (
                   <img 
                     key={index}
                     src={logo.image} 
                     alt={logo.name}
-                    className="h-10 sm:h-12 w-auto object-contain flex-shrink-0 mx-4 sm:mx-6"
+                    className="h-10 sm:h-12 w-auto object-contain flex-shrink-0 mx-3 sm:mx-6"
+                    loading="lazy"
+                    decoding="async"
                   />
                 ))}
               </div>
