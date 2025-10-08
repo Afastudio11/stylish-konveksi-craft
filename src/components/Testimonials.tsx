@@ -87,7 +87,7 @@ const customerPhotos = [
 ];
 
 const Testimonials = () => {
-  const duplicatedPhotos = [...customerPhotos, ...customerPhotos];
+  const duplicatedPhotos = [...customerPhotos, ...customerPhotos, ...customerPhotos, ...customerPhotos];
 
   return (
     <section className="py-16 md:py-24 bg-white overflow-hidden">
@@ -104,7 +104,7 @@ const Testimonials = () => {
 
         {/* Scrolling Photo Gallery */}
         <div className="relative">
-          <div className="flex gap-6 animate-scroll-testimonials">
+          <div className="flex gap-6 animate-scroll-testimonials will-change-transform">
             {duplicatedPhotos.map((photo, index) => (
               <div
                 key={`${photo.id}-${index}`}
@@ -114,6 +114,7 @@ const Testimonials = () => {
                   src={photo.image}
                   alt={photo.alt}
                   className="w-full h-[400px] md:h-[480px] object-cover"
+                  loading="lazy"
                 />
               </div>
             ))}
