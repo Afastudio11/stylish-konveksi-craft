@@ -24,12 +24,14 @@ const ClientLogos = () => {
           {duplicatedLogos.map((logo, index) => (
             <div
               key={index}
-              className="mx-4 md:mx-6 inline-flex items-center justify-center flex-shrink-0 w-28 md:w-36 h-16 md:h-18"
+              className="mx-4 md:mx-6 inline-flex items-center justify-center flex-shrink-0 w-32 md:w-40 h-20 md:h-24"
             >
               <img 
                 src={logo.image} 
                 alt={logo.name}
-                className="w-full h-full object-contain mix-blend-multiply"
+                className={`max-w-full max-h-full object-contain mix-blend-multiply ${
+                  logo.name === "Bank Mandiri" ? "scale-50" : ""
+                }`}
                 loading="lazy"
                 decoding="async"
               />
