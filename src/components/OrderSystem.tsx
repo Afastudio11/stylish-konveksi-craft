@@ -121,7 +121,7 @@ const OrderSystem = () => {
 
         {/* Info Cards */}
         <div className="mb-16 md:mb-20">
-          <div className="grid grid-cols-2 md:flex gap-4 md:gap-5 px-4 md:px-4 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:flex gap-4 md:gap-5 px-4 md:px-4 max-w-5xl mx-auto">
             <div className="bg-accent rounded-2xl p-4 md:p-6 text-center hover:shadow-2xl transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-1 md:flex-1 min-h-[100px] md:min-h-[90px] flex flex-col items-center justify-center">
               <h4 className="text-xs md:text-sm font-bold text-black mb-2 leading-tight tracking-wide">MINIMUM ORDER</h4>
               <p className="text-lg md:text-2xl font-black text-black">12 PCS</p>
