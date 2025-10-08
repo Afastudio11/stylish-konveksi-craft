@@ -144,8 +144,8 @@ const Hero = () => {
 
             {/* Client Logos */}
             <div className="relative overflow-hidden w-full">
-              <div className="flex animate-marquee whitespace-nowrap">
-                {[...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos].map((logo, index) => (
+              <div className="inline-flex animate-marquee whitespace-nowrap">
+                {[...logos, ...logos].map((logo, index) => (
                   <img 
                     key={index}
                     src={logo.image} 
