@@ -145,16 +145,22 @@ const Hero = () => {
             {/* Client Logos */}
             <div className="relative overflow-hidden w-full">
               <div className="inline-flex animate-marquee-seamless whitespace-nowrap">
-                {[...logos, ...logos, ...logos, ...logos, ...logos].map((logo, index) => (
-                  <img 
-                    key={index}
-                    src={logo.image} 
-                    alt={logo.name}
-                    className="h-10 sm:h-12 w-auto object-contain flex-shrink-0 mx-3 sm:mx-6"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                ))}
+                {[...logos, ...logos, ...logos, ...logos, ...logos].map((logo, index) => {
+                  const isTelkom = logo.name === "SD Telkom Makassar";
+                  
+                  return (
+                    <img 
+                      key={index}
+                      src={logo.image} 
+                      alt={logo.name}
+                      className={`object-contain flex-shrink-0 mx-3 sm:mx-6 ${
+                        isTelkom ? 'h-7 sm:h-8' : 'h-10 sm:h-12'
+                      }`}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  );
+                })}
               </div>
             </div>
           </div>
