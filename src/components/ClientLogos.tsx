@@ -20,21 +20,17 @@ const ClientLogos = () => {
   return (
     <section className="py-3 bg-white overflow-hidden">
       <div className="relative">
-        <div className="inline-flex animate-marquee-seamless whitespace-nowrap">
+        <div className="inline-flex animate-marquee-seamless whitespace-nowrap items-center">
           {duplicatedLogos.map((logo, index) => {
-            const isTelkom = logo.name === "SD Telkom Makassar";
-            
             return (
               <div
                 key={index}
-                className="mx-4 md:mx-6 inline-flex items-center justify-center flex-shrink-0 w-32 md:w-40 h-20 md:h-24"
+                className="mx-6 md:mx-8 inline-flex items-center justify-center flex-shrink-0 w-32 md:w-40 h-20 md:h-24"
               >
                 <img 
                   src={logo.image} 
                   alt={logo.name}
-                  className={`object-contain mix-blend-multiply ${
-                    isTelkom ? 'max-h-12 md:max-h-14 max-w-[80%]' : 'max-w-full max-h-full'
-                  }`}
+                  className="object-contain mix-blend-multiply max-w-full max-h-full"
                   loading="lazy"
                   decoding="async"
                 />
