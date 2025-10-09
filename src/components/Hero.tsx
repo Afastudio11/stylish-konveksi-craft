@@ -144,8 +144,9 @@ const Hero = () => {
 
             {/* Client Logos */}
             <div className="relative overflow-hidden w-full">
-              <div className="inline-flex animate-marquee-seamless whitespace-nowrap">
+              <div className="inline-flex animate-marquee-seamless whitespace-nowrap items-center">
                 {[...logos, ...logos, ...logos, ...logos, ...logos].map((logo, index) => {
+                  const isMandiri = logo.name === "Bank Mandiri";
                   const isTelkom = logo.name === "SD Telkom Makassar";
                   
                   return (
@@ -154,7 +155,9 @@ const Hero = () => {
                       src={logo.image} 
                       alt={logo.name}
                       className={`object-contain flex-shrink-0 mx-3 sm:mx-6 ${
-                        isTelkom ? 'h-7 sm:h-8' : 'h-10 sm:h-12'
+                        isMandiri ? 'h-6 sm:h-7' : 
+                        isTelkom ? 'h-6 sm:h-7' : 
+                        'h-8 sm:h-10'
                       }`}
                       loading="lazy"
                       decoding="async"
