@@ -75,19 +75,21 @@ Setelah build, Anda akan memiliki folder `dist` dengan struktur seperti ini:
 ```
 dist/
 ├── index.html
-├── attached_assets/        # Foto-foto pelanggan Anda
+├── galeri-customer/        # ✅ Foto-foto pelanggan Anda (FIXED!)
 │   ├── IMG-20251008-WA0002_1759894910497.jpg
 │   ├── IMG-20251008-WA0003_1759894910497.jpg
-│   └── ...
+│   ├── IMG-20251008-WA0004_1759894910498.jpg
+│   └── ... (17 foto lainnya)
 ├── assets/                 # File CSS, JS, dan gambar yang sudah dioptimasi
 │   ├── index-[hash].css
 │   ├── index-[hash].js
+│   ├── logo-[hash].png
 │   └── ...
-└── public/
-    ├── bantaeng.png
-    ├── bpjs.png
-    └── ...
+└── (file public lainnya jika ada)
 ```
+
+**✅ PERBAIKAN TERBARU (9 Oktober 2025):**
+Folder gambar customer telah dipindahkan dari `attached_assets/` ke `galeri-customer/` di dalam folder `public/`. Ini memastikan semua foto pelanggan otomatis ter-copy saat build dan muncul sempurna di hosting!
 
 ---
 
